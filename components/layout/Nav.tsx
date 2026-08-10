@@ -1,13 +1,19 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { LOGO_URL, NAV_LINKS } from "@/lib/content";
 import styles from "./Nav.module.css";
 
 export function Nav() {
+  const pathname = usePathname();
+
   return (
     <nav className={styles.nav}>
       <div className={`container ${styles.inner}`}>
-        <a href="#top" className={styles.logo}>
+        <Link href="/" className={styles.logo}>
           <Image
             src={LOGO_URL}
             alt="Asian Top Wellness"
@@ -16,15 +22,19 @@ export function Nav() {
             priority
             className={styles.logoImg}
           />
-        </a>
+        </Link>
         <div className={styles.links}>
-          {NAV_LINKS.map((link, i) => (
-            <a key={link.href} href={link.href} className={i === 0 ? styles.linkActive : styles.link}>
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={pathname === link.href ? styles.linkActive : styles.link}
+            >
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
-        <Button href="#contact" variant="primary" size="sm">
+        <Button href="/contact#enquiry" variant="primary" size="sm">
           Create Your Product
         </Button>
       </div>

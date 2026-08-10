@@ -27,7 +27,7 @@ export function CustomDev() {
               </span>
             ))}
           </div>
-          <Button href="#contact" variant="primary" size="lg">
+          <Button href="/contact#enquiry" variant="primary" size="lg">
             Discuss Your Product Idea
           </Button>
         </div>

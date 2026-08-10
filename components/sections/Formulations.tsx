@@ -32,10 +32,10 @@ export function Formulations() {
               format.
             </p>
             <div className={styles.ctaRow}>
-              <Button href="#contact" variant="primary" size="md">
+              <Button href="/contact#enquiry" variant="primary" size="md">
                 Request a Sample
               </Button>
-              <Button href="#contact" variant="secondary" size="md">
+              <Button href="/contact#enquiry" variant="secondary" size="md">
                 Customize This Product
               </Button>
             </div>
@@ -49,10 +49,10 @@ export function Formulations() {
               to drinking blends, bars or single-serve sachets for your market.
             </p>
             <div className={styles.ctaRow}>
-              <Button href="#contact" variant="primary" size="md">
+              <Button href="/contact#enquiry" variant="primary" size="md">
                 Request a Sample
               </Button>
-              <Button href="#contact" variant="secondary" size="md">
+              <Button href="/contact#enquiry" variant="secondary" size="md">
                 Customize This Product
               </Button>
             </div>

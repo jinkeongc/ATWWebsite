@@ -1,10 +1,13 @@
 export const NAV_LINKS = [
-  { label: "Home", href: "#top" },
-  { label: "About Us", href: "#about" },
-  { label: "Products", href: "#products" },
-  { label: "Services", href: "#journey" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Products", href: "/products" },
+  { label: "Services", href: "/services" },
+  { label: "Contact", href: "/contact" },
 ];
+
+export const CONTACT_PHONE = "+60 12-961 9900";
+export const CONTACT_ADDRESS = "30, Jalan SS 2/72, SS 2, 47300 Petaling Jaya, Selangor, Malaysia";
 
 export const WHATSAPP_URL = "https://api.whatsapp.com/send?phone=60129619900";
 export const CONTACT_EMAIL = "info@asiantopwellness.com";

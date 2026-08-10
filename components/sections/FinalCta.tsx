@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/Button";
-import { CONTACT_EMAIL, WHATSAPP_URL } from "@/lib/content";
+import { WHATSAPP_URL } from "@/lib/content";
 import styles from "./FinalCta.module.css";
 
 export function FinalCta() {
@@ -11,7 +11,7 @@ export function FinalCta() {
         we can build it, and how.
       </p>
       <div className={styles.ctaRow}>
-        <Button href={`mailto:${CONTACT_EMAIL}`} variant="primary" size="xl">
+        <Button href="/contact#enquiry" variant="primary" size="xl">
           Discuss Your Product Idea
         </Button>
         <Button href={WHATSAPP_URL} variant="secondary" size="xl">

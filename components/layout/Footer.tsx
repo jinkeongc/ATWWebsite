@@ -12,25 +12,28 @@ export function Footer() {
           </div>
           <div className={styles.col}>
             <span className={styles.colHead}>Explore</span>
-            <a href="#top" className={styles.link}>
+            <a href="/" className={styles.link}>
               Home
             </a>
-            <a href="#about" className={styles.link}>
+            <a href="/about" className={styles.link}>
               About Us
             </a>
-            <a href="#products" className={styles.link}>
+            <a href="/products" className={styles.link}>
               Products
             </a>
-            <a href="#journey" className={styles.link}>
+            <a href="/services" className={styles.link}>
               Services
+            </a>
+            <a href="/contact" className={styles.link}>
+              Contact
             </a>
           </div>
           <div className={styles.col}>
             <span className={styles.colHead}>Start</span>
-            <a href="#contact" className={styles.link}>
+            <a href="/contact#enquiry" className={styles.link}>
               Create Your Product
             </a>
-            <a href="#contact" className={styles.link}>
+            <a href="/contact#enquiry" className={styles.link}>
               Request a Sample
             </a>
             <a href={WHATSAPP_URL} className={styles.link}>

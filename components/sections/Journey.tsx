@@ -21,7 +21,7 @@ export function Journey() {
           ))}
         </div>
         <div className={styles.footRow}>
-          <a href="#contact" className={styles.link}>
+          <a href="/contact#enquiry" className={styles.link}>
             Start at stage one — tell us your idea
           </a>
         </div>

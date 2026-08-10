@@ -18,7 +18,7 @@ export function AboutPreview() {
             turn wellness concepts into commercially viable products — from sourcing and formulation through
             production and export.
           </p>
-          <a href="#" className={styles.link}>
+          <a href="/about" className={styles.link}>
             More about ATW →
           </a>
         </div>

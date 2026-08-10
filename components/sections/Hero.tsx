@@ -16,10 +16,10 @@ export function Hero() {
           wellness products designed around their market.
         </p>
         <div className={styles.ctaRow}>
-          <Button href="#contact" variant="primary" size="lg">
+          <Button href="/contact#enquiry" variant="primary" size="lg">
             Start Your Product
           </Button>
-          <Button href="#journey" variant="secondary" size="lg">
+          <Button href="/services" variant="secondary" size="lg">
             See How It Works
           </Button>
         </div>

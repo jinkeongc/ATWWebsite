@@ -2,7 +2,7 @@
 
 import { useState, type CSSProperties, type ReactNode } from "react";
 
-export type ButtonVariant = "primary" | "secondary";
+export type ButtonVariant = "primary" | "secondary" | "inverse";
 export type ButtonSize = "sm" | "md" | "lg" | "xl";
 
 interface ButtonProps {
@@ -57,7 +57,9 @@ export function Button({
     opacity: disabled ? 0.45 : 1,
     transition:
       "background var(--dur-fast) var(--ease-out), opacity var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out)",
-    border: "1.5px solid transparent",
+    borderWidth: "1.5px",
+    borderStyle: "solid",
+    borderColor: "transparent",
     display: "inline-flex",
     alignItems: "center",
   };
@@ -68,8 +70,9 @@ export function Button({
       ...base,
       background: "transparent",
       color: "var(--text-brand)",
-      border: "1.5px solid var(--border-strong)",
+      borderColor: "var(--border-strong)",
     },
+    inverse: { ...base, background: "var(--cream-text)", color: "var(--green-deep)" },
   };
 
   const style = { ...variantStyles[variant] };
@@ -80,6 +83,9 @@ export function Button({
     }
     if (variant === "secondary") {
       style.borderColor = "var(--green-deep)";
+    }
+    if (variant === "inverse") {
+      style.background = "#FFFFFF";
     }
   }
 
