@@ -1,0 +1,31 @@
+import { JOURNEY } from "@/lib/content";
+import styles from "./Journey.module.css";
+
+export function Journey() {
+  return (
+    <section id="journey" className={styles.band}>
+      <div className={`container ${styles.inner}`}>
+        <div className={styles.headRow}>
+          <h2 className={styles.heading}>From idea to market</h2>
+          <p className={styles.intro}>
+            Seven stages, one partner. We stay with your product from the first conversation to the loading dock.
+          </p>
+        </div>
+        <div className={styles.grid}>
+          {JOURNEY.map((j) => (
+            <div key={j.num} className={styles.step} style={{ marginTop: j.offset }}>
+              <span className={styles.num}>{j.num}</span>
+              <span className={styles.name}>{j.name}</span>
+              <span className={styles.desc}>{j.desc}</span>
+            </div>
+          ))}
+        </div>
+        <div className={styles.footRow}>
+          <a href="#contact" className={styles.link}>
+            Start at stage one — tell us your idea →
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}

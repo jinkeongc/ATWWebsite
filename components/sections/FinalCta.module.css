@@ -1,0 +1,37 @@
+.section {
+  padding: 128px 24px 140px;
+  text-align: center;
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-weight: var(--weight-medium);
+  font-size: 52px;
+  line-height: var(--leading-tight);
+  color: var(--text-brand);
+  margin: 0 auto 22px;
+  max-width: 22ch;
+  text-wrap: balance;
+}
+
+.copy {
+  font-size: 17px;
+  line-height: var(--leading-body);
+  color: var(--ink-700);
+  margin: 0 auto 40px;
+  max-width: 52ch;
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  align-items: center;
+}
+
+@media (max-width: 640px) {
+  .heading {
+    font-size: 36px;
+  }
+}

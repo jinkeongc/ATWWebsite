@@ -1,0 +1,49 @@
+.band {
+  background: var(--surface-card);
+}
+
+.inner {
+  padding: 96px 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 72px;
+  align-items: center;
+}
+
+.photo {
+  height: 400px;
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-weight: var(--weight-medium);
+  font-size: 38px;
+  line-height: var(--leading-snug);
+  color: var(--text-brand);
+  margin: 0 0 20px;
+}
+
+.copy {
+  font-size: 16px;
+  line-height: var(--leading-body);
+  color: var(--ink-700);
+  margin: 0 0 28px;
+  max-width: 50ch;
+}
+
+.link {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--link);
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .photo {
+    height: 300px;
+    order: -1;
+  }
+}

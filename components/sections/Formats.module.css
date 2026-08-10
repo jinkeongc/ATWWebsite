@@ -1,0 +1,79 @@
+.section {
+  padding: 0 24px 112px;
+}
+
+.headRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+.heading {
+  font-family: var(--font-serif);
+  font-weight: var(--weight-medium);
+  font-size: var(--text-h1);
+  line-height: var(--leading-snug);
+  color: var(--text-brand);
+  margin: 0;
+  max-width: 20ch;
+}
+
+.intro {
+  font-size: var(--text-body-size);
+  line-height: var(--leading-body);
+  color: var(--ink-700);
+  margin: 0;
+  max-width: 44ch;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.photo {
+  height: 220px;
+}
+
+.cardText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cardTitle {
+  font-size: 16px;
+  font-weight: var(--weight-semibold);
+  color: var(--text-brand);
+}
+
+.cardDesc {
+  font-size: var(--text-small);
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+@media (max-width: 1024px) {
+  .headRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

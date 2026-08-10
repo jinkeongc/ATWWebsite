@@ -1,0 +1,30 @@
+:root{
+/* base palette */
+--green-900:#123526; --green-800:#1b4433; --green-700:#2a5a44; --green-500:#4e7a5f;
+--sage-300:#b6c9b1; --sage-200:#cfdcc9; --sage-100:#e4ecdf;
+--lime-400:#d7ef53; --lime-300:#e3f57e; --lime-500:#c4e02f;
+--cream-100:#f6f2e8; --cream-200:#efe9da; --cream-300:#e7dfcc;
+--clay-500:#c2542f; --clay-300:#e0a183;
+--ink-900:#191914; --ink-700:#3c3c34; --ink-500:#6b6b60; --ink-300:#a3a396;
+--white:#ffffff;
+/* semantic */
+--surface-page:var(--cream-100);
+--surface-card:var(--cream-200);
+--surface-raised:var(--white);
+--surface-inverse:var(--green-900);
+--surface-accent:var(--sage-300);
+--text-body:var(--ink-900);
+--text-muted:var(--ink-500);
+--text-inverse:var(--cream-100);
+--text-brand:var(--green-900);
+--accent:var(--lime-400);
+--accent-hover:var(--lime-500);
+--accent-ink:var(--ink-900);
+--link:var(--green-800);
+--link-hover:var(--green-500);
+--border-subtle:rgba(25,25,20,.14);
+--border-strong:var(--ink-900);
+--focus-ring:var(--green-700);
+/* status */
+--positive:#3e7a4e; --warning:#c99a2c; --danger:#b2402a;
+}

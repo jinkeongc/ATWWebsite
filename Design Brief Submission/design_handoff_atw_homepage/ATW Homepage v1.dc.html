@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    body { margin: 0; background: #FBF9F3; color: #22301F; font-family: 'Schibsted Grotesk', sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #2E5B3C; text-decoration: none; }
+    a:hover { color: #1E3D2A; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</helmet>
+
+<nav style="position:sticky;top:0;z-index:50;background:rgba(251,249,243,0.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(34,48,31,0.08)">
+  <div style="max-width:1240px;margin:0 auto;padding:0 40px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:32px">
+    <a href="#top" style="display:flex;align-items:center;gap:12px">
+      <img src="https://static.wixstatic.com/media/bee8ea_34655a0d126641b7ac01e8240854ca19~mv2.png/v1/fill/w_245,h_101,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/asian_top_wellness__1_-removebg-preview.png" alt="Asian Top Wellness" style="height:46px;width:auto;display:block"></img>
+    </a>
+    <div style="display:flex;align-items:center;gap:36px;font-size:15px;font-weight:500;color:#3A4A36">
+      <a href="#top" style="color:#22301F" style-hover="color:#2E5B3C">Home</a>
+      <a href="#about" style="color:#3A4A36" style-hover="color:#2E5B3C">About Us</a>
+      <a href="#products" style="color:#3A4A36" style-hover="color:#2E5B3C">Products</a>
+      <a href="#journey" style="color:#3A4A36" style-hover="color:#2E5B3C">Services</a>
+      <a href="#contact" style="color:#3A4A36" style-hover="color:#2E5B3C">Contact</a>
+    </div>
+    <a href="#contact" style="background:#1E3D2A;color:#F7F3E6;padding:12px 24px;border-radius:999px;font-size:15px;font-weight:600;letter-spacing:0.01em" style-hover="background:#2E5B3C;color:#FFFFFF">Create Your Product</a>
+  </div>
+</nav>
+
+<header id="top" style="max-width:1240px;margin:0 auto;padding:88px 40px 96px;display:grid;grid-template-columns:1.05fr 1fr;gap:72px;align-items:center">
+  <div style="animation:fadeUp 0.7s ease both">
+    <div style="display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#2E5B3C;margin-bottom:28px">
+      <span style="width:28px;height:1px;background:#2E5B3C;display:inline-block"></span>
+      OEM &amp; Private-Label Wellness · Malaysia
+    </div>
+    <h1 style="font-family:'Lora',serif;font-weight:550;font-size:64px;line-height:1.06;letter-spacing:-0.015em;color:#1E3D2A;margin:0 0 28px;text-wrap:balance">From idea to finished wellness product.</h1>
+    <p style="font-size:19px;line-height:1.6;color:#4A5945;margin:0 0 40px;max-width:52ch;text-wrap:pretty">ATW partners with brands, distributors and entrepreneurs to formulate, manufacture, package and deliver wellness products designed around their market.</p>
+    <div style="display:flex;align-items:center;gap:16px">
+      <a href="#contact" style="background:#1E3D2A;color:#F7F3E6;padding:16px 32px;border-radius:999px;font-size:16px;font-weight:600" style-hover="background:#2E5B3C;color:#FFFFFF">Start Your Product</a>
+      <a href="#journey" style="padding:16px 28px;border-radius:999px;font-size:16px;font-weight:600;color:#1E3D2A;border:1.5px solid rgba(30,61,42,0.35)" style-hover="border:1.5px solid #1E3D2A;color:#1E3D2A">See How It Works</a>
+    </div>
+  </div>
+  <div style="position:relative;height:600px;animation:fadeUp 0.7s ease 0.15s both">
+    <div style="position:absolute;inset:40px 0 0 60px;background:#E7EEE0;border-radius:240px 240px 28px 28px"></div>
+    <div style="position:absolute;top:0;right:28px;width:420px;height:500px">
+      <image-slot id="hpA-hero-main" shape="rounded" radius="24" placeholder="hero: powders + beverage formulation, bright natural light"></image-slot>
+    </div>
+    <div style="position:absolute;bottom:24px;left:8px;width:200px;height:200px">
+      <image-slot id="hpA-hero-ingredient" shape="circle" placeholder="ingredient close-up (wheatgrass / moringa)"></image-slot>
+    </div>
+    <div style="position:absolute;bottom:64px;right:0;background:#FFFFFF;border:1px solid rgba(34,48,31,0.08);border-radius:16px;padding:18px 22px;box-shadow:0 12px 32px rgba(30,61,42,0.10);display:flex;flex-direction:column;gap:4px">
+      <span style="font-family:'Lora',serif;font-size:24px;color:#1E3D2A">Idea → Sample → Shelf</span>
+      <span style="font-size:13px;color:#6B7A64">One partner across the whole journey</span>
+    </div>
+  </div>
+</header>
+
+<section style="max-width:1240px;margin:0 auto;padding:0 40px 104px">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:48px">
+    <h2 style="font-family:'Lora',serif;font-weight:550;font-size:42px;line-height:1.12;color:#1E3D2A;margin:0;max-width:20ch">What we can create together</h2>
+    <p style="font-size:16px;line-height:1.6;color:#4A5945;margin:0;max-width:44ch">Bring us an ingredient, a flavor, a health positioning or a finished concept — we develop formulations across formats.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px">
+    <sc-for list="{{ formats }}" as="f" hint-placeholder-count="6">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="height:220px">
+          <image-slot id="{{ f.slot }}" shape="rounded" radius="18" placeholder="{{ f.img }}"></image-slot>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:4px;padding:0 4px">
+          <span style="font-size:17px;font-weight:600;color:#1E3D2A">{{ f.name }}</span>
+          <span style="font-size:14px;line-height:1.5;color:#6B7A64">{{ f.desc }}</span>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<section style="background:#E7EEE0">
+  <div style="max-width:1240px;margin:0 auto;padding:104px 40px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+    <div>
+      <div style="font-size:13px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#2E5B3C;margin-bottom:20px">Custom Product Development</div>
+      <h2 style="font-family:'Lora',serif;font-weight:550;font-size:48px;line-height:1.1;color:#1E3D2A;margin:0 0 24px">Have an idea?<br></br>Let's develop it.</h2>
+      <p style="font-size:17px;line-height:1.65;color:#41503D;margin:0 0 28px;max-width:50ch">Most of our projects begin with a fragment — an ingredient someone believes in, a flavor, a nutritional direction, a market that needs serving. You don't need a finished specification to start.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px">
+        <sc-for list="{{ starters }}" as="s" hint-placeholder-count="6">
+          <span style="background:rgba(255,255,255,0.75);border:1px solid rgba(30,61,42,0.12);color:#2E4A32;font-size:14px;font-weight:500;padding:8px 16px;border-radius:999px">{{ s }}</span>
+        </sc-for>
+      </div>
+      <a href="#contact" style="display:inline-block;background:#1E3D2A;color:#F7F3E6;padding:16px 32px;border-radius:999px;font-size:16px;font-weight:600" style-hover="background:#2E5B3C;color:#FFFFFF">Discuss Your Product Idea</a>
+    </div>
+    <div style="height:520px">
+      <image-slot id="hp-custom-dev" shape="rounded" radius="24" placeholder="formulation session: weighing powders, tasting samples"></image-slot>
+    </div>
+  </div>
+</section>
+
+<section id="journey" style="background:#1E3D2A">
+  <div style="max-width:1240px;margin:0 auto;padding:110px 40px 120px">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:40px;margin-bottom:72px">
+      <h2 style="font-family:'Lora',serif;font-weight:500;font-size:46px;line-height:1.1;color:#F7F3E6;margin:0">From idea to market</h2>
+      <p style="font-size:16px;line-height:1.6;color:#B8C7AF;margin:0;max-width:40ch">Seven stages, one partner. We stay with your product from the first conversation to the loading dock.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:24px;align-items:start">
+      <sc-for list="{{ journey }}" as="j" hint-placeholder-count="7">
+        <div style="border-top:1px solid rgba(247,243,230,0.25);padding-top:22px;margin-top:{{ j.offset }};display:flex;flex-direction:column;gap:10px">
+          <span style="font-family:'Lora',serif;font-size:38px;color:#E4D3A2;line-height:1">{{ j.num }}</span>
+          <span style="font-size:16px;font-weight:600;color:#F7F3E6">{{ j.name }}</span>
+          <span style="font-size:13.5px;line-height:1.55;color:#A9BBA0">{{ j.desc }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <div style="margin-top:80px;display:flex;justify-content:center">
+      <a href="#contact" style="color:#E4D3A2;font-size:16px;font-weight:600;border-bottom:1px solid rgba(228,211,162,0.5);padding-bottom:4px" style-hover="color:#F7F3E6;border-bottom:1px solid #F7F3E6">Start at stage one — tell us your idea</a>
+    </div>
+  </div>
+</section>
+
+<section id="products" style="max-width:1240px;margin:0 auto;padding:110px 40px 40px">
+  <div style="margin-bottom:64px;max-width:62ch">
+    <div style="font-size:13px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#2E5B3C;margin-bottom:18px">Example Formulations</div>
+    <h2 style="font-family:'Lora',serif;font-weight:550;font-size:44px;line-height:1.12;color:#1E3D2A;margin:0 0 18px">Proof of what our lab can build</h2>
+    <p style="font-size:17px;line-height:1.6;color:#4A5945;margin:0">Two formulations we developed in-house — treat them as starting points. Both can be customized, white-labelled, or simply sampled to judge our work.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:72px">
+    <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:72px;align-items:center">
+      <div style="height:460px">
+        <image-slot id="hp-wheatgrass" shape="rounded" radius="24" placeholder="wheatgrass coffee: unbranded pouch + prepared cup, wheatgrass sprigs"></image-slot>
+      </div>
+      <div>
+        <h3 style="font-family:'Lora',serif;font-weight:550;font-size:34px;color:#1E3D2A;margin:0 0 16px">Wheatgrass Coffee</h3>
+        <p style="font-size:16.5px;line-height:1.65;color:#4A5945;margin:0 0 24px;max-width:48ch">Rich coffee flavor combined with the superfood profile of wheatgrass — a natural caffeine alternative carrying vitamins, minerals and antioxidants. Adjustable roast character, sweetness and serving format.</p>
+        <div style="display:flex;gap:14px">
+          <a href="#contact" style="background:#1E3D2A;color:#F7F3E6;padding:13px 26px;border-radius:999px;font-size:15px;font-weight:600" style-hover="background:#2E5B3C;color:#FFFFFF">Request a Sample</a>
+          <a href="#contact" style="padding:13px 24px;border-radius:999px;font-size:15px;font-weight:600;color:#1E3D2A;border:1.5px solid rgba(30,61,42,0.3)" style-hover="border:1.5px solid #1E3D2A">Customize This Product</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1.1fr;gap:72px;align-items:center">
+      <div>
+        <h3 style="font-family:'Lora',serif;font-weight:550;font-size:34px;color:#1E3D2A;margin:0 0 16px">Moringa Chocolate</h3>
+        <p style="font-size:16.5px;line-height:1.65;color:#4A5945;margin:0 0 24px;max-width:48ch">Cocoa warmth meets moringa's dense nutritional profile. A wellness chocolate format that adapts to drinking blends, bars or single-serve sachets for your market.</p>
+        <div style="display:flex;gap:14px">
+          <a href="#contact" style="background:#1E3D2A;color:#F7F3E6;padding:13px 26px;border-radius:999px;font-size:15px;font-weight:600" style-hover="background:#2E5B3C;color:#FFFFFF">Request a Sample</a>
+          <a href="#contact" style="padding:13px 24px;border-radius:999px;font-size:15px;font-weight:600;color:#1E3D2A;border:1.5px solid rgba(30,61,42,0.3)" style-hover="border:1.5px solid #1E3D2A">Customize This Product</a>
+        </div>
+      </div>
+      <div style="height:460px">
+        <image-slot id="hp-moringa" shape="rounded" radius="24" placeholder="moringa chocolate: cocoa powder, moringa leaves, neutral sachet"></image-slot>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="max-width:1240px;margin:0 auto;padding:110px 40px">
+  <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start">
+    <h2 style="font-family:'Lora',serif;font-weight:550;font-size:42px;line-height:1.14;color:#1E3D2A;margin:0;position:sticky;top:120px">Why brands build with ATW</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:40px 48px">
+      <sc-for list="{{ reasons }}" as="r" hint-placeholder-count="6">
+        <div style="border-top:1px solid rgba(30,61,42,0.15);padding-top:18px;display:flex;flex-direction:column;gap:8px">
+          <span style="font-size:17px;font-weight:600;color:#1E3D2A">{{ r.name }}</span>
+          <span style="font-size:14.5px;line-height:1.55;color:#5A6955">{{ r.desc }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<section id="about" style="background:#F5F0E2">
+  <div style="max-width:1240px;margin:0 auto;padding:96px 40px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center">
+    <div style="height:400px">
+      <image-slot id="hp-about" shape="rounded" radius="24" placeholder="ATW team / facility, natural light"></image-slot>
+    </div>
+    <div>
+      <div style="font-size:13px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:#2E5B3C;margin-bottom:18px">About ATW</div>
+      <h2 style="font-family:'Lora',serif;font-weight:550;font-size:38px;line-height:1.15;color:#1E3D2A;margin:0 0 20px">A wellness product partner in Petaling Jaya, working with the world</h2>
+      <p style="font-size:16.5px;line-height:1.65;color:#4A5945;margin:0 0 28px;max-width:50ch">Asian Top Wellness is a Malaysia-based product development and manufacturing company helping businesses turn wellness concepts into commercially viable products — from sourcing and formulation through production and export.</p>
+      <a href="#" style="font-size:16px;font-weight:600;color:#1E3D2A;border-bottom:1.5px solid rgba(30,61,42,0.4);padding-bottom:3px" style-hover="color:#2E5B3C;border-bottom:1.5px solid #2E5B3C">More about ATW →</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="max-width:1240px;margin:0 auto;padding:130px 40px 140px;text-align:center">
+  <h2 style="font-family:'Lora',serif;font-weight:550;font-size:52px;line-height:1.12;color:#1E3D2A;margin:0 auto 22px;max-width:22ch;text-wrap:balance">Your next wellness product can start with a conversation.</h2>
+  <p style="font-size:17px;line-height:1.6;color:#4A5945;margin:0 auto 40px;max-width:52ch">Tell us what you're imagining — an ingredient, a flavor, a market. We'll tell you honestly whether we can build it, and how.</p>
+  <div style="display:flex;justify-content:center;gap:16px">
+    <a href="mailto:info@asiantopwellness.com" style="background:#1E3D2A;color:#F7F3E6;padding:17px 36px;border-radius:999px;font-size:16.5px;font-weight:600" style-hover="background:#2E5B3C;color:#FFFFFF">Discuss Your Product Idea</a>
+    <a href="https://api.whatsapp.com/send?phone=60129619900" style="padding:17px 30px;border-radius:999px;font-size:16.5px;font-weight:600;color:#1E3D2A;border:1.5px solid rgba(30,61,42,0.35)" style-hover="border:1.5px solid #1E3D2A">WhatsApp Us</a>
+  </div>
+</section>
+
+<footer style="background:#16301F;color:#C9D6C0">
+  <div style="max-width:1240px;margin:0 auto;padding:72px 40px 40px">
+    <div style="display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:56px;padding-bottom:56px;border-bottom:1px solid rgba(201,214,192,0.15)">
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <span style="font-family:'Lora',serif;font-size:24px;color:#F7F3E6">Asian Top Wellness</span>
+        <span style="font-size:15px;line-height:1.55;color:#9DB093;max-width:32ch">From idea to finished wellness product.</span>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14.5px">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8CA181;margin-bottom:4px">Explore</span>
+        <a href="#top" style="color:#C9D6C0" style-hover="color:#F7F3E6">Home</a>
+        <a href="#about" style="color:#C9D6C0" style-hover="color:#F7F3E6">About Us</a>
+        <a href="#products" style="color:#C9D6C0" style-hover="color:#F7F3E6">Products</a>
+        <a href="#journey" style="color:#C9D6C0" style-hover="color:#F7F3E6">Services</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14.5px">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8CA181;margin-bottom:4px">Start</span>
+        <a href="#contact" style="color:#C9D6C0" style-hover="color:#F7F3E6">Create Your Product</a>
+        <a href="#contact" style="color:#C9D6C0" style-hover="color:#F7F3E6">Request a Sample</a>
+        <a href="https://api.whatsapp.com/send?phone=60129619900" style="color:#C9D6C0" style-hover="color:#F7F3E6">WhatsApp</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-size:14.5px;line-height:1.6">
+        <span style="font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8CA181;margin-bottom:4px">Contact</span>
+        <span>30, Jalan SS 2/72, SS 2,<br></br>47300 Petaling Jaya, Selangor, Malaysia</span>
+        <a href="mailto:info@asiantopwellness.com" style="color:#C9D6C0" style-hover="color:#F7F3E6">info@asiantopwellness.com</a>
+      </div>
+    </div>
+    <div style="padding-top:28px;font-size:13px;color:#8CA181">Copyright © 2026 Asian Top Wellness Sdn Bhd</div>
+  </div>
+</footer>
+
+<sc-if value="{{ showWhatsAppFloat }}" hint-placeholder-val="{{ true }}">
+  <a href="https://api.whatsapp.com/send?phone=60129619900" title="WhatsApp Us" style="position:fixed;bottom:28px;right:28px;z-index:60;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(30,61,42,0.25);color:#FFFFFF;font-size:26px" style-hover="background:#1EBE5A;color:#FFFFFF">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.5.1-1 .2-3.3-.7-2.8-1.2-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .6l-.4.6c-.1.2-.3.4-.1.7.2.3.8 1.3 1.7 2.1 1.2 1.1 2.2 1.4 2.5 1.5.3.1.5.1.7-.1l.9-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.2 1.2z"></path></svg>
+  </a>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showWhatsAppFloat&quot;: {&quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Page&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showWhatsAppFloat: this.props.showWhatsAppFloat ?? true,
+      formats: [
+        { slot: "hp-fmt-powder", name: "Drink powders & superfood blends", desc: "Greens, protein and functional blends built around your hero ingredient.", img: "green powder scoop, sachets" },
+        { slot: "hp-fmt-coffee", name: "Functional coffee & beverages", desc: "Coffee, lattes and instant beverages with a wellness angle.", img: "pour of iced functional latte" },
+        { slot: "hp-fmt-choc", name: "Wellness chocolate & cocoa", desc: "Chocolate drinks and confectionery carrying functional ingredients.", img: "cocoa powder + chocolate pieces" },
+        { slot: "hp-fmt-sachet", name: "Sachets & single-serve", desc: "Stick packs and sachets for daily-ritual products.", img: "unbranded stick packs, fanned" },
+        { slot: "hp-fmt-jars", name: "Jars, pouches & canisters", desc: "Retail-ready pack formats matched to your positioning.", img: "neutral jars and pouches lineup" },
+        { slot: "hp-fmt-custom", name: "Your formulation", desc: "A category we haven't listed? That's usually where projects start.", img: "raw ingredients composition" }
+      ],
+      starters: ["An ingredient", "A flavor", "A health positioning", "A target market", "A rough concept", "Packaging requirements"],
+      journey: [
+        { num: "01", name: "Product Idea", desc: "We map what you want to create and for whom.", offset: "0" },
+        { num: "02", name: "Formulation", desc: "Our lab develops or adapts the recipe.", offset: "36px" },
+        { num: "03", name: "Sampling", desc: "You taste and test real product.", offset: "0" },
+        { num: "04", name: "Refinement", desc: "Flavor, texture and nutrition tuned to feedback.", offset: "36px" },
+        { num: "05", name: "Manufacturing", desc: "Approved formulas move into production.", offset: "0" },
+        { num: "06", name: "Packaging", desc: "Formats and finishing to your requirements.", offset: "36px" },
+        { num: "07", name: "Delivery", desc: "Export support toward your market.", offset: "0" }
+      ],
+      reasons: [
+        { name: "Custom formulation", desc: "Products developed around your idea, not off a fixed menu." },
+        { name: "OEM / private label", desc: "Your brand on the pack — we stay invisible." },
+        { name: "Ingredient sourcing", desc: "Raw materials sourced to fit your quality and cost targets." },
+        { name: "Production & packaging", desc: "Manufacturing and finishing under one roof of responsibility." },
+        { name: "Export & logistics support", desc: "Help moving finished goods toward international markets." },
+        { name: "Flexible collaboration", desc: "From fragment of an idea to full specification — we meet you where you are." }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
