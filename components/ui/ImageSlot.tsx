@@ -6,6 +6,8 @@ interface ImageSlotProps {
   radius?: number;
   style?: CSSProperties;
   className?: string;
+  /** Local-only override for previewing a real photo in place of the placeholder. Never used in production content. */
+  devSrc?: string;
 }
 
 /**
@@ -13,7 +15,7 @@ interface ImageSlotProps {
  * Renders a labeled drop-zone in place of the final image so layout and
  * spacing can be verified before photography is commissioned.
  */
-export function ImageSlot({ label, shape = "rounded", radius = 24, style, className }: ImageSlotProps) {
+export function ImageSlot({ label, shape = "rounded", radius = 24, style, className, devSrc }: ImageSlotProps) {
   return (
     <div
       className={className}
@@ -31,18 +33,35 @@ export function ImageSlot({ label, shape = "rounded", radius = 24, style, classN
         textAlign: "center",
         padding: shape === "circle" ? "0 20px 20px" : "12px",
         overflow: "hidden",
+        position: "relative",
         ...style,
       }}
     >
-      <span
-        style={{
-          fontSize: "11px",
-          color: "var(--text-muted)",
-          lineHeight: 1.4,
-        }}
-      >
-        {label}
-      </span>
+      {devSrc ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={devSrc}
+          alt=""
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+          }}
+        />
+      ) : (
+        <span
+          style={{
+            fontSize: "11px",
+            color: "var(--text-muted)",
+            lineHeight: 1.4,
+            position: "relative",
+          }}
+        >
+          {label}
+        </span>
+      )}
     </div>
   );
 }

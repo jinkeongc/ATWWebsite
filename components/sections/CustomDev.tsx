@@ -32,7 +32,7 @@ export function CustomDev() {
           </Button>
         </div>
         <div className={styles.photo} data-parallax="-0.06">
-          <ImageSlot label="formulation session: weighing powders, tasting samples" shape="rounded" radius={24} />
+          <ImageSlot label="formulation session: weighing powders, tasting samples" shape="rounded" radius={24} devSrc="/joke-photos/formulation-session.jpg" />
         </div>
       </div>
     </section>

@@ -60,27 +60,33 @@
   margin: 18px 0 0;
 }
 
+.whoContent {
+  max-width: 640px;
+}
+
 .whoLede {
   font-family: var(--font-serif);
   font-size: 25px;
   line-height: 1.45;
   color: var(--text-brand);
-  margin: 0 0 28px;
+  margin: 0 0 20px;
+  /* Wider than .whoContent on purpose: gives the lead statement room to
+     settle into two calm lines instead of the body copy's tighter measure. */
+  width: 668px;
 }
 
 .whoBody {
   font-size: 16px;
   line-height: 1.7;
   color: var(--text-copy);
-  margin: 0 0 20px;
-  max-width: 58ch;
+  margin: 0 0 16px;
 }
 
 .whoFacts {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 36px;
+  gap: 8px;
+  margin-top: 28px;
 }
 
 .fact {
@@ -348,6 +354,9 @@
   }
   .roleDesc {
     grid-column: 2;
+  }
+  .whoLede {
+    width: 100%;
   }
 }
 

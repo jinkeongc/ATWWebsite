@@ -90,7 +90,7 @@ export default function AboutPage() {
           </p>
         </div>
         <div className={`${styles.heroPhoto} fade-up-delay`} data-parallax="-0.05">
-          <ImageSlot label="ATW team at work — natural light, formulation bench" radius={24} />
+          <ImageSlot label="ATW team at work — natural light, formulation bench" radius={24} devSrc="/joke-photos/team-bench.jpg" />
         </div>
       </header>
 
@@ -104,7 +104,7 @@ export default function AboutPage() {
             </div>
             <h2 className={styles.whoHeading}>A product partner, not a retailer</h2>
           </div>
-          <div data-reveal>
+          <div className={styles.whoContent} data-reveal>
             <p className={styles.whoLede}>
               Asian Top Wellness partners with businesses to develop wellness products tailored to their ideas,
               customers and markets.
@@ -119,10 +119,8 @@ export default function AboutPage() {
               that need to travel across borders, tastes and markets.
             </p>
             <div className={styles.whoFacts}>
-              <span className={styles.fact}>Malaysia-based</span>
               <span className={styles.fact}>OEM / Private Label</span>
               <span className={styles.fact}>Wellness products</span>
-              <span className={styles.fact}>International customers</span>
             </div>
           </div>
         </div>
@@ -173,7 +171,7 @@ export default function AboutPage() {
             </ul>
           </div>
           <div className={styles.howPhoto} data-parallax="-0.06">
-            <ImageSlot label="tasting session — sample cups, notes, two people collaborating" radius={24} />
+            <ImageSlot label="tasting session — sample cups, notes, two people collaborating" radius={24} devSrc="/joke-photos/tasting-session.jpg" />
           </div>
         </div>
       </section>
