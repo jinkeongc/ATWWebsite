@@ -27,10 +27,10 @@ export function Hero() {
       <div className={`${styles.collage} fade-up-delay`}>
         <div className={styles.collageBackdrop} />
         <div className={styles.collageMain} data-parallax="-0.05">
-          <ImageSlot label="hero: powders + beverage formulation, bright natural light" />
+          <ImageSlot label="hero: powders + beverage formulation, bright natural light" shape="rounded" radius={24} />
         </div>
         <div className={styles.collageIngredient} data-parallax="0.06">
-          <ImageSlot label="ingredient close-up (wheatgrass / moringa)" />
+          <ImageSlot label="ingredient close-up (wheatgrass / moringa)" shape="circle" />
         </div>
         <div className={styles.collageCaption}>
           <span className={styles.collageCaptionTitle}>Idea → Sample → Shelf</span>

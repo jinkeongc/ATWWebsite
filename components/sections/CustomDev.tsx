@@ -8,7 +8,7 @@ export function CustomDev() {
     <section className={styles.band}>
       <div className={`container ${styles.inner}`}>
         <div>
-          <div className="atw-label" style={{ color: "var(--green-800)", marginBottom: 20 }}>
+          <div className="eyebrow" style={{ marginBottom: 20 }}>
             Custom Product Development
           </div>
           <h2 className={styles.heading}>
@@ -27,12 +27,12 @@ export function CustomDev() {
               </span>
             ))}
           </div>
-          <Button href="#contact" variant="inverse" size="lg">
+          <Button href="#contact" variant="primary" size="lg">
             Discuss Your Product Idea
           </Button>
         </div>
         <div className={styles.photo} data-parallax="-0.06">
-          <ImageSlot label="formulation session: weighing powders, tasting samples" />
+          <ImageSlot label="formulation session: weighing powders, tasting samples" shape="rounded" radius={24} />
         </div>
       </div>
     </section>

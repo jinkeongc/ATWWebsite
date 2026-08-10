@@ -1,5 +1,5 @@
 .section {
-  padding: 112px 24px 40px;
+  padding: 110px 40px 40px;
 }
 
 .head {
@@ -9,17 +9,17 @@
 
 .heading {
   font-family: var(--font-serif);
-  font-weight: var(--weight-medium);
-  font-size: var(--text-h1);
-  line-height: var(--leading-snug);
+  font-weight: var(--weight-headline);
+  font-size: 44px;
+  line-height: 1.12;
   color: var(--text-brand);
   margin: 0 0 18px;
 }
 
 .intro {
   font-size: 17px;
-  line-height: var(--leading-body);
-  color: var(--ink-700);
+  line-height: 1.6;
+  color: var(--text-copy);
   margin: 0;
 }
 
@@ -31,7 +31,7 @@
 
 .row {
   display: grid;
-  gap: 64px;
+  gap: 72px;
   align-items: center;
 }
 
@@ -53,16 +53,16 @@
 
 .title {
   font-family: var(--font-serif);
-  font-weight: var(--weight-medium);
-  font-size: var(--text-h2);
+  font-weight: var(--weight-headline);
+  font-size: 34px;
   color: var(--text-brand);
   margin: 0 0 16px;
 }
 
 .desc {
-  font-size: 16px;
-  line-height: var(--leading-body);
-  color: var(--ink-700);
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--text-copy);
   margin: 0 0 24px;
   max-width: 48ch;
 }
@@ -75,6 +75,9 @@
 }
 
 @media (max-width: 900px) {
+  .section {
+    padding: 80px 24px 24px;
+  }
   .rowPhotoLeft,
   .rowPhotoRight {
     grid-template-columns: 1fr;

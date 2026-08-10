@@ -1,9 +1,9 @@
 .band {
-  background: var(--surface-inverse);
+  background: var(--surface-journey);
 }
 
 .inner {
-  padding: 112px 24px 120px;
+  padding: 110px 40px 120px;
 }
 
 .headRow {
@@ -16,17 +16,17 @@
 
 .heading {
   font-family: var(--font-serif);
-  font-weight: var(--weight-regular);
-  font-size: var(--text-h1);
-  line-height: var(--leading-snug);
-  color: var(--text-inverse);
+  font-weight: var(--weight-medium);
+  font-size: 46px;
+  line-height: 1.1;
+  color: var(--cream-text);
   margin: 0;
 }
 
 .intro {
-  font-size: var(--text-body-size);
-  line-height: var(--leading-body);
-  color: var(--sage-300);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--sage-text-1);
   margin: 0;
   max-width: 40ch;
 }
@@ -39,7 +39,7 @@
 }
 
 .step {
-  border-top: 1px solid rgba(246, 242, 232, 0.28);
+  border-top: 1px solid rgba(247, 243, 230, 0.25);
   padding-top: 22px;
   display: flex;
   flex-direction: column;
@@ -48,21 +48,21 @@
 
 .num {
   font-family: var(--font-serif);
-  font-size: 36px;
-  color: var(--sage-300);
+  font-size: 38px;
+  color: var(--gold);
   line-height: 1;
 }
 
 .name {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: var(--weight-semibold);
-  color: var(--text-inverse);
+  color: var(--cream-text);
 }
 
 .desc {
-  font-size: 13px;
+  font-size: 13.5px;
   line-height: 1.55;
-  color: var(--sage-200);
+  color: var(--sage-text-2);
 }
 
 .footRow {
@@ -72,17 +72,21 @@
 }
 
 .link {
-  color: var(--lime-400);
-  font-size: 15px;
+  color: var(--gold);
+  font-size: 16px;
   font-weight: 600;
-  border-bottom: 1px solid rgba(215, 239, 83, 0.5);
+  border-bottom: 1px solid rgba(228, 211, 162, 0.5);
   padding-bottom: 4px;
 }
 .link:hover {
-  color: var(--lime-500);
+  color: var(--cream-text);
+  border-bottom-color: var(--cream-text);
 }
 
 @media (max-width: 1024px) {
+  .inner {
+    padding: 80px 40px 96px;
+  }
   .headRow {
     flex-direction: column;
     align-items: flex-start;
@@ -97,6 +101,9 @@
 }
 
 @media (max-width: 640px) {
+  .inner {
+    padding: 64px 24px 72px;
+  }
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }

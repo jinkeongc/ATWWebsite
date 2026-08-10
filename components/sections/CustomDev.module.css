@@ -1,28 +1,28 @@
 .band {
-  background: var(--sage-100);
+  background: var(--surface-sage);
 }
 
 .inner {
-  padding: 112px 24px;
+  padding: 104px 40px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 72px;
+  gap: 80px;
   align-items: center;
 }
 
 .heading {
   font-family: var(--font-serif);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-headline);
   font-size: 48px;
-  line-height: var(--leading-tight);
+  line-height: 1.1;
   color: var(--text-brand);
   margin: 0 0 24px;
 }
 
 .copy {
   font-size: 17px;
-  line-height: var(--leading-body);
-  color: var(--ink-700);
+  line-height: 1.65;
+  color: #41503D;
   margin: 0 0 28px;
   max-width: 50ch;
 }
@@ -35,13 +35,11 @@
 }
 
 .chip {
-  background: var(--surface-raised);
-  border: 1px solid var(--border-subtle);
-  color: var(--green-800);
-  font-size: var(--text-micro);
-  font-weight: 600;
-  letter-spacing: var(--tracking-label);
-  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(30, 61, 42, 0.12);
+  color: #2E4A32;
+  font-size: 14px;
+  font-weight: 500;
   padding: 8px 16px;
   border-radius: 999px;
 }
@@ -53,11 +51,17 @@
 @media (max-width: 1024px) {
   .inner {
     grid-template-columns: 1fr;
-    padding: 72px 24px;
+    padding: 72px 40px;
     gap: 40px;
   }
   .photo {
     height: 360px;
     order: -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .inner {
+    padding: 56px 24px;
   }
 }

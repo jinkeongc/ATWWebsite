@@ -11,10 +11,10 @@ export function FinalCta() {
         we can build it, and how.
       </p>
       <div className={styles.ctaRow}>
-        <Button href={`mailto:${CONTACT_EMAIL}`} variant="primary" size="lg">
+        <Button href={`mailto:${CONTACT_EMAIL}`} variant="primary" size="xl">
           Discuss Your Product Idea
         </Button>
-        <Button href={WHATSAPP_URL} variant="secondary" size="lg">
+        <Button href={WHATSAPP_URL} variant="secondary" size="xl">
           WhatsApp Us
         </Button>
       </div>

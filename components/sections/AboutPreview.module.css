@@ -1,12 +1,12 @@
 .band {
-  background: var(--surface-card);
+  background: var(--surface-cream-band);
 }
 
 .inner {
-  padding: 96px 24px;
+  padding: 96px 40px;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 72px;
+  gap: 80px;
   align-items: center;
 }
 
@@ -16,29 +16,36 @@
 
 .heading {
   font-family: var(--font-serif);
-  font-weight: var(--weight-medium);
+  font-weight: var(--weight-headline);
   font-size: 38px;
-  line-height: var(--leading-snug);
+  line-height: 1.15;
   color: var(--text-brand);
   margin: 0 0 20px;
 }
 
 .copy {
-  font-size: 16px;
-  line-height: var(--leading-body);
-  color: var(--ink-700);
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--text-copy);
   margin: 0 0 28px;
   max-width: 50ch;
 }
 
 .link {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 600;
-  color: var(--link);
+  color: var(--text-brand);
+  border-bottom: 1.5px solid rgba(30, 61, 42, 0.4);
+  padding-bottom: 3px;
+}
+.link:hover {
+  color: var(--green-mid);
+  border-bottom-color: var(--green-mid);
 }
 
 @media (max-width: 900px) {
   .inner {
+    padding: 72px 24px;
     grid-template-columns: 1fr;
     gap: 40px;
   }

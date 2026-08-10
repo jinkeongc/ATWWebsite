@@ -6,7 +6,7 @@ export function Formulations() {
   return (
     <section id="products" className={`container ${styles.section}`}>
       <div className={styles.head}>
-        <div className="atw-label" style={{ color: "var(--green-800)", marginBottom: 18 }}>
+        <div className="eyebrow" style={{ marginBottom: 18 }}>
           Example Formulations
         </div>
         <h2 className={styles.heading}>Proof of what our lab can build</h2>
@@ -18,7 +18,11 @@ export function Formulations() {
       <div className={styles.rows}>
         <div className={`${styles.row} ${styles.rowPhotoLeft}`}>
           <div className={styles.photo} data-parallax="-0.05">
-            <ImageSlot label="wheatgrass coffee: unbranded pouch + prepared cup, wheatgrass sprigs" />
+            <ImageSlot
+              label="wheatgrass coffee: unbranded pouch + prepared cup, wheatgrass sprigs"
+              shape="rounded"
+              radius={24}
+            />
           </div>
           <div>
             <h3 className={styles.title}>Wheatgrass Coffee</h3>
@@ -28,7 +32,7 @@ export function Formulations() {
               format.
             </p>
             <div className={styles.ctaRow}>
-              <Button href="#contact" variant="inverse" size="md">
+              <Button href="#contact" variant="primary" size="md">
                 Request a Sample
               </Button>
               <Button href="#contact" variant="secondary" size="md">
@@ -45,7 +49,7 @@ export function Formulations() {
               to drinking blends, bars or single-serve sachets for your market.
             </p>
             <div className={styles.ctaRow}>
-              <Button href="#contact" variant="inverse" size="md">
+              <Button href="#contact" variant="primary" size="md">
                 Request a Sample
               </Button>
               <Button href="#contact" variant="secondary" size="md">
@@ -54,7 +58,7 @@ export function Formulations() {
             </div>
           </div>
           <div className={`${styles.photo} ${styles.photoOrder1}`} data-parallax="-0.05">
-            <ImageSlot label="moringa chocolate: cocoa powder, moringa leaves, neutral sachet" />
+            <ImageSlot label="moringa chocolate: cocoa powder, moringa leaves, neutral sachet" shape="rounded" radius={24} />
           </div>
         </div>
       </div>

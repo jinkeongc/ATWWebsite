@@ -24,7 +24,7 @@ export function Nav() {
             </a>
           ))}
         </div>
-        <Button href="#contact" variant="primary" size="md">
+        <Button href="#contact" variant="primary" size="sm">
           Create Your Product
         </Button>
       </div>

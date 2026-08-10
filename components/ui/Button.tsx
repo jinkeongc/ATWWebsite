@@ -2,8 +2,8 @@
 
 import { useState, type CSSProperties, type ReactNode } from "react";
 
-export type ButtonVariant = "primary" | "secondary" | "inverse" | "ghost";
-export type ButtonSize = "sm" | "md" | "lg";
+export type ButtonVariant = "primary" | "secondary";
+export type ButtonSize = "sm" | "md" | "lg" | "xl";
 
 interface ButtonProps {
   variant?: ButtonVariant;
@@ -15,16 +15,25 @@ interface ButtonProps {
   href?: string;
 }
 
-const PAD: Record<ButtonSize, string> = {
-  sm: "8px 18px",
-  md: "12px 26px",
-  lg: "16px 34px",
+const PRIMARY_PAD: Record<ButtonSize, string> = {
+  sm: "12px 24px",
+  md: "13px 26px",
+  lg: "16px 32px",
+  xl: "17px 36px",
+};
+
+const SECONDARY_PAD: Record<ButtonSize, string> = {
+  sm: "12px 24px",
+  md: "13px 24px",
+  lg: "16px 28px",
+  xl: "17px 30px",
 };
 
 const FONT_SIZE: Record<ButtonSize, string> = {
-  sm: "11px",
-  md: "12px",
-  lg: "13px",
+  sm: "15px",
+  md: "15px",
+  lg: "16px",
+  xl: "16.5px",
 };
 
 export function Button({
@@ -41,56 +50,38 @@ export function Button({
   const base: CSSProperties = {
     fontFamily: "var(--font-sans)",
     fontWeight: 600,
-    letterSpacing: "var(--tracking-label)",
-    textTransform: "uppercase",
     fontSize: FONT_SIZE[size],
-    padding: PAD[size],
+    padding: variant === "primary" ? PRIMARY_PAD[size] : SECONDARY_PAD[size],
     borderRadius: "var(--radius-pill)",
     cursor: disabled ? "default" : "pointer",
     opacity: disabled ? 0.45 : 1,
     transition:
-      "background var(--dur-fast) var(--ease-out), opacity var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out)",
-    border: "1px solid transparent",
+      "background var(--dur-fast) var(--ease-out), opacity var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out)",
+    border: "1.5px solid transparent",
     display: "inline-flex",
     alignItems: "center",
   };
 
   const variantStyles: Record<ButtonVariant, CSSProperties> = {
-    primary: { ...base, background: "var(--accent)", color: "var(--accent-ink)" },
+    primary: { ...base, background: "var(--green-deep)", color: "var(--cream-text)" },
     secondary: {
       ...base,
       background: "transparent",
-      color: "var(--text-body)",
-      border: "1px solid var(--border-strong)",
-    },
-    inverse: { ...base, background: "var(--surface-inverse)", color: "var(--text-inverse)" },
-    ghost: {
-      ...base,
-      background: "transparent",
-      color: "var(--text-body)",
-      textTransform: "none",
-      letterSpacing: ".01em",
-      fontWeight: 500,
-      fontSize: size === "sm" ? "13px" : "14px",
-      padding: "4px 0",
-      borderRadius: 0,
+      color: "var(--text-brand)",
+      border: "1.5px solid var(--border-strong)",
     },
   };
 
   const style = { ...variantStyles[variant] };
   if (hover && !disabled) {
-    if (variant === "primary") style.background = "var(--accent-hover)";
-    if (variant === "secondary") style.background = "var(--cream-300)";
-    if (variant === "inverse") style.background = "var(--green-800)";
-    if (variant === "ghost") style.color = "var(--link-hover)";
+    if (variant === "primary") {
+      style.background = "var(--green-mid)";
+      style.color = "#FFFFFF";
+    }
+    if (variant === "secondary") {
+      style.borderColor = "var(--green-deep)";
+    }
   }
-
-  const content = (
-    <>
-      {children}
-      {variant === "ghost" && <span style={{ marginLeft: 6 }}>→</span>}
-    </>
-  );
 
   const isExternal = href?.startsWith("http");
 
@@ -104,7 +95,7 @@ export function Button({
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
-        {content}
+        {children}
       </a>
     );
   }
@@ -118,7 +109,7 @@ export function Button({
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      {content}
+      {children}
     </button>
   );
 }

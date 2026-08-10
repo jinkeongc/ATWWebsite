@@ -6,10 +6,10 @@ export function AboutPreview() {
     <section id="about" className={styles.band}>
       <div className={`container ${styles.inner}`}>
         <div className={styles.photo} data-parallax="-0.05">
-          <ImageSlot label="ATW team / facility, natural light" />
+          <ImageSlot label="ATW team / facility, natural light" shape="rounded" radius={24} />
         </div>
         <div>
-          <div className="atw-label" style={{ color: "var(--green-800)", marginBottom: 18 }}>
+          <div className="eyebrow" style={{ marginBottom: 18 }}>
             About ATW
           </div>
           <h2 className={styles.heading}>A wellness product partner in Petaling Jaya, working with the world</h2>

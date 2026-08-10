@@ -22,13 +22,13 @@ export function WhatsAppFloat() {
         width: 56,
         height: 56,
         borderRadius: "50%",
-        background: hover ? "var(--green-700)" : "var(--green-800)",
+        background: hover ? "var(--whatsapp-hover)" : "var(--whatsapp)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         boxShadow: "var(--shadow-float)",
-        color: hover ? "#ffffff" : "var(--cream-100)",
-        transition: "background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out)",
+        color: "#FFFFFF",
+        transition: "background var(--dur-fast) var(--ease-out)",
       }}
     >
       <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
