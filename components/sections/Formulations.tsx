@@ -5,7 +5,7 @@ import styles from "./Formulations.module.css";
 export function Formulations() {
   return (
     <section id="products" className={`container ${styles.section}`}>
-      <div className={styles.head}>
+      <div className={styles.head} data-reveal>
         <div className="eyebrow" style={{ marginBottom: 18 }}>
           Example Formulations
         </div>
@@ -24,7 +24,7 @@ export function Formulations() {
               radius={24}
             />
           </div>
-          <div>
+          <div data-reveal="right">
             <h3 className={styles.title}>Wheatgrass Coffee</h3>
             <p className={styles.desc}>
               Rich coffee flavor combined with the superfood profile of wheatgrass — a natural caffeine alternative
@@ -42,7 +42,7 @@ export function Formulations() {
           </div>
         </div>
         <div className={`${styles.row} ${styles.rowPhotoRight}`}>
-          <div>
+          <div data-reveal="left">
             <h3 className={styles.title}>Moringa Chocolate</h3>
             <p className={styles.desc}>
               Cocoa warmth meets moringa&apos;s dense nutritional profile. A wellness chocolate format that adapts

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ParallaxController } from "@/components/ParallaxController";
+import { ScrollEffects } from "@/components/ScrollEffects";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
@@ -84,7 +84,7 @@ const STAGES = [
 export default function ServicesPage() {
   return (
     <>
-      <ParallaxController />
+      <ScrollEffects />
       <Nav />
 
       {/* Hero */}
@@ -112,7 +112,7 @@ export default function ServicesPage() {
       {/* Compact process strip */}
       <div className={styles.stripBand}>
         <div className={`container ${styles.stripInner}`}>
-          <div className={styles.strip}>
+          <div className={styles.strip} data-reveal>
             {STRIP.map((s, i) => (
               <span key={s} style={{ display: "contents" }}>
                 <span className={styles.stripStep}>
@@ -140,7 +140,7 @@ export default function ServicesPage() {
             <div className={styles.stageRail}>
               <span className={styles.stageNum}>{s.num}</span>
             </div>
-            <div className={styles.stageBody}>
+            <div className={styles.stageBody} data-reveal={s.reversed ? "right" : "left"}>
               <span className={styles.stageKicker}>{s.kicker}</span>
               <h2 className={styles.stageHeading}>{s.name}</h2>
               <p className={styles.stageCopy}>{s.copy}</p>
@@ -162,16 +162,16 @@ export default function ServicesPage() {
       {/* Big process recap — dark band */}
       <section className={styles.bigBand}>
         <div className={`container ${styles.bigInner}`}>
-          <div className="eyebrow" style={{ color: "var(--gold)" }}>
+          <div className="eyebrow" style={{ color: "var(--gold)" }} data-reveal>
             <span className="eyebrow-rule" style={{ background: "var(--gold)" }} />
             The Whole Journey
           </div>
-          <h2 className={styles.bigHeading}>
+          <h2 className={styles.bigHeading} data-reveal>
             Seven stages. <em>One partner.</em>
           </h2>
-          <div className={styles.bigRows}>
+          <div className={styles.bigRows} data-reveal-stagger>
             {STAGES.map((s, i) => (
-              <div key={s.num} className={styles.bigRow}>
+              <div key={s.num} className={styles.bigRow} data-reveal>
                 <span className={styles.bigNum}>{s.num}</span>
                 <span className={styles.bigName}>{STRIP[i]}</span>
                 <p className={styles.bigDesc}>{s.name}</p>
@@ -182,9 +182,9 @@ export default function ServicesPage() {
       </section>
 
       {/* Final CTA */}
-      <section className={`container ${styles.cta}`}>
-        <h2 className={styles.ctaHeading}>Have something you want to make?</h2>
-        <p className={styles.ctaCopy}>
+      <section className={`container ${styles.cta}`} data-reveal-stagger>
+        <h2 className={styles.ctaHeading} data-reveal>Have something you want to make?</h2>
+        <p className={styles.ctaCopy} data-reveal>
           Tell us what you have in mind. You don&apos;t need to arrive with a finished formula.
         </p>
         <Button href="/contact#enquiry" variant="primary" size="xl">

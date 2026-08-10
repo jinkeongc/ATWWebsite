@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ParallaxController } from "@/components/ParallaxController";
+import { ScrollEffects } from "@/components/ScrollEffects";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
@@ -70,7 +70,7 @@ const EXAMPLES = [
 export default function ProductsPage() {
   return (
     <>
-      <ParallaxController />
+      <ScrollEffects />
       <Nav />
 
       {/* Hero */}
@@ -113,7 +113,7 @@ export default function ProductsPage() {
       {/* Create Your Own Product — dominant */}
       <section className={styles.createBand}>
         <div className={`container ${styles.createInner}`}>
-          <div className={styles.createHead}>
+          <div className={styles.createHead} data-reveal>
             <div>
               <div className="eyebrow" style={{ color: "var(--gold)" }}>
                 <span className="eyebrow-rule" style={{ background: "var(--gold)" }} />
@@ -136,7 +136,7 @@ export default function ProductsPage() {
                 style={{ background: "rgba(247,243,230,0.08)", borderColor: "rgba(247,243,230,0.2)" }}
               />
             </div>
-            <div>
+            <div data-reveal="right">
               <span className={styles.createColHead}>You can start with</span>
               <ul className={styles.startList}>
                 {STARTING_POINTS.map((s) => (
@@ -163,7 +163,7 @@ export default function ProductsPage() {
 
       {/* Existing formulations */}
       <section className={`container ${styles.examplesSection}`}>
-        <div className={styles.examplesHead}>
+        <div className={styles.examplesHead} data-reveal>
           <div className="eyebrow">
             <span className="eyebrow-rule" />
             Existing Formulations
@@ -180,7 +180,7 @@ export default function ProductsPage() {
             <div className={styles.examplePhoto} data-parallax="-0.05">
               <ImageSlot label={ex.img} radius={24} />
             </div>
-            <div>
+            <div data-reveal={ex.reversed ? "left" : "right"}>
               <span className={styles.exampleTag}>{ex.tag}</span>
               <h3 className={styles.exampleHeading}>{ex.name}</h3>
               <p className={styles.exampleCopy}>{ex.copy}</p>
@@ -207,16 +207,16 @@ export default function ProductsPage() {
 
       {/* Starting points, not limits */}
       <section className={styles.limitsBand}>
-        <div className={`container ${styles.limitsInner}`}>
-          <div className="eyebrow" style={{ justifyContent: "center" }}>
+        <div className={`container ${styles.limitsInner}`} data-reveal-stagger>
+          <div className="eyebrow" style={{ justifyContent: "center" }} data-reveal>
             <span className="eyebrow-rule" />
             The Important Part
             <span className="eyebrow-rule" />
           </div>
-          <h2 className={styles.limitsHeading}>
+          <h2 className={styles.limitsHeading} data-reveal>
             These are starting points — <em>not limits.</em>
           </h2>
-          <p className={styles.limitsCopy}>
+          <p className={styles.limitsCopy} data-reveal>
             Wheatgrass Coffee and Moringa Chocolate are examples of what ATW can develop. If your product idea looks
             completely different, we still want to hear about it.
           </p>

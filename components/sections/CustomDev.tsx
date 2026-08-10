@@ -7,7 +7,7 @@ export function CustomDev() {
   return (
     <section className={styles.band}>
       <div className={`container ${styles.inner}`}>
-        <div>
+        <div data-reveal="left">
           <div className="eyebrow" style={{ marginBottom: 20 }}>
             Custom Product Development
           </div>

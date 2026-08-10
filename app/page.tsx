@@ -1,4 +1,4 @@
-import { ParallaxController } from "@/components/ParallaxController";
+import { ScrollEffects } from "@/components/ScrollEffects";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
@@ -14,7 +14,7 @@ import { FinalCta } from "@/components/sections/FinalCta";
 export default function Home() {
   return (
     <>
-      <ParallaxController />
+      <ScrollEffects />
       <Nav />
       <Hero />
       <Formats />

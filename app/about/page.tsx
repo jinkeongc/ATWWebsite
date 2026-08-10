@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ParallaxController } from "@/components/ParallaxController";
+import { ScrollEffects } from "@/components/ScrollEffects";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
@@ -70,7 +70,7 @@ const WORLD = [
 export default function AboutPage() {
   return (
     <>
-      <ParallaxController />
+      <ScrollEffects />
       <Nav />
 
       {/* Hero */}
@@ -97,14 +97,14 @@ export default function AboutPage() {
       {/* Who we are */}
       <section className={styles.whoBand}>
         <div className={`container ${styles.whoInner}`}>
-          <div className={styles.whoSticky}>
+          <div className={styles.whoSticky} data-reveal="left">
             <div className="eyebrow">
               <span className="eyebrow-rule" />
               Who We Are
             </div>
             <h2 className={styles.whoHeading}>A product partner, not a retailer</h2>
           </div>
-          <div>
+          <div data-reveal>
             <p className={styles.whoLede}>
               Asian Top Wellness partners with businesses to develop wellness products tailored to their ideas,
               customers and markets.
@@ -130,7 +130,7 @@ export default function AboutPage() {
 
       {/* What we do */}
       <section className={`container ${styles.roleSection}`}>
-        <div className={styles.roleHead}>
+        <div className={styles.roleHead} data-reveal>
           <div className="eyebrow">
             <span className="eyebrow-rule" />
             What We Do
@@ -141,9 +141,9 @@ export default function AboutPage() {
             good — so you never have to stitch the journey together yourself.
           </p>
         </div>
-        <div>
+        <div data-reveal-stagger>
           {ROLES.map((r) => (
-            <div key={r.num} className={styles.roleRow}>
+            <div key={r.num} className={styles.roleRow} data-reveal>
               <span className={styles.roleNum}>{r.num}</span>
               <span className={styles.roleName}>{r.name}</span>
               <p className={styles.roleDesc}>{r.desc}</p>
@@ -155,7 +155,7 @@ export default function AboutPage() {
       {/* How we work */}
       <section className={styles.howBand}>
         <div className={`container ${styles.howInner}`}>
-          <div>
+          <div data-reveal="left">
             <div className="eyebrow">
               <span className="eyebrow-rule" />
               How We Work
@@ -179,13 +179,13 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className={`container ${styles.mission}`}>
-        <div className="eyebrow" style={{ justifyContent: "center" }}>
+      <section className={`container ${styles.mission}`} data-reveal-stagger>
+        <div className="eyebrow" style={{ justifyContent: "center" }} data-reveal>
           <span className="eyebrow-rule" />
           Our Mission
           <span className="eyebrow-rule" />
         </div>
-        <p className={styles.missionText}>
+        <p className={styles.missionText} data-reveal="scale">
           To help businesses create practical, high-quality wellness products that are ready for <em>real markets.</em>
         </p>
       </section>
@@ -193,7 +193,7 @@ export default function AboutPage() {
       {/* Malaysia to the world */}
       <section className={styles.worldBand}>
         <div className={`container ${styles.worldInner}`}>
-          <div className={styles.worldHead}>
+          <div className={styles.worldHead} data-reveal>
             <div>
               <div className="eyebrow" style={{ color: "var(--gold)" }}>
                 <span className="eyebrow-rule" style={{ background: "var(--gold)" }} />
@@ -208,9 +208,9 @@ export default function AboutPage() {
               afield. Specific destinations and logistics details are project-dependent — talk to us about yours.
             </p>
           </div>
-          <div className={styles.worldGrid}>
+          <div className={styles.worldGrid} data-reveal-stagger>
             {WORLD.map((w) => (
-              <div key={w.name} className={styles.worldItem}>
+              <div key={w.name} className={styles.worldItem} data-reveal>
                 <span className={styles.worldItemName}>{w.name}</span>
                 <span className={styles.worldItemDesc}>{w.desc}</span>
               </div>
@@ -220,13 +220,13 @@ export default function AboutPage() {
       </section>
 
       {/* Final CTA */}
-      <section className={`container ${styles.cta}`}>
-        <h2 className={styles.ctaHeading}>Have a wellness product in mind?</h2>
-        <p className={styles.ctaCopy}>
+      <section className={`container ${styles.cta}`} data-reveal-stagger>
+        <h2 className={styles.ctaHeading} data-reveal>Have a wellness product in mind?</h2>
+        <p className={styles.ctaCopy} data-reveal>
           It doesn&apos;t need to be finished — or even fully formed. Tell us where the idea currently stands and
           we&apos;ll take it from there together.
         </p>
-        <div className={styles.ctaRow}>
+        <div className={styles.ctaRow} data-reveal>
           <Button href="/contact#enquiry" variant="primary" size="xl">
             Create Your Product
           </Button>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ScrollEffects } from "@/components/ScrollEffects";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <>
+      <ScrollEffects />
       <Nav />
 
       {/* Hero */}
@@ -37,8 +39,8 @@ export default function ContactPage() {
       <div className={`container ${styles.main}`}>
         <EnquiryForm />
 
-        <aside className={styles.aside}>
-          <div>
+        <aside className={styles.aside} data-reveal-stagger>
+          <div data-reveal>
             <div className="eyebrow">
               <span className="eyebrow-rule" />
               Direct
@@ -68,7 +70,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className={styles.waCard}>
+          <div className={styles.waCard} data-reveal>
             <h3 className={styles.waHeading}>Fastest on WhatsApp</h3>
             <p className={styles.waCopy}>
               A short message is enough — tell us the ingredient, flavor or idea, and we&apos;ll take it from there.
@@ -78,7 +80,7 @@ export default function ContactPage() {
             </a>
           </div>
 
-          <div className={styles.asidePhoto}>
+          <div className={styles.asidePhoto} data-reveal>
             <ImageSlot label="ATW office / sample shelf — warm, natural light" radius={18} />
           </div>
         </aside>

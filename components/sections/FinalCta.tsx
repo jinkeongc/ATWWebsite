@@ -4,13 +4,13 @@ import styles from "./FinalCta.module.css";
 
 export function FinalCta() {
   return (
-    <section id="contact" className={`container ${styles.section}`}>
-      <h2 className={styles.heading}>Your next wellness product can start with a conversation.</h2>
-      <p className={styles.copy}>
+    <section id="contact" className={`container ${styles.section}`} data-reveal-stagger>
+      <h2 className={styles.heading} data-reveal>Your next wellness product can start with a conversation.</h2>
+      <p className={styles.copy} data-reveal>
         Tell us what you&apos;re imagining — an ingredient, a flavor, a market. We&apos;ll tell you honestly whether
         we can build it, and how.
       </p>
-      <div className={styles.ctaRow}>
+      <div className={styles.ctaRow} data-reveal>
         <Button href="/contact#enquiry" variant="primary" size="xl">
           Discuss Your Product Idea
         </Button>
