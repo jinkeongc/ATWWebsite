@@ -10,6 +10,13 @@ interface ImageSlotProps {
   className?: string;
   /** Local-only override for previewing a real photo in place of the placeholder. Never used in production content. */
   devSrc?: string;
+  /**
+   * Drift the photo *within* its frame as the page scrolls (0–1, where 1 uses
+   * the full overscan). The frame stays put, so grid alignment is unaffected.
+   */
+  innerParallax?: number;
+  /** Settle the photo from a slight zoom to rest when it scrolls into view. */
+  kenBurns?: boolean;
 }
 
 /**
@@ -17,8 +24,20 @@ interface ImageSlotProps {
  * Renders a labeled drop-zone in place of the final image so layout and
  * spacing can be verified before photography is commissioned. If devSrc
  * points to a file that doesn't exist (yet), the labeled placeholder shows.
+ *
+ * Transform ownership is split so effects never fight: ScrollEffects drives
+ * the shift wrapper, CSS drives the <img> (ken burns + hover zoom).
  */
-export function ImageSlot({ label, shape = "rounded", radius = 24, style, className, devSrc }: ImageSlotProps) {
+export function ImageSlot({
+  label,
+  shape = "rounded",
+  radius = 24,
+  style,
+  className,
+  devSrc,
+  innerParallax,
+  kenBurns,
+}: ImageSlotProps) {
   const [failed, setFailed] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
   // A missing devSrc 404s before hydration, so onError alone never fires for it.
@@ -29,6 +48,7 @@ export function ImageSlot({ label, shape = "rounded", radius = 24, style, classN
   return (
     <div
       className={className}
+      data-kenburns={kenBurns ? "" : undefined}
       style={{
         width: "100%",
         height: "100%",
@@ -48,20 +68,30 @@ export function ImageSlot({ label, shape = "rounded", radius = 24, style, classN
       }}
     >
       {devSrc && !failed ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          ref={imgRef}
-          src={devSrc}
-          alt=""
-          onError={() => setFailed(true)}
+        <div
+          data-parallax-inner={innerParallax ? String(innerParallax) : undefined}
           style={{
             position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
+            // Overscan gives the inner drift somewhere to travel without
+            // ever exposing an edge of the frame.
+            inset: innerParallax ? "-9% 0" : 0,
+            willChange: innerParallax ? "transform" : undefined,
           }}
-        />
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            ref={imgRef}
+            src={devSrc}
+            alt=""
+            onError={() => setFailed(true)}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              display: "block",
+            }}
+          />
+        </div>
       ) : (
         <span
           style={{

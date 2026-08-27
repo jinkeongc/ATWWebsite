@@ -31,12 +31,14 @@ export function CustomDev() {
             Discuss Your Product Idea
           </Button>
         </div>
-        <div className={styles.photo} data-parallax="-0.06">
+        <div className={styles.photo}>
           <ImageSlot
             label="formulation session: weighing powders, tasting samples"
             shape="rounded"
             radius={24}
             devSrc="/placeholders/custom-dev-session.jpg"
+            innerParallax={0.9}
+            kenBurns
           />
         </div>
       </div>

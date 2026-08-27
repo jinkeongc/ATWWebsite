@@ -5,12 +5,14 @@ export function AboutPreview() {
   return (
     <section id="about" className={styles.band}>
       <div className={`container ${styles.inner}`}>
-        <div className={styles.photo} data-parallax="-0.05">
+        <div className={styles.photo}>
           <ImageSlot
             label="ATW team / facility, natural light"
             shape="rounded"
             radius={24}
             devSrc="/placeholders/about-team-facility.jpg"
+            innerParallax={0.9}
+            kenBurns
           />
         </div>
         <div data-reveal="right">

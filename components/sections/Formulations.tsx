@@ -17,12 +17,14 @@ export function Formulations() {
       </div>
       <div className={styles.rows}>
         <div className={`${styles.row} ${styles.rowPhotoLeft}`}>
-          <div className={styles.photo} data-parallax="-0.05">
+          <div className={styles.photo}>
             <ImageSlot
               label="wheatgrass coffee: unbranded pouch + prepared cup, wheatgrass sprigs"
               shape="rounded"
               radius={24}
               devSrc="/placeholders/formulation-wheatgrass-coffee.jpg"
+              innerParallax={0.9}
+              kenBurns
             />
           </div>
           <div data-reveal="right">
@@ -57,12 +59,14 @@ export function Formulations() {
               </Button>
             </div>
           </div>
-          <div className={`${styles.photo} ${styles.photoOrder1}`} data-parallax="-0.05">
+          <div className={`${styles.photo} ${styles.photoOrder1}`}>
             <ImageSlot
               label="moringa chocolate: cocoa powder, moringa leaves, neutral sachet"
               shape="rounded"
               radius={24}
               devSrc="/placeholders/formulation-moringa-chocolate.jpg"
+              innerParallax={0.9}
+              kenBurns
             />
           </div>
         </div>

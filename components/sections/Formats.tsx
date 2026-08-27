@@ -15,7 +15,7 @@ export function Formats() {
         {FORMATS.map((f) => (
           <div key={f.slot} className={styles.card} data-reveal>
             <div className={styles.photo}>
-              <ImageSlot label={f.img} shape="rounded" radius={18} devSrc={f.src} />
+              <ImageSlot label={f.img} shape="rounded" radius={18} devSrc={f.src} kenBurns />
             </div>
             <div className={styles.cardText}>
               <span className={styles.cardTitle}>{f.name}</span>

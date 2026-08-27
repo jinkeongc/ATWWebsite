@@ -32,14 +32,18 @@ export function Hero() {
             shape="rounded"
             radius={24}
             devSrc="/placeholders/hero-formulation.jpg"
+            kenBurns
           />
         </div>
         <div className={styles.collageIngredient} data-parallax="0.06">
-          <ImageSlot
-            label="ingredient close-up (wheatgrass / moringa)"
-            shape="circle"
-            devSrc="/placeholders/hero-ingredient-closeup.jpg"
-          />
+          <div className="idle-float">
+            <ImageSlot
+              label="ingredient close-up (wheatgrass / moringa)"
+              shape="circle"
+              devSrc="/placeholders/hero-ingredient-closeup.jpg"
+              kenBurns
+            />
+          </div>
         </div>
         <div className={styles.collageCaption}>
           <span className={styles.collageCaptionTitle}>Idea → Sample → Shelf</span>
