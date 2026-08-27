@@ -89,8 +89,14 @@ export default function AboutPage() {
             with one partner.
           </p>
         </div>
-        <div className={`${styles.heroPhoto} fade-up-delay`} data-parallax="-0.05">
-          <ImageSlot label="ATW team at work — natural light, formulation bench" radius={24} devSrc="/joke-photos/team-bench.jpg" />
+        <div className={`${styles.heroPhoto} fade-up-delay`}>
+          <ImageSlot
+            label="ATW team at work — natural light, formulation bench"
+            radius={24}
+            devSrc="/placeholders/about-hero-team-bench.jpg"
+            innerParallax={0.9}
+            kenBurns
+          />
         </div>
       </header>
 
@@ -170,8 +176,14 @@ export default function AboutPage() {
               ))}
             </ul>
           </div>
-          <div className={styles.howPhoto} data-parallax="-0.06">
-            <ImageSlot label="tasting session — sample cups, notes, two people collaborating" radius={24} devSrc="/joke-photos/tasting-session.jpg" />
+          <div className={styles.howPhoto}>
+            <ImageSlot
+              label="tasting session — sample cups, notes, two people collaborating"
+              radius={24}
+              devSrc="/placeholders/about-tasting-session.jpg"
+              innerParallax={0.9}
+              kenBurns
+            />
           </div>
         </div>
       </section>

@@ -81,7 +81,12 @@ export default function ContactPage() {
           </div>
 
           <div className={styles.asidePhoto} data-reveal>
-            <ImageSlot label="ATW office / sample shelf — warm, natural light" radius={18} />
+            <ImageSlot
+              label="ATW office / sample shelf — warm, natural light"
+              radius={18}
+              devSrc="/placeholders/contact-office-shelf.jpg"
+              kenBurns
+            />
           </div>
         </aside>
       </div>

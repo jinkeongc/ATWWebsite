@@ -1,8 +1,10 @@
-# Landing-page placeholder photos
+# Placeholder photos (all pages)
 
 Drop AI-generated placeholder images here with these exact filenames.
-Each slot on the homepage is already wired to its file — if a file is
+Every image slot on the site is already wired to its file — if a file is
 missing, the labeled placeholder box shows instead.
+
+## Homepage
 
 | File | Slot | Orientation |
 | --- | --- | --- |
@@ -18,6 +20,43 @@ missing, the labeled placeholder box shows instead.
 | `formulation-wheatgrass-coffee.jpg` | Wheatgrass Coffee row | Square-ish |
 | `formulation-moringa-chocolate.jpg` | Moringa Chocolate row | Square-ish |
 | `about-team-facility.jpg` | About preview | Landscape (~3:2) |
+
+## About
+
+| File | Slot | Orientation |
+| --- | --- | --- |
+| `about-hero-team-bench.jpg` | Hero photo | Landscape (~3:2) |
+| `about-tasting-session.jpg` | How We Work | Square-ish |
+
+## Services
+
+| File | Slot | Orientation |
+| --- | --- | --- |
+| `services-consultation.jpg` | Stage 01 | Landscape (~3:2) |
+| `services-formulation-bench.jpg` | Stage 02 | Landscape (~3:2) |
+| `services-tasting-flight.jpg` | Stage 03 | Landscape (~3:2) |
+| `services-raw-ingredients.jpg` | Stage 04 | Landscape (~3:2) |
+| `services-production-line.jpg` | Stage 05 | Landscape (~3:2) |
+| `services-packaging-formats.jpg` | Stage 06 | Landscape (~3:2) |
+| `services-export-cartons.jpg` | Stage 07 | Landscape (~3:2) |
+
+## Products
+
+| File | Slot | Orientation |
+| --- | --- | --- |
+| `products-strip-powders.jpg` | Hero strip A | Square |
+| `products-strip-jars.jpg` | Hero strip B | Square |
+| `products-strip-beverage.jpg` | Hero strip C | Square |
+| `products-strip-sachets.jpg` | Hero strip D | Square |
+| `products-dev-bench.jpg` | Create Your Own | Square-ish |
+| `products-example-wheatgrass.jpg` | Wheatgrass Coffee | Square-ish |
+| `products-example-moringa.jpg` | Moringa Chocolate | Square-ish |
+
+## Contact
+
+| File | Slot | Orientation |
+| --- | --- | --- |
+| `contact-office-shelf.jpg` | Aside photo | Landscape (~3:2) |
 
 All images are cropped with `object-fit: cover`, so exact ratios are
 forgiving — orientation and centered subjects matter most.
