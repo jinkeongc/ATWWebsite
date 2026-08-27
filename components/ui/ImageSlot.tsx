@@ -1,4 +1,6 @@
-import type { CSSProperties } from "react";
+"use client";
+
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 
 interface ImageSlotProps {
   label: string;
@@ -13,9 +15,17 @@ interface ImageSlotProps {
 /**
  * Placeholder for real/generated photography (see handoff README "Assets").
  * Renders a labeled drop-zone in place of the final image so layout and
- * spacing can be verified before photography is commissioned.
+ * spacing can be verified before photography is commissioned. If devSrc
+ * points to a file that doesn't exist (yet), the labeled placeholder shows.
  */
 export function ImageSlot({ label, shape = "rounded", radius = 24, style, className, devSrc }: ImageSlotProps) {
+  const [failed, setFailed] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+  // A missing devSrc 404s before hydration, so onError alone never fires for it.
+  useEffect(() => {
+    const img = imgRef.current;
+    if (img && img.complete && img.naturalWidth === 0) setFailed(true);
+  }, [devSrc]);
   return (
     <div
       className={className}
@@ -37,11 +47,13 @@ export function ImageSlot({ label, shape = "rounded", radius = 24, style, classN
         ...style,
       }}
     >
-      {devSrc ? (
+      {devSrc && !failed ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
+          ref={imgRef}
           src={devSrc}
           alt=""
+          onError={() => setFailed(true)}
           style={{
             position: "absolute",
             inset: 0,

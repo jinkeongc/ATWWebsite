@@ -6,7 +6,12 @@ export function AboutPreview() {
     <section id="about" className={styles.band}>
       <div className={`container ${styles.inner}`}>
         <div className={styles.photo} data-parallax="-0.05">
-          <ImageSlot label="ATW team / facility, natural light" shape="rounded" radius={24} />
+          <ImageSlot
+            label="ATW team / facility, natural light"
+            shape="rounded"
+            radius={24}
+            devSrc="/placeholders/about-team-facility.jpg"
+          />
         </div>
         <div data-reveal="right">
           <div className="eyebrow" style={{ marginBottom: 18 }}>

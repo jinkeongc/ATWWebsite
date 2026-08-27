@@ -11,8 +11,8 @@ export function Formulations() {
         </div>
         <h2 className={styles.heading}>Proof of what our lab can build</h2>
         <p className={styles.intro}>
-          Two formulations we developed in-house — treat them as starting points. Both can be customized,
-          white-labelled, or simply sampled to judge our work.
+          Two formulations from our own lab — treat them as starting points, or simply sample them to judge our
+          work.
         </p>
       </div>
       <div className={styles.rows}>
@@ -22,14 +22,14 @@ export function Formulations() {
               label="wheatgrass coffee: unbranded pouch + prepared cup, wheatgrass sprigs"
               shape="rounded"
               radius={24}
+              devSrc="/placeholders/formulation-wheatgrass-coffee.jpg"
             />
           </div>
           <div data-reveal="right">
             <h3 className={styles.title}>Wheatgrass Coffee</h3>
             <p className={styles.desc}>
-              Rich coffee flavor combined with the superfood profile of wheatgrass — a natural caffeine alternative
-              carrying vitamins, minerals and antioxidants. Adjustable roast character, sweetness and serving
-              format.
+              Rich coffee flavor meets the superfood profile of wheatgrass — a natural caffeine alternative,
+              adjustable in roast, sweetness and serving format.
             </p>
             <div className={styles.ctaRow}>
               <Button href="/contact#enquiry" variant="primary" size="md">
@@ -45,8 +45,8 @@ export function Formulations() {
           <div data-reveal="left">
             <h3 className={styles.title}>Moringa Chocolate</h3>
             <p className={styles.desc}>
-              Cocoa warmth meets moringa&apos;s dense nutritional profile. A wellness chocolate format that adapts
-              to drinking blends, bars or single-serve sachets for your market.
+              Cocoa warmth meets moringa&apos;s dense nutritional profile — adaptable to drinking blends, bars or
+              single-serve sachets.
             </p>
             <div className={styles.ctaRow}>
               <Button href="/contact#enquiry" variant="primary" size="md">
@@ -58,7 +58,12 @@ export function Formulations() {
             </div>
           </div>
           <div className={`${styles.photo} ${styles.photoOrder1}`} data-parallax="-0.05">
-            <ImageSlot label="moringa chocolate: cocoa powder, moringa leaves, neutral sachet" shape="rounded" radius={24} />
+            <ImageSlot
+              label="moringa chocolate: cocoa powder, moringa leaves, neutral sachet"
+              shape="rounded"
+              radius={24}
+              devSrc="/placeholders/formulation-moringa-chocolate.jpg"
+            />
           </div>
         </div>
       </div>
