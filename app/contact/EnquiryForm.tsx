@@ -123,13 +123,9 @@ export function EnquiryForm() {
         setSubmitted(true);
       }}
     >
-      <div className={styles.formHead}>
-        <h2 className={styles.formHeading}>Product enquiry</h2>
-        <p className={styles.formSub}>An idea is enough to start the conversation.</p>
-      </div>
+      <h2 className={styles.formHeading}>Product enquiry</h2>
 
-      <div className={styles.formBody}>
-        <div className={styles.fieldGrid}>
+      <div className={styles.fieldGrid}>
           <div className={styles.field}>
             <label className={styles.label} htmlFor="name">
               Name
@@ -184,12 +180,11 @@ export function EnquiryForm() {
           </div>
         </div>
 
-        <div className={styles.submitRow}>
-          <Button type="submit" variant="primary" size="xl">
-            Start the Conversation
-          </Button>
-          <span className={styles.privacyNote}>Used only to respond to your enquiry.</span>
-        </div>
+      <div className={styles.submitRow}>
+        <Button type="submit" variant="primary" size="xl">
+          Start the Conversation
+        </Button>
+        <span className={styles.privacyNote}>Used only to respond to your enquiry.</span>
       </div>
     </form>
   );

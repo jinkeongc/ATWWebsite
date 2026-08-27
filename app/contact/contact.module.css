@@ -1,7 +1,7 @@
 /* ---- Contact page ---- */
 
-/* Shares the 1240px container with .main below so the heading's left edge
-   lines up with the form card's. */
+/* Shares the 1240px container with the sections below so the heading's left
+   edge lines up with the band content. */
 .hero {
   padding: 96px 40px 72px;
 }
@@ -29,49 +29,94 @@
   max-width: 46ch;
 }
 
-/* Layout: form + aside */
-.main {
-  padding: 0 40px 130px;
+/* ---- Enquiry band — deep green, the page's main event ---- */
+.band {
+  background: var(--surface-journey);
+}
+
+.bandInner {
+  padding: 96px 40px 108px;
   display: grid;
-  grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
   gap: 80px;
   align-items: start;
 }
 
-/* Form card — dark header band anchors the card against the cream page */
-.formCard {
-  background: var(--surface-raised);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-card);
-  box-shadow: 0 20px 48px rgba(30, 61, 42, 0.16);
-  scroll-margin-top: 110px;
+.bandHeading {
+  font-family: var(--font-serif);
+  font-weight: var(--weight-medium);
+  font-size: 42px;
+  line-height: 1.12;
+  color: var(--cream-text);
+  margin: 20px 0 18px;
+  text-wrap: balance;
 }
 
-/* Rounds its own top corners (instead of overflow:hidden on the card) so the
-   interest dropdown's floating menu can extend past the card edge. */
-.formHead {
-  background: var(--surface-journey);
-  padding: 30px 48px 32px;
-  border-radius: calc(var(--radius-card) - 1px) calc(var(--radius-card) - 1px) 0 0;
+.bandHeading em {
+  font-style: italic;
+}
+
+.bandLede {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--sage-text-1);
+  margin: 0;
+  max-width: 42ch;
+}
+
+/* What happens next — gold numerals, echoing the homepage journey */
+.steps {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 20px;
+  align-items: baseline;
+  border-top: 1px solid rgba(247, 243, 230, 0.18);
+  padding: 22px 0;
+}
+
+.stepNum {
+  font-family: var(--font-serif);
+  font-size: 30px;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.stepName {
+  display: block;
+  font-size: 16px;
+  font-weight: var(--weight-semibold);
+  color: var(--cream-text);
+  margin-bottom: 5px;
+}
+
+.stepDesc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--sage-text-2);
+  margin: 0;
+}
+
+/* ---- Form card — white, floating on the band ---- */
+.formCard {
+  background: var(--surface-raised);
+  border-radius: var(--radius-card);
+  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.28);
+  padding: 44px 44px 48px;
+  scroll-margin-top: 110px;
 }
 
 .formHeading {
   font-family: var(--font-serif);
   font-weight: var(--weight-medium);
-  font-size: 30px;
-  color: var(--cream-text);
-  margin: 0 0 6px;
-}
-
-.formSub {
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--sage-text-1);
-  margin: 0;
-}
-
-.formBody {
-  padding: 40px 48px 46px;
+  font-size: 26px;
+  color: var(--text-brand);
+  margin: 0 0 28px;
 }
 
 .fieldGrid {
@@ -268,29 +313,35 @@
   max-width: 44ch;
 }
 
-/* Aside — direct contact */
-.aside {
-  position: sticky;
-  top: 108px;
-  display: flex;
-  flex-direction: column;
-  gap: 36px;
+/* ---- Direct closer — big photo + contact details ---- */
+.direct {
+  padding: 104px 40px 130px;
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: 80px;
+  align-items: center;
 }
 
-.asideHeading {
+.directPhoto {
+  height: 480px;
+}
+
+.directHeading {
   font-family: var(--font-serif);
   font-weight: var(--weight-medium);
-  font-size: 26px;
+  font-size: 34px;
+  line-height: 1.15;
   color: var(--text-brand);
-  margin: 14px 0 0;
+  margin: 18px 0 10px;
 }
 
-.asideList {
+.detailList {
   display: flex;
   flex-direction: column;
+  margin-top: 22px;
 }
 
-.asideItem {
+.detailItem {
   border-top: 1px solid var(--border-subtle);
   padding: 18px 0;
   display: flex;
@@ -298,7 +349,7 @@
   gap: 4px;
 }
 
-.asideKey {
+.detailKey {
   font-size: 12px;
   font-weight: 600;
   letter-spacing: var(--tracking-label);
@@ -306,37 +357,29 @@
   color: var(--text-muted);
 }
 
-.asideVal {
+.detailVal {
   font-size: 16px;
   color: var(--text-body);
   line-height: 1.55;
 }
 
-.asideVal a {
+.detailVal a {
   color: var(--green-mid);
   font-weight: 500;
 }
 
-/* WhatsApp callout */
-.waCard {
-  background: var(--surface-journey);
-  border-radius: var(--radius-card);
-  padding: 30px 30px 34px;
-  color: var(--cream-text);
-}
-
-.waHeading {
-  font-family: var(--font-serif);
-  font-size: 24px;
-  margin: 0 0 8px;
-  color: var(--cream-text);
+.waRow {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 26px;
+  margin-top: 4px;
 }
 
 .waCopy {
-  font-size: 14px;
+  font-size: 14.5px;
   line-height: 1.6;
-  color: var(--sage-text-1);
-  margin: 0 0 22px;
+  color: var(--text-copy);
+  margin: 0 0 18px;
+  max-width: 40ch;
 }
 
 .waButton {
@@ -357,17 +400,19 @@
   color: #ffffff;
 }
 
-.asidePhoto {
-  height: 220px;
-}
-
 @media (max-width: 1024px) {
-  .main {
+  .bandInner {
     grid-template-columns: 1fr;
     gap: 56px;
+    padding: 72px 40px 80px;
   }
-  .aside {
-    position: static;
+  .direct {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 80px 40px 96px;
+  }
+  .directPhoto {
+    height: 360px;
   }
 }
 
@@ -378,16 +423,23 @@
   .heroHeading {
     font-size: 38px;
   }
-  .main {
-    padding: 0 24px 88px;
+  .bandInner {
+    padding: 56px 24px 64px;
+    gap: 44px;
   }
-  .formHead {
-    padding: 24px 22px 26px;
+  .bandHeading {
+    font-size: 32px;
   }
-  .formBody {
+  .formCard {
     padding: 28px 22px 32px;
   }
   .fieldGrid {
     grid-template-columns: 1fr;
+  }
+  .direct {
+    padding: 64px 24px 88px;
+  }
+  .directPhoto {
+    height: 280px;
   }
 }
