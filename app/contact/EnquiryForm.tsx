@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import styles from "./contact.module.css";
 
@@ -15,12 +15,89 @@ const INTERESTS = [
   "Something else",
 ];
 
-export function EnquiryForm() {
-  const [interests, setInterests] = useState<string[]>([]);
-  const [submitted, setSubmitted] = useState(false);
+function InterestSelect({
+  value,
+  onChange,
+}: {
+  value: string | null;
+  onChange: (v: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const wrapRef = useRef<HTMLDivElement>(null);
 
-  const toggle = (item: string) =>
-    setInterests((prev) => (prev.includes(item) ? prev.filter((i) => i !== item) : [...prev, item]));
+  useEffect(() => {
+    if (!open) return;
+    const onPointerDown = (e: PointerEvent) => {
+      if (!wrapRef.current?.contains(e.target as Node)) setOpen(false);
+    };
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
+
+  return (
+    <div className={styles.selectWrap} ref={wrapRef}>
+      <button
+        type="button"
+        id="interest"
+        className={styles.selectTrigger}
+        aria-haspopup="listbox"
+        aria-expanded={open}
+        onClick={() => setOpen((o) => !o)}
+      >
+        {value ? <span>{value}</span> : <span className={styles.selectPlaceholder}>Select what fits best</span>}
+        <svg
+          className={`${styles.selectChevron} ${open ? styles.selectChevronOpen : ""}`}
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path d="M4 6l4 4 4-4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </button>
+      {open && (
+        <div className={styles.selectMenu} role="listbox" aria-labelledby="interest">
+          {INTERESTS.map((item) => {
+            const selected = item === value;
+            return (
+              <button
+                key={item}
+                type="button"
+                role="option"
+                aria-selected={selected}
+                className={selected ? styles.optionSelected : styles.option}
+                onClick={() => {
+                  onChange(item);
+                  setOpen(false);
+                }}
+              >
+                {item}
+                {selected && (
+                  <svg className={styles.optionCheck} width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M3 8.5l3.2 3.2L13 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                )}
+              </button>
+            );
+          })}
+        </div>
+      )}
+      <input type="hidden" name="interest" value={value ?? ""} />
+    </div>
+  );
+}
+
+export function EnquiryForm() {
+  const [interest, setInterest] = useState<string | null>(null);
+  const [submitted, setSubmitted] = useState(false);
 
   if (submitted) {
     return (
@@ -84,27 +161,15 @@ export function EnquiryForm() {
             </label>
             <input id="country" name="country" className={styles.input} />
           </div>
-          <div className={`${styles.field} ${styles.fieldWide}`}>
+          <div className={styles.field}>
             <label className={styles.label} htmlFor="phone">
               Phone / WhatsApp <span className={styles.optional}>(optional)</span>
             </label>
             <input id="phone" name="phone" className={styles.input} placeholder="+60 ..." />
           </div>
-          <div className={`${styles.field} ${styles.fieldWide}`}>
+          <div className={styles.field}>
             <span className={styles.label}>What are you interested in?</span>
-            <div className={styles.chips}>
-              {INTERESTS.map((item) => (
-                <button
-                  key={item}
-                  type="button"
-                  className={interests.includes(item) ? styles.chipActive : styles.chip}
-                  onClick={() => toggle(item)}
-                  aria-pressed={interests.includes(item)}
-                >
-                  {item}
-                </button>
-              ))}
-            </div>
+            <InterestSelect value={interest} onChange={setInterest} />
           </div>
           <div className={`${styles.field} ${styles.fieldWide}`}>
             <label className={styles.label} htmlFor="idea">
