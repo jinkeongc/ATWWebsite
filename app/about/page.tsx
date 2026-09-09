@@ -8,9 +8,9 @@ import { ImageSlot } from "@/components/ui/ImageSlot";
 import styles from "./about.module.css";
 
 export const metadata: Metadata = {
-  title: "About Us | Asian Top Wellness",
+  title: "About Us | ATW",
   description:
-    "Asian Top Wellness is a Malaysia-based wellness product development and OEM / private-label partner, helping brands turn wellness ideas into finished products.",
+    "ATW is a Malaysia-based wellness product development and OEM / private-label partner, helping brands turn wellness ideas into finished products.",
 };
 
 const ROLES = [
@@ -84,7 +84,7 @@ export default function AboutPage() {
             Wellness ideas, developed into <em>real products.</em>
           </h1>
           <p className={styles.heroCopy}>
-            Asian Top Wellness works with brands, distributors, entrepreneurs and businesses to develop wellness
+            ATW works with brands, distributors, entrepreneurs and businesses to develop wellness
             products from concept through production — formulation, sampling, manufacturing, packaging and delivery,
             with one partner.
           </p>
@@ -112,7 +112,7 @@ export default function AboutPage() {
           </div>
           <div className={styles.whoContent} data-reveal>
             <p className={styles.whoLede}>
-              Asian Top Wellness partners with businesses to develop wellness products tailored to their ideas,
+              ATW partners with businesses to develop wellness products tailored to their ideas,
               customers and markets.
             </p>
             <p className={styles.whoBody}>
