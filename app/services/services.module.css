@@ -174,6 +174,7 @@
   line-height: 1.14;
   color: var(--text-brand);
   margin: 0 0 16px;
+  text-wrap: balance;
 }
 
 .stageCopy {
@@ -220,6 +221,7 @@
   color: var(--cream-text);
   margin: 18px 0 64px;
   max-width: 20ch;
+  text-wrap: balance;
 }
 
 .bigHeading em {

@@ -8,7 +8,7 @@ import { ImageSlot } from "@/components/ui/ImageSlot";
 import styles from "./products.module.css";
 
 export const metadata: Metadata = {
-  title: "Products | Asian Top Wellness",
+  title: "Products | ATW",
   description:
     "Start with an existing ATW formulation like Wheatgrass Coffee or Moringa Chocolate — or develop a wellness product entirely around your own idea, ingredients and market.",
 };

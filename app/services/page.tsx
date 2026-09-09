@@ -8,7 +8,7 @@ import { ImageSlot } from "@/components/ui/ImageSlot";
 import styles from "./services.module.css";
 
 export const metadata: Metadata = {
-  title: "Services | Asian Top Wellness",
+  title: "Services | ATW",
   description:
     "ATW supports wellness product development from concept to commercial product — consultation, formulation, sampling, sourcing, OEM / private-label manufacturing, packaging and delivery.",
 };

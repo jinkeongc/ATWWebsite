@@ -18,6 +18,7 @@
   margin: 0;
   position: sticky;
   top: 120px;
+  text-wrap: balance;
 }
 
 .grid {

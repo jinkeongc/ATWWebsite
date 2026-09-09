@@ -9,7 +9,7 @@ import { EnquiryForm } from "./EnquiryForm";
 import styles from "./contact.module.css";
 
 export const metadata: Metadata = {
-  title: "Contact | Asian Top Wellness",
+  title: "Contact | ATW",
   description:
     "Tell ATW about the wellness product you want to create. An idea is enough to start the discussion — reach us by enquiry form, email, phone or WhatsApp.",
 };

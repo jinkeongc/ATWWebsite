@@ -21,6 +21,7 @@
   line-height: 1.1;
   color: var(--cream-text);
   margin: 0;
+  text-wrap: balance;
 }
 
 .intro {

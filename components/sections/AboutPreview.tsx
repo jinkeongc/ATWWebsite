@@ -21,7 +21,7 @@ export function AboutPreview() {
           </div>
           <h2 className={styles.heading}>A wellness product partner in Petaling Jaya, working with the world</h2>
           <p className={styles.copy}>
-            Asian Top Wellness is a Malaysia-based product development and manufacturing company helping businesses
+            ATW is a Malaysia-based product development and manufacturing company helping businesses
             turn wellness concepts into commercially viable products — from sourcing and formulation through
             production and export.
           </p>
