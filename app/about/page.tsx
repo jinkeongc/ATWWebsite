@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { createMetadata } from "@/lib/seo";
 import { ScrollEffects } from "@/components/ScrollEffects";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
@@ -7,11 +7,12 @@ import { Button } from "@/components/ui/Button";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 import styles from "./about.module.css";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "About Us | ATW",
   description:
     "ATW is a Malaysia-based wellness product development and OEM / private-label partner, helping brands turn wellness ideas into finished products.",
-};
+  path: "/about",
+});
 
 const ROLES = [
   {
@@ -51,7 +52,7 @@ const VALUES = [
 const WORLD = [
   {
     name: "Malaysia-based",
-    desc: "Developed and produced from Petaling Jaya, Selangor — placeholder detail, to be confirmed.",
+    desc: "Developed and produced from Petaling Jaya, Selangor.",
   },
   {
     name: "International projects",

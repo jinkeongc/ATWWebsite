@@ -47,6 +47,18 @@
   color: #5A6955;
 }
 
+.itemLink {
+  margin-top: 2px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--green-mid);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.itemLink:hover {
+  color: var(--green-deep);
+}
+
 @media (max-width: 900px) {
   .section {
     padding: 72px 24px;

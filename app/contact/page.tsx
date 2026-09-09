@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { createMetadata } from "@/lib/seo";
 import { ScrollEffects } from "@/components/ScrollEffects";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
@@ -8,11 +8,12 @@ import { CONTACT_ADDRESS, CONTACT_EMAIL, CONTACT_PHONE, WHATSAPP_URL } from "@/l
 import { EnquiryForm } from "./EnquiryForm";
 import styles from "./contact.module.css";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "Contact | ATW",
   description:
     "Tell ATW about the wellness product you want to create. An idea is enough to start the discussion — reach us by enquiry form, email, phone or WhatsApp.",
-};
+  path: "/contact",
+});
 
 const NEXT_STEPS = [
   {
@@ -123,7 +124,7 @@ export default function ContactPage() {
             </div>
             <div className={styles.detailItem}>
               <span className={styles.detailKey}>Business hours</span>
-              <span className={styles.detailVal}>Mon–Fri, 9:00am–6:00pm (MYT) — to be confirmed</span>
+              <span className={styles.detailVal}>Mon–Fri, 9:00am–6:00pm (MYT)</span>
             </div>
           </div>
           <div className={styles.waRow}>

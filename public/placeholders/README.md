@@ -1,8 +1,8 @@
-# Placeholder photos (all pages)
+# Production photos (all pages)
 
-Drop AI-generated placeholder images here with these exact filenames.
-Every image slot on the site is already wired to its file — if a file is
-missing, the labeled placeholder box shows instead.
+These are the approved production images used throughout the site. The folder
+name is retained to avoid changing every existing asset URL. If an image is
+missing, the corresponding image slot displays its descriptive fallback label.
 
 ## Homepage
 

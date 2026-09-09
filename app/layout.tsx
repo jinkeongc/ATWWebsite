@@ -1,16 +1,26 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { createMetadata, DEFAULT_DESCRIPTION, SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ATW | From idea to finished wellness product",
-  description:
-    "ATW is a Malaysia-based OEM / private-label wellness product developer and manufacturer, partnering with brands, distributors and entrepreneurs to formulate, manufacture, package and deliver wellness products.",
+  metadataBase: new URL(SITE_URL),
+  ...createMetadata({
+    title: "ATW | From idea to finished wellness product",
+    description: DEFAULT_DESCRIPTION,
+    path: "/",
+  }),
+  applicationName: "Asian Top Wellness",
+  category: "manufacturing",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }

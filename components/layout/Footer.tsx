@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CONTACT_EMAIL, WHATSAPP_URL } from "@/lib/content";
 import styles from "./Footer.module.css";
 
@@ -12,30 +13,33 @@ export function Footer() {
           </div>
           <div className={styles.col}>
             <span className={styles.colHead}>Explore</span>
-            <a href="/" className={styles.link}>
+            <Link href="/" className={styles.link}>
               Home
-            </a>
-            <a href="/about" className={styles.link}>
+            </Link>
+            <Link href="/about" className={styles.link}>
               About Us
-            </a>
-            <a href="/products" className={styles.link}>
+            </Link>
+            <Link href="/products" className={styles.link}>
               Products
-            </a>
-            <a href="/services" className={styles.link}>
+            </Link>
+            <Link href="/capabilities" className={styles.link}>
+              Capabilities
+            </Link>
+            <Link href="/services" className={styles.link}>
               Services
-            </a>
-            <a href="/contact" className={styles.link}>
+            </Link>
+            <Link href="/contact" className={styles.link}>
               Contact
-            </a>
+            </Link>
           </div>
           <div className={styles.col}>
             <span className={styles.colHead}>Start</span>
-            <a href="/contact#enquiry" className={styles.link}>
+            <Link href="/contact#enquiry" className={styles.link}>
               Create Your Product
-            </a>
-            <a href="/contact#enquiry" className={styles.link}>
+            </Link>
+            <Link href="/contact#enquiry" className={styles.link}>
               Request a Sample
-            </a>
+            </Link>
             <a href={WHATSAPP_URL} className={styles.link}>
               WhatsApp
             </a>

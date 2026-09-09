@@ -9,11 +9,11 @@ The **homepage** is implemented, structured from the handoff in
 [`Design Brief Submission/design_handoff_atw_homepage`](<Design Brief Submission/design_handoff_atw_homepage/README.md>)
 but visually styled to match the approved **v1** design (`ATW Homepage v1.dc.html` in that folder) —
 Lora/Schibsted Grotesk type, rounded/circular imagery, and the warm green + gold palette, with the v2
-scroll-parallax and hero entrance animation retained. Remaining pages (About, Products, Services, Contact)
-are specified in the handoff but not yet built — follow the same visual system when implementing them.
+scroll-parallax and hero entrance animation retained. The About, Products, Capabilities, Services and Contact pages
+follow the same visual system.
 
-Photography is placeholder (`ImageSlot` drop-zones) until real/generated imagery is commissioned; see
-the handoff's "Assets" section for what's needed.
+The photography under `public/placeholders` is approved production photography. The directory name remains for
+compatibility with the existing page references.
 
 ## Design system
 
@@ -35,3 +35,15 @@ Open [http://localhost:3000](http://localhost:3000).
 npm run lint   # eslint
 npm run build  # production build
 ```
+
+## Production services
+
+The enquiry form posts to `app/api/enquiry/route.ts`, which delivers enquiries through Resend. Copy `.env.example`
+to `.env.local` for local testing and configure the same server-only variables in Vercel. Verify
+`asiantopwellness.com` as a sending domain in Resend before using the production sender address.
+
+Vercel Web Analytics is included in the root layout. Enable Web Analytics for the project in the Vercel dashboard
+before the production deployment.
+
+Canonical URLs and the generated sitemap use `NEXT_PUBLIC_SITE_URL`, defaulting to
+`https://www.asiantopwellness.com`.

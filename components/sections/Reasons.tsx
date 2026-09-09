@@ -11,6 +11,11 @@ export function Reasons() {
             <div key={r.name} className={styles.item} data-reveal>
               <span className={styles.itemTitle}>{r.name}</span>
               <span className={styles.itemDesc}>{r.desc}</span>
+              {r.href && (
+                <a href={r.href} className={styles.itemLink}>
+                  {r.linkLabel}
+                </a>
+              )}
             </div>
           ))}
         </div>

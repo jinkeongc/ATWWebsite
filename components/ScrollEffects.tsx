@@ -31,7 +31,7 @@ export function ScrollEffects() {
 
     document.querySelectorAll<HTMLElement>("[data-reveal-stagger]").forEach((group) => {
       group.querySelectorAll<HTMLElement>(":scope > [data-reveal]").forEach((el, i) => {
-        el.style.setProperty("--reveal-delay", `${Math.min(i * 90, 540)}ms`);
+        el.style.setProperty("--reveal-delay", `${Math.min(i * 60, 360)}ms`);
       });
     });
 

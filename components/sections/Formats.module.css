@@ -4,7 +4,7 @@
 
 .headRow {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 40px;
   margin-bottom: 48px;
@@ -63,6 +63,15 @@
   font-size: 14px;
   line-height: 1.5;
   color: var(--text-muted);
+}
+
+.headAside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  /* Nudge the paragraph's first line onto the heading's cap height. */
+  padding-top: 6px;
 }
 
 @media (max-width: 1024px) {

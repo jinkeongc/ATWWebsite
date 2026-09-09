@@ -137,9 +137,9 @@
   font-size: 13.5px;
   font-weight: 500;
   color: var(--cream-text);
-  border: 1px solid rgba(247, 243, 230, 0.35);
-  border-radius: var(--radius-pill);
-  padding: 8px 16px;
+  background: var(--tag-fill-dark);
+  border-radius: var(--radius-tag);
+  padding: 8px 14px;
 }
 
 /* Existing formulations */
@@ -194,9 +194,9 @@
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
   color: var(--green-mid);
-  border: 1px solid var(--border-strong);
-  border-radius: var(--radius-pill);
-  padding: 7px 16px;
+  background: var(--tag-fill);
+  border-radius: var(--radius-tag);
+  padding: 7px 12px;
   display: inline-block;
   margin-bottom: 22px;
 }
@@ -249,6 +249,45 @@
   gap: 14px;
 }
 
+/* Capabilities teaser */
+.capBand {
+  background: var(--surface-cream-band);
+}
+
+.capInner {
+  padding: 96px 40px 104px;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 64px;
+  align-items: center;
+}
+
+.capHeading {
+  font-family: var(--font-serif);
+  font-weight: var(--weight-headline);
+  font-size: 42px;
+  line-height: 1.12;
+  color: var(--text-brand);
+  margin: 18px 0 0;
+  max-width: 14ch;
+  text-wrap: balance;
+}
+
+.capAside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.capCopy {
+  font-size: 16.5px;
+  line-height: 1.65;
+  color: var(--text-copy);
+  margin: 0;
+  max-width: 54ch;
+}
+
 /* Starting points, not limits */
 .limitsBand {
   background: var(--surface-sage);
@@ -289,7 +328,8 @@
   }
   .createHead,
   .createBody,
-  .example {
+  .example,
+  .capInner {
     grid-template-columns: 1fr;
     gap: 48px;
   }
@@ -341,6 +381,13 @@
   }
   .exampleHeading {
     font-size: 31px;
+  }
+  .capInner {
+    padding: 72px 24px 80px;
+    gap: 28px;
+  }
+  .capHeading {
+    font-size: 32px;
   }
   .limitsInner {
     padding: 80px 24px 88px;

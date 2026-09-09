@@ -194,9 +194,9 @@
   font-size: 13px;
   font-weight: 500;
   color: var(--text-brand);
-  background: var(--surface-sage);
-  border-radius: var(--radius-pill);
-  padding: 6px 14px;
+  background: var(--tag-fill);
+  border-radius: var(--radius-tag);
+  padding: 6px 12px;
 }
 
 .stagePhoto {

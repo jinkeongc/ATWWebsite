@@ -1,0 +1,580 @@
+/* ---- Capabilities page ---- */
+
+.hero {
+  padding: 96px 40px 100px;
+  text-align: center;
+}
+
+.heroHeading {
+  font-family: var(--font-serif);
+  font-weight: var(--weight-headline);
+  font-size: 58px;
+  line-height: 1.08;
+  color: var(--text-brand);
+  margin: 24px auto 22px;
+  max-width: 16ch;
+  text-wrap: balance;
+}
+
+.heroHeading em {
+  font-style: italic;
+}
+
+.heroCopy {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text-copy);
+  margin: 0 auto 32px;
+  max-width: 56ch;
+}
+
+.heroStats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 36px;
+}
+
+.stat {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-brand);
+  border-radius: var(--radius-tag);
+  padding: 9px 16px;
+  background: var(--tag-fill);
+}
+
+.statNum {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: var(--weight-headline);
+  margin-right: 4px;
+}
+
+.heroCtas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+/* Formats — cream band */
+.formatsBand {
+  background: var(--surface-cream-band);
+}
+
+.formatsInner {
+  padding: 110px 40px 76px;
+}
+
+.formatsHead {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 64px;
+  align-items: end;
+  margin-bottom: 56px;
+}
+
+.formatsHeading {
+  font-family: var(--font-serif);
+  font-weight: var(--weight-headline);
+  font-size: 42px;
+  line-height: 1.12;
+  color: var(--text-brand);
+  margin: 18px 0 0;
+  text-wrap: balance;
+}
+
+.formatsIntro {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-copy);
+  margin: 0;
+}
+
+.formatsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0 32px;
+}
+
+/* Each card spans three parent rows (name / description / examples) via
+   subgrid, so titles, descriptions and bullet lists line up across a row
+   regardless of how long each description runs. Vertical spacing between
+   card rows lives in the card's bottom padding rather than a row gap, so the
+   gap doesn't also open up between a card's own rows. */
+.format {
+  grid-row: span 3;
+  display: grid;
+  grid-template-rows: subgrid;
+  border-top: 1px solid rgba(30, 61, 42, 0.18);
+  padding: 18px 0 44px;
+}
+
+.formatName {
+  font-size: 16.5px;
+  font-weight: var(--weight-semibold);
+  color: var(--text-brand);
+  line-height: 1.3;
+  padding-bottom: 8px;
+}
+
+.formatDesc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-copy);
+}
+
+.formatExamples {
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Dot sits in its own flex cell so wrapped lines hang under the text, not the dot. */
+.formatExamples li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+}
+
+.formatExamples li::before {
+  content: "";
+  flex: none;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--green-mid);
+  opacity: 0.6;
+  margin-top: 8px;
+}
+
+/* Functions */
+.functionsSection {
+  padding: 120px 40px 110px;
+}
+
+.functionsHead {
+  max-width: 660px;
+  margin-bottom: 56px;
+}
+
+.functionsHeading {
+  font-family: var(--font-serif);
+  font-weight: var(--weight-headline);
+  font-size: 42px;
+  line-height: 1.12;
+  color: var(--text-brand);
+  margin: 18px 0 16px;
+  text-wrap: balance;
+}
+
+.functionsIntro {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-copy);
+  margin: 0;
+}
+
+.functionsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.fnCard {
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px 24px 22px;
+  border-radius: var(--radius-card);
+  background: var(--surface-raised);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 6px 20px rgba(30, 61, 42, 0.05);
+  cursor: pointer;
+  text-align: left;
+  transition:
+    transform var(--dur-med) var(--ease-out),
+    box-shadow var(--dur-med) var(--ease-out),
+    border-color var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out);
+}
+
+.fnCard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card);
+  border-color: var(--border-strong);
+}
+
+.fnCard:focus-visible {
+  outline: 2px solid var(--green-mid);
+  outline-offset: 2px;
+}
+
+/* Active state lives on a data attribute, not a class swap: ScrollEffects adds
+   `.is-revealed` imperatively, and a React className change would wipe it and
+   hide the card. */
+.fnCard[data-active] {
+  background: var(--surface-sage);
+  border-color: var(--green-mid);
+}
+
+.fnName {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: var(--weight-headline);
+  line-height: 1.2;
+  color: var(--text-brand);
+}
+
+.fnBlurb {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-copy);
+  flex: 1;
+}
+
+.fnMeta {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--green-mid);
+  margin-top: 8px;
+}
+
+/* Library — sage band */
+.libraryBand {
+  background: var(--surface-sage);
+  scroll-margin-top: 76px;
+}
+
+.libraryInner {
+  padding: 110px 40px 120px;
+}
+
+.libraryHead {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: 64px;
+  align-items: end;
+  margin-bottom: 44px;
+}
+
+.libraryHeading {
+  font-family: var(--font-serif);
+  font-weight: var(--weight-headline);
+  font-size: 42px;
+  line-height: 1.12;
+  color: var(--text-brand);
+  margin: 18px 0 0;
+  text-wrap: balance;
+}
+
+.libraryHeading em {
+  font-style: italic;
+}
+
+.libraryIntro {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-copy);
+  margin: 0;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.searchWrap {
+  position: relative;
+  display: block;
+  max-width: 480px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.search {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  color: var(--text-body);
+  background: var(--surface-raised);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  padding: 14px 18px 14px 44px;
+  outline: none;
+  width: 100%;
+  box-shadow: 0 4px 14px rgba(30, 61, 42, 0.05);
+  transition: border-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+}
+
+.search:focus {
+  border-color: var(--green-mid);
+  box-shadow: 0 0 0 3px rgba(46, 91, 60, 0.12);
+}
+
+.search::placeholder {
+  color: var(--text-muted);
+}
+
+.search::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  all: unset;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-brand);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.5);
+  transition: background var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+}
+
+.chip:hover {
+  background: var(--surface-raised);
+  border-color: var(--green-deep);
+}
+
+.chip:focus-visible {
+  outline: 2px solid var(--green-mid);
+  outline-offset: 2px;
+}
+
+.chipActive {
+  composes: chip;
+  background: var(--green-deep);
+  border-color: var(--green-deep);
+  color: var(--cream-text);
+}
+
+.chipActive:hover {
+  background: var(--green-mid);
+  border-color: var(--green-mid);
+}
+
+.resultsBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid rgba(30, 61, 42, 0.18);
+  padding-bottom: 12px;
+  margin-bottom: 8px;
+}
+
+.resultsCount {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.clear {
+  all: unset;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--green-mid);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.clear:hover {
+  color: var(--green-deep);
+}
+
+.ingredientGrid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0 40px;
+}
+
+.ingredient {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  border-bottom: 1px solid rgba(30, 61, 42, 0.1);
+  padding: 13px 0 12px;
+}
+
+.ingredientName {
+  font-size: 15.5px;
+  font-weight: 500;
+  color: var(--text-body);
+}
+
+.ingredientFns {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.empty {
+  padding: 56px 0 24px;
+  max-width: 52ch;
+}
+
+.emptyHeading {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: var(--weight-headline);
+  color: var(--text-brand);
+  margin: 0 0 10px;
+}
+
+.emptyCopy {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--text-copy);
+  margin: 0 0 18px;
+}
+
+.emptyLink {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--green-mid);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Closing band — dark */
+.closeBand {
+  background: var(--surface-journey);
+}
+
+.closeInner {
+  padding: 120px 40px 120px;
+  text-align: center;
+}
+
+.closeHeading {
+  font-family: var(--font-serif);
+  font-weight: var(--weight-headline);
+  font-size: 50px;
+  line-height: 1.1;
+  color: var(--cream-text);
+  margin: 24px auto 22px;
+  max-width: 30ch;
+  text-wrap: balance;
+}
+
+.closeHeading em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.closeCopy {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--sage-text-1);
+  margin: 0 auto 40px;
+  max-width: 56ch;
+}
+
+.closeCtas {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 44px;
+}
+
+.closeNote {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--sage-text-2);
+  margin: 0 auto;
+  max-width: 58ch;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .formatsHead,
+  .libraryHead {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .formatsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .functionsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .ingredientGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 64px 24px 64px;
+  }
+  .heroHeading {
+    font-size: 40px;
+  }
+  .formatsInner {
+    padding: 72px 24px 48px;
+  }
+  .libraryInner {
+    padding: 72px 24px 80px;
+  }
+  .formatsHeading,
+  .functionsHeading,
+  .libraryHeading {
+    font-size: 32px;
+  }
+  .formatsGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+  }
+  .format {
+    padding-bottom: 32px;
+  }
+  .functionsSection {
+    padding: 80px 24px 72px;
+  }
+  .functionsGrid,
+  .ingredientGrid {
+    grid-template-columns: 1fr;
+  }
+  .closeInner {
+    padding: 80px 24px 88px;
+  }
+  .closeHeading {
+    font-size: 34px;
+  }
+}

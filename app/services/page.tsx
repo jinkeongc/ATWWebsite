@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { createMetadata } from "@/lib/seo";
 import { ScrollEffects } from "@/components/ScrollEffects";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
@@ -7,11 +7,12 @@ import { Button } from "@/components/ui/Button";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 import styles from "./services.module.css";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "Services | ATW",
   description:
     "ATW supports wellness product development from concept to commercial product — consultation, formulation, sampling, sourcing, OEM / private-label manufacturing, packaging and delivery.",
-};
+  path: "/services",
+});
 
 const STRIP = ["Idea", "Formulation", "Sample", "Refine", "Manufacture", "Package", "Deliver"];
 
@@ -62,7 +63,7 @@ const STAGES = [
     name: "OEM / Private Label Manufacturing",
     copy: "Approved formulations move toward production on an OEM / private-label basis: the finished product carries your brand, and ATW stays invisible behind it. Production specifics — volumes, capabilities, timelines — are scoped per project.",
     tags: ["OEM", "Private label", "Your brand on pack"],
-    img: "production — filling line, unbranded packs (placeholder)",
+    img: "production — filling line, unbranded packs",
     src: "/placeholders/services-production-line.jpg",
     reversed: false,
   },

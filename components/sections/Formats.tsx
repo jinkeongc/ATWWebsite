@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/Button";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 import { FORMATS } from "@/lib/content";
 import styles from "./Formats.module.css";
@@ -7,9 +8,14 @@ export function Formats() {
     <section className={`container ${styles.section}`}>
       <div className={styles.headRow} data-reveal>
         <h2 className={styles.heading}>What we can create together</h2>
-        <p className={styles.intro}>
-          Bring us an idea in any shape — we develop formulations across every major wellness format.
-        </p>
+        <div className={styles.headAside}>
+          <p className={styles.intro}>
+            Bring us an idea in any shape — we develop formulations across every major wellness format.
+          </p>
+          <Button href="/capabilities" variant="secondary" size="md">
+            Browse Our Capabilities
+          </Button>
+        </div>
       </div>
       <div className={styles.grid} data-reveal-stagger>
         {FORMATS.map((f) => (

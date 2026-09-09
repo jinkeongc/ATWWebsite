@@ -2,6 +2,7 @@ export const NAV_LINKS = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Products", href: "/products" },
+  { label: "Capabilities", href: "/capabilities" },
   { label: "Services", href: "/services" },
   { label: "Contact", href: "/contact" },
 ];
@@ -11,8 +12,7 @@ export const CONTACT_ADDRESS = "30, Jalan SS 2/72, SS 2, 47300 Petaling Jaya, Se
 
 export const WHATSAPP_URL = "https://api.whatsapp.com/send?phone=60129619900";
 export const CONTACT_EMAIL = "info@asiantopwellness.com";
-export const LOGO_URL =
-  "https://static.wixstatic.com/media/bee8ea_34655a0d126641b7ac01e8240854ca19~mv2.png/v1/fill/w_245,h_101,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/asian_top_wellness__1_-removebg-preview.png";
+export const LOGO_URL = "/atw-logo.png";
 
 export const FORMATS = [
   {
@@ -81,7 +81,12 @@ export const JOURNEY = [
 export const REASONS = [
   { name: "Custom formulation", desc: "Products developed around your idea, not off a fixed menu." },
   { name: "OEM / private label", desc: "Your brand on the pack — we stay invisible." },
-  { name: "Ingredient sourcing", desc: "Raw materials sourced to fit your quality and cost targets." },
+  {
+    name: "Ingredient sourcing",
+    desc: "Raw materials sourced to fit your quality and cost targets.",
+    href: "/capabilities",
+    linkLabel: "See what we work with",
+  },
   { name: "Production & packaging", desc: "Manufacturing and finishing under one roof of responsibility." },
   { name: "Export & logistics support", desc: "Help moving finished goods toward international markets." },
   {

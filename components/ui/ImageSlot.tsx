@@ -8,7 +8,7 @@ interface ImageSlotProps {
   radius?: number;
   style?: CSSProperties;
   className?: string;
-  /** Local-only override for previewing a real photo in place of the placeholder. Never used in production content. */
+  /** Production photo URL. The legacy prop name is retained to avoid churn across existing page content. */
   devSrc?: string;
   /**
    * Drift the photo *within* its frame as the page scrolls (0–1, where 1 uses
@@ -20,10 +20,8 @@ interface ImageSlotProps {
 }
 
 /**
- * Placeholder for real/generated photography (see handoff README "Assets").
- * Renders a labeled drop-zone in place of the final image so layout and
- * spacing can be verified before photography is commissioned. If devSrc
- * points to a file that doesn't exist (yet), the labeled placeholder shows.
+ * Renders production photography with a labeled fallback if the image cannot
+ * be loaded.
  *
  * Transform ownership is split so effects never fight: ScrollEffects drives
  * the shift wrapper, CSS drives the <img> (ken burns + hover zoom).
@@ -40,7 +38,7 @@ export function ImageSlot({
 }: ImageSlotProps) {
   const [failed, setFailed] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
-  // A missing devSrc 404s before hydration, so onError alone never fires for it.
+  // A missing devSrc can 404 before hydration, so onError alone may not catch it.
   useEffect(() => {
     const img = imgRef.current;
     if (img && img.complete && img.naturalWidth === 0) setFailed(true);

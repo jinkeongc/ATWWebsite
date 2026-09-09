@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import { createMetadata } from "@/lib/seo";
 import { ScrollEffects } from "@/components/ScrollEffects";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
@@ -7,11 +7,12 @@ import { Button } from "@/components/ui/Button";
 import { ImageSlot } from "@/components/ui/ImageSlot";
 import styles from "./products.module.css";
 
-export const metadata: Metadata = {
+export const metadata = createMetadata({
   title: "Products | ATW",
   description:
     "Start with an existing ATW formulation like Wheatgrass Coffee or Moringa Chocolate — or develop a wellness product entirely around your own idea, ingredients and market.",
-};
+  path: "/products",
+});
 
 const STARTING_POINTS = [
   "A product idea",
@@ -40,7 +41,7 @@ const EXAMPLES = [
   {
     name: "Wheatgrass Coffee",
     tag: "Existing formulation",
-    copy: "A wellness beverage concept combining coffee with wheatgrass — familiar coffee ritual, functional green angle. Temporary descriptive copy; final product details to be confirmed.",
+    copy: "A wellness beverage concept combining coffee with wheatgrass — familiar coffee ritual, functional green angle.",
     specs: [
       ["Concept", "Functional coffee with a greens-forward wellness position"],
       ["Key ingredients", "Coffee, wheatgrass — adjustable to your direction"],
@@ -55,7 +56,7 @@ const EXAMPLES = [
   {
     name: "Moringa Chocolate",
     tag: "Existing formulation",
-    copy: "A chocolate-based wellness drink featuring moringa — indulgent on the tongue, functional underneath. Temporary descriptive copy; final product details to be confirmed.",
+    copy: "A chocolate-based wellness drink featuring moringa — indulgent on the tongue, functional underneath.",
     specs: [
       ["Concept", "Wellness chocolate drink carrying moringa"],
       ["Key ingredients", "Cocoa, moringa — adjustable to your direction"],
@@ -208,6 +209,29 @@ export default function ProductsPage() {
             </div>
           </div>
         ))}
+      </section>
+
+      {/* Capabilities teaser */}
+      <section className={styles.capBand}>
+        <div className={`container ${styles.capInner}`}>
+          <div data-reveal="left">
+            <div className="eyebrow">
+              <span className="eyebrow-rule" />
+              Capabilities
+            </div>
+            <h2 className={styles.capHeading}>Wondering if we can make it?</h2>
+          </div>
+          <div className={styles.capAside} data-reveal="right">
+            <p className={styles.capCopy}>
+              Browse the health functions, ingredients and product formats we can develop through our partners, from
+              functional coffee and plant milks to tablets and capsules. If your ingredient is there, we can talk about
+              building around it.
+            </p>
+            <Button href="/capabilities" variant="secondary" size="lg">
+              Browse Our Capabilities
+            </Button>
+          </div>
+        </div>
       </section>
 
       {/* Starting points, not limits */}

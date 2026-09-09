@@ -7,6 +7,7 @@ import styles from "./contact.module.css";
 const INTERESTS = [
   "Develop a new product",
   "Customize a formulation",
+  "A specific ingredient or function",
   "OEM / Private Label",
   "Wheatgrass Coffee",
   "Moringa Chocolate",
@@ -97,17 +98,17 @@ function InterestSelect({
 
 export function EnquiryForm() {
   const [interest, setInterest] = useState<string | null>(null);
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "submitting" | "submitted" | "error">("idle");
+  const [error, setError] = useState("");
 
-  if (submitted) {
+  if (status === "submitted") {
     return (
       <div id="enquiry" className={styles.formCard}>
         <div className={styles.success}>
           <h2 className={styles.successHeading}>Thank you — we&apos;ve got it.</h2>
           <p className={styles.successCopy}>
             Your enquiry has been noted. We&apos;ll come back to you shortly to start the conversation about your
-            product. (Form delivery is not yet connected in this preview — for now, please also reach us directly by
-            email or WhatsApp.)
+            product.
           </p>
         </div>
       </div>
@@ -118,9 +119,35 @@ export function EnquiryForm() {
     <form
       id="enquiry"
       className={styles.formCard}
-      onSubmit={(e) => {
+      aria-busy={status === "submitting"}
+      onSubmit={async (e) => {
         e.preventDefault();
-        setSubmitted(true);
+        setStatus("submitting");
+        setError("");
+
+        const form = e.currentTarget;
+        const formData = new FormData(form);
+        const payload = Object.fromEntries(formData.entries());
+
+        try {
+          const response = await fetch("/api/enquiry", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+          const result = (await response.json()) as { error?: string };
+
+          if (!response.ok) {
+            throw new Error(result.error || "We couldn't send your enquiry. Please try again.");
+          }
+
+          setStatus("submitted");
+          form.reset();
+          setInterest(null);
+        } catch (submitError) {
+          setError(submitError instanceof Error ? submitError.message : "We couldn't send your enquiry. Please try again.");
+          setStatus("error");
+        }
       }}
     >
       <h2 className={styles.formHeading}>Product enquiry</h2>
@@ -178,14 +205,23 @@ export function EnquiryForm() {
               placeholder="Ingredients, flavor, target market — or just the idea so far."
             />
           </div>
+          <div className={styles.honeypot} aria-hidden="true">
+            <label htmlFor="website">Website</label>
+            <input id="website" name="website" tabIndex={-1} autoComplete="off" />
+          </div>
         </div>
 
       <div className={styles.submitRow}>
-        <Button type="submit" variant="primary" size="xl">
-          Start the Conversation
+        <Button type="submit" variant="primary" size="xl" disabled={status === "submitting"}>
+          {status === "submitting" ? "Sending…" : "Start the Conversation"}
         </Button>
         <span className={styles.privacyNote}>Used only to respond to your enquiry.</span>
       </div>
+      {status === "error" && (
+        <p className={styles.formError} role="alert">
+          {error}
+        </p>
+      )}
     </form>
   );
 }
