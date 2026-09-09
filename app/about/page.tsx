@@ -8,9 +8,9 @@ import { ImageSlot } from "@/components/ui/ImageSlot";
 import styles from "./about.module.css";
 
 export const metadata: Metadata = {
-  title: "About Us | Asian Top Wellness",
+  title: "About Us | ATW",
   description:
-    "Asian Top Wellness is a Malaysia-based wellness product development and OEM / private-label partner, helping brands turn wellness ideas into finished products.",
+    "ATW is a Malaysia-based wellness product development and OEM / private-label partner, helping brands turn wellness ideas into finished products.",
 };
 
 const ROLES = [
@@ -84,13 +84,19 @@ export default function AboutPage() {
             Wellness ideas, developed into <em>real products.</em>
           </h1>
           <p className={styles.heroCopy}>
-            Asian Top Wellness works with brands, distributors, entrepreneurs and businesses to develop wellness
+            ATW works with brands, distributors, entrepreneurs and businesses to develop wellness
             products from concept through production — formulation, sampling, manufacturing, packaging and delivery,
             with one partner.
           </p>
         </div>
-        <div className={`${styles.heroPhoto} fade-up-delay`} data-parallax="-0.05">
-          <ImageSlot label="ATW team at work — natural light, formulation bench" radius={24} />
+        <div className={`${styles.heroPhoto} fade-up-delay`}>
+          <ImageSlot
+            label="ATW team at work — natural light, formulation bench"
+            radius={24}
+            devSrc="/placeholders/about-hero-team-bench.jpg"
+            innerParallax={0.9}
+            kenBurns
+          />
         </div>
       </header>
 
@@ -104,9 +110,9 @@ export default function AboutPage() {
             </div>
             <h2 className={styles.whoHeading}>A product partner, not a retailer</h2>
           </div>
-          <div data-reveal>
+          <div className={styles.whoContent} data-reveal>
             <p className={styles.whoLede}>
-              Asian Top Wellness partners with businesses to develop wellness products tailored to their ideas,
+              ATW partners with businesses to develop wellness products tailored to their ideas,
               customers and markets.
             </p>
             <p className={styles.whoBody}>
@@ -119,10 +125,8 @@ export default function AboutPage() {
               that need to travel across borders, tastes and markets.
             </p>
             <div className={styles.whoFacts}>
-              <span className={styles.fact}>Malaysia-based</span>
               <span className={styles.fact}>OEM / Private Label</span>
               <span className={styles.fact}>Wellness products</span>
-              <span className={styles.fact}>International customers</span>
             </div>
           </div>
         </div>
@@ -172,8 +176,14 @@ export default function AboutPage() {
               ))}
             </ul>
           </div>
-          <div className={styles.howPhoto} data-parallax="-0.06">
-            <ImageSlot label="tasting session — sample cups, notes, two people collaborating" radius={24} />
+          <div className={styles.howPhoto}>
+            <ImageSlot
+              label="tasting session — sample cups, notes, two people collaborating"
+              radius={24}
+              devSrc="/placeholders/about-tasting-session.jpg"
+              innerParallax={0.9}
+              kenBurns
+            />
           </div>
         </div>
       </section>

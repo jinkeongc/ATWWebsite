@@ -17,8 +17,8 @@ export function CustomDev() {
             Let&apos;s develop it.
           </h2>
           <p className={styles.copy}>
-            Most of our projects begin with a fragment — an ingredient someone believes in, a flavor, a nutritional
-            direction, a market that needs serving. You don&apos;t need a finished specification to start.
+            Most of our projects begin with something small — an ingredient someone believes in. You don&apos;t
+            need a finished specification to start.
           </p>
           <div className={styles.chips}>
             {STARTERS.map((s) => (
@@ -31,8 +31,15 @@ export function CustomDev() {
             Discuss Your Product Idea
           </Button>
         </div>
-        <div className={styles.photo} data-parallax="-0.06">
-          <ImageSlot label="formulation session: weighing powders, tasting samples" shape="rounded" radius={24} />
+        <div className={styles.photo}>
+          <ImageSlot
+            label="formulation session: weighing powders, tasting samples"
+            shape="rounded"
+            radius={24}
+            devSrc="/placeholders/custom-dev-session.jpg"
+            innerParallax={0.9}
+            kenBurns
+          />
         </div>
       </div>
     </section>

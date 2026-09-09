@@ -7,9 +7,7 @@ export function Journey() {
       <div className={`container ${styles.inner}`}>
         <div className={styles.headRow} data-reveal>
           <h2 className={styles.heading}>From idea to market</h2>
-          <p className={styles.intro}>
-            Seven stages, one partner. We stay with your product from the first conversation to the loading dock.
-          </p>
+          <p className={styles.intro}>Seven stages, one partner — from first conversation to loading dock.</p>
         </div>
         <div className={styles.grid} data-reveal-stagger>
           {JOURNEY.map((j) => (

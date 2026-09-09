@@ -20,36 +20,42 @@ export const FORMATS = [
     name: "Drink powders & superfood blends",
     desc: "Greens, protein and functional blends built around your hero ingredient.",
     img: "green powder scoop, sachets",
+    src: "/placeholders/format-drink-powders.jpg",
   },
   {
     slot: "hp-fmt-coffee",
     name: "Functional coffee & beverages",
     desc: "Coffee, lattes and instant beverages with a wellness angle.",
     img: "pour of iced functional latte",
+    src: "/placeholders/format-functional-coffee.jpg",
   },
   {
     slot: "hp-fmt-choc",
     name: "Wellness chocolate & cocoa",
     desc: "Chocolate drinks and confectionery carrying functional ingredients.",
     img: "cocoa powder + chocolate pieces",
+    src: "/placeholders/format-wellness-chocolate.jpg",
   },
   {
     slot: "hp-fmt-sachet",
     name: "Sachets & single-serve",
     desc: "Stick packs and sachets for daily-ritual products.",
     img: "unbranded stick packs, fanned",
+    src: "/placeholders/format-sachets.jpg",
   },
   {
     slot: "hp-fmt-jars",
     name: "Jars, pouches & canisters",
     desc: "Retail-ready pack formats matched to your positioning.",
     img: "neutral jars and pouches lineup",
+    src: "/placeholders/format-jars-pouches.jpg",
   },
   {
     slot: "hp-fmt-custom",
     name: "Your formulation",
     desc: "A category we haven't listed? That's usually where projects start.",
     img: "raw ingredients composition",
+    src: "/placeholders/format-raw-ingredients.jpg",
   },
 ];
 

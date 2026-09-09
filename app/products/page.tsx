@@ -8,7 +8,7 @@ import { ImageSlot } from "@/components/ui/ImageSlot";
 import styles from "./products.module.css";
 
 export const metadata: Metadata = {
-  title: "Products | Asian Top Wellness",
+  title: "Products | ATW",
   description:
     "Start with an existing ATW formulation like Wheatgrass Coffee or Moringa Chocolate — or develop a wellness product entirely around your own idea, ingredients and market.",
 };
@@ -49,6 +49,7 @@ const EXAMPLES = [
       ["Samples", "Available on request"],
     ],
     img: "wheatgrass coffee concept — iced latte, green powder, unbranded sachet",
+    src: "/placeholders/products-example-wheatgrass.jpg",
     reversed: false,
   },
   {
@@ -63,6 +64,7 @@ const EXAMPLES = [
       ["Samples", "Available on request"],
     ],
     img: "moringa chocolate concept — dark cocoa drink, moringa leaf & powder",
+    src: "/placeholders/products-example-moringa.jpg",
     reversed: true,
   },
 ];
@@ -97,16 +99,16 @@ export default function ProductsPage() {
       {/* Staggered visual strip */}
       <div className={`container ${styles.heroStrip}`}>
         <div className={styles.stripA} data-parallax="-0.04">
-          <ImageSlot label="raw ingredient powders, scoops" radius={18} />
+          <ImageSlot label="raw ingredient powders, scoops" radius={18} devSrc="/placeholders/products-strip-powders.jpg" kenBurns />
         </div>
         <div className={styles.stripB} data-parallax="-0.07">
-          <ImageSlot label="unbranded jars & pouches lineup" radius={18} />
+          <ImageSlot label="unbranded jars & pouches lineup" radius={18} devSrc="/placeholders/products-strip-jars.jpg" kenBurns />
         </div>
         <div className={styles.stripC} data-parallax="-0.03">
-          <ImageSlot label="poured functional beverage" radius={18} />
+          <ImageSlot label="poured functional beverage" radius={18} devSrc="/placeholders/products-strip-beverage.jpg" kenBurns />
         </div>
         <div className={styles.stripD} data-parallax="-0.06">
-          <ImageSlot label="fanned unbranded sachets / stick packs" radius={18} />
+          <ImageSlot label="fanned unbranded sachets / stick packs" radius={18} devSrc="/placeholders/products-strip-sachets.jpg" kenBurns />
         </div>
       </div>
 
@@ -129,11 +131,14 @@ export default function ProductsPage() {
             </p>
           </div>
           <div className={styles.createBody}>
-            <div className={styles.createPhoto} data-parallax="-0.05">
+            <div className={styles.createPhoto}>
               <ImageSlot
                 label="development bench — weighing powders, sample cups, notebook"
                 radius={24}
                 style={{ background: "rgba(247,243,230,0.08)", borderColor: "rgba(247,243,230,0.2)" }}
+                devSrc="/placeholders/products-dev-bench.jpg"
+                innerParallax={0.9}
+                kenBurns
               />
             </div>
             <div data-reveal="right">
@@ -177,8 +182,8 @@ export default function ProductsPage() {
 
         {EXAMPLES.map((ex) => (
           <div key={ex.name} className={`${styles.example} ${ex.reversed ? styles.exampleReversed : ""}`}>
-            <div className={styles.examplePhoto} data-parallax="-0.05">
-              <ImageSlot label={ex.img} radius={24} />
+            <div className={styles.examplePhoto}>
+              <ImageSlot label={ex.img} radius={24} devSrc={ex.src} innerParallax={0.9} kenBurns />
             </div>
             <div data-reveal={ex.reversed ? "left" : "right"}>
               <span className={styles.exampleTag}>{ex.tag}</span>
@@ -214,7 +219,7 @@ export default function ProductsPage() {
             <span className="eyebrow-rule" />
           </div>
           <h2 className={styles.limitsHeading} data-reveal>
-            These are starting points — <em>not limits.</em>
+            These are starting points, <em>not limits.</em>
           </h2>
           <p className={styles.limitsCopy} data-reveal>
             Wheatgrass Coffee and Moringa Chocolate are examples of what ATW can develop. If your product idea looks

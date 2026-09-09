@@ -21,6 +21,7 @@
   line-height: 1.15;
   color: var(--text-brand);
   margin: 0 0 20px;
+  text-wrap: balance;
 }
 
 .copy {

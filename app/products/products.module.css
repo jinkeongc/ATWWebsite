@@ -159,6 +159,7 @@
   line-height: 1.12;
   color: var(--text-brand);
   margin: 18px 0 16px;
+  text-wrap: balance;
 }
 
 .examplesIntro {
@@ -207,6 +208,7 @@
   line-height: 1.1;
   color: var(--text-brand);
   margin: 0 0 18px;
+  text-wrap: balance;
 }
 
 .exampleCopy {

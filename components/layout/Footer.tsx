@@ -7,7 +7,7 @@ export function Footer() {
       <div className={`container ${styles.inner}`}>
         <div className={styles.grid}>
           <div className={styles.brandCol}>
-            <span className={styles.brandName}>Asian Top Wellness</span>
+            <span className={styles.brandName}>ATW</span>
             <span className={styles.tagline}>From idea to finished wellness product.</span>
           </div>
           <div className={styles.col}>
