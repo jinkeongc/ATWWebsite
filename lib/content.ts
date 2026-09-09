@@ -56,6 +56,8 @@ export const FORMATS = [
     desc: "A category we haven't listed? That's usually where projects start.",
     img: "raw ingredients composition",
     src: "/placeholders/format-raw-ingredients.jpg",
+    href: "/capabilities",
+    linkLabel: "Browse our capabilities",
   },
 ];
 

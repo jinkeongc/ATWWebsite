@@ -4,7 +4,7 @@
 
 .headRow {
   display: flex;
-  align-items: flex-start;
+  align-items: flex-end;
   justify-content: space-between;
   gap: 40px;
   margin-bottom: 48px;
@@ -65,13 +65,36 @@
   color: var(--text-muted);
 }
 
-.headAside {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
-  /* Nudge the paragraph's first line onto the heading's cap height. */
-  padding-top: 6px;
+/* "Your formulation" is the one card that leads somewhere. The whole card is
+   the link; the cue below the copy is deliberately quiet — text and an arrow,
+   no button chrome — so it reads as a doorway rather than a call to action. */
+.cardLinked {
+  color: inherit;
+}
+.cardLinked:hover {
+  color: inherit;
+}
+
+.cardCue {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--green-mid);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.cardCueArrow {
+  transition: transform var(--dur-med) var(--ease-out);
+}
+
+.cardLinked:hover .cardCue {
+  color: var(--green-deep);
+}
+.cardLinked:hover .cardCueArrow {
+  transform: translateX(4px);
 }
 
 @media (max-width: 1024px) {
