@@ -219,7 +219,7 @@ export default function ProductsPage() {
             <span className="eyebrow-rule" />
           </div>
           <h2 className={styles.limitsHeading} data-reveal>
-            These are starting points — <em>not limits.</em>
+            These are starting points, <em>not limits.</em>
           </h2>
           <p className={styles.limitsCopy} data-reveal>
             Wheatgrass Coffee and Moringa Chocolate are examples of what ATW can develop. If your product idea looks
