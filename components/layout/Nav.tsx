@@ -57,12 +57,16 @@ export function Nav() {
           <span className={menuOpen ? styles.barBotOpen : styles.bar} />
         </button>
       </div>
-      {menuOpen && (
-        <div className={styles.mobileMenu}>
+      <div
+        className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ""}`}
+        aria-hidden={!menuOpen}
+      >
+        <div className={styles.mobileMenuInner}>
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
+              tabIndex={menuOpen ? 0 : -1}
               className={
                 pathname === link.href ? styles.mobileLinkActive : styles.mobileLink
               }
@@ -77,7 +81,7 @@ export function Nav() {
             </Button>
           </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 }
