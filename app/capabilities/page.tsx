@@ -11,7 +11,7 @@ import styles from "./capabilities.module.css";
 export const metadata = createMetadata({
   title: "Capabilities | ATW",
   description:
-    "Browse the health functions, ingredients and product formats ATW can develop through its manufacturing and ingredient partners — a map of what's possible for your wellness product.",
+    "Browse the health functions, ingredients and product formats ATW can develop — a map of what's possible for your wellness product.",
   path: "/capabilities",
 });
 
@@ -32,9 +32,8 @@ export default function CapabilitiesPage() {
           What we can <em>build for you.</em>
         </h1>
         <p className={`${styles.heroCopy} fade-up-delay`}>
-          Through our manufacturing and ingredient partners, ATW can develop wellness products across a wide range of
-          health functions, ingredients and formats. Think of this page as a map of what&apos;s possible, not a menu
-          to order from.
+          ATW can develop wellness products across a wide range of health functions, ingredients and formats.
+          Think of this page as a map of what&apos;s possible, not a menu to order from.
         </p>
         <div className={`${styles.heroStats} fade-up-delay`}>
           <span className={styles.stat}>

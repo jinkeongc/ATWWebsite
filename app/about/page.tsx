@@ -52,7 +52,7 @@ const VALUES = [
 const WORLD = [
   {
     name: "Malaysia-based",
-    desc: "Developed and produced from Petaling Jaya, Selangor.",
+    desc: "Every project developed and managed from Petaling Jaya, Selangor.",
   },
   {
     name: "International projects",
@@ -119,7 +119,7 @@ export default function AboutPage() {
             <p className={styles.whoBody}>
               From early formulation through manufacturing, packaging and delivery, ATW helps turn product concepts
               into commercially viable finished goods. Our work is OEM and private-label by nature: the product
-              carries your brand, and we do the developing and making behind it.
+              carries your brand, and we handle the developing and making behind it.
             </p>
             <p className={styles.whoBody}>
               We are based in Malaysia and work with both local and international customers — supporting projects

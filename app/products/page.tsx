@@ -60,7 +60,7 @@ const EXAMPLES = [
     specs: [
       ["Concept", "Wellness chocolate drink carrying moringa"],
       ["Key ingredients", "Cocoa, moringa — adjustable to your direction"],
-      ["Format", "Chocolate drink powder; sachet or jar friendly"],
+      ["Format", "Chocolate drink powder; sachet or pouch friendly"],
       ["Customization", "Flavor, sweetness, added functionals, serving format, packaging"],
       ["Samples", "Available on request"],
     ],
@@ -103,7 +103,7 @@ export default function ProductsPage() {
           <ImageSlot label="raw ingredient powders, scoops" radius={18} devSrc="/placeholders/products-strip-powders.jpg" kenBurns />
         </div>
         <div className={styles.stripB} data-parallax="-0.07">
-          <ImageSlot label="unbranded jars & pouches lineup" radius={18} devSrc="/placeholders/products-strip-jars.jpg" kenBurns />
+          <ImageSlot label="unbranded pouches & packaging lineup" radius={18} devSrc="/placeholders/products-strip-jars.jpg" kenBurns />
         </div>
         <div className={styles.stripC} data-parallax="-0.03">
           <ImageSlot label="poured functional beverage" radius={18} devSrc="/placeholders/products-strip-beverage.jpg" kenBurns />
@@ -223,7 +223,7 @@ export default function ProductsPage() {
           </div>
           <div className={styles.capAside} data-reveal="right">
             <p className={styles.capCopy}>
-              Browse the health functions, ingredients and product formats we can develop through our partners, from
+              Browse the health functions, ingredients and product formats we can develop — from
               functional coffee and plant milks to tablets and capsules. If your ingredient is there, we can talk about
               building around it.
             </p>

@@ -32,7 +32,7 @@ export const FORMATS = [
   {
     slot: "hp-fmt-choc",
     name: "Wellness chocolate & cocoa",
-    desc: "Chocolate drinks and confectionery carrying functional ingredients.",
+    desc: "Chocolate drinks and protein bars carrying functional ingredients.",
     img: "cocoa powder + chocolate pieces",
     src: "/placeholders/format-wellness-chocolate.jpg",
   },
@@ -44,10 +44,10 @@ export const FORMATS = [
     src: "/placeholders/format-sachets.jpg",
   },
   {
-    slot: "hp-fmt-jars",
-    name: "Jars, pouches & canisters",
-    desc: "Retail-ready pack formats matched to your positioning.",
-    img: "neutral jars and pouches lineup",
+    slot: "hp-fmt-packaging",
+    name: "Retail-ready packaging",
+    desc: "Sachets, pouches and more — packed and finished to match your positioning.",
+    img: "neutral packaging lineup",
     src: "/placeholders/format-jars-pouches.jpg",
   },
   {

@@ -47,8 +47,8 @@ export function Formulations() {
           <div data-reveal="left">
             <h3 className={styles.title}>Moringa Chocolate</h3>
             <p className={styles.desc}>
-              Cocoa warmth meets moringa&apos;s dense nutritional profile — adaptable to drinking blends, bars or
-              single-serve sachets.
+              Cocoa warmth meets moringa&apos;s dense nutritional profile — adaptable to drinking blends, protein
+              bars or single-serve sachets.
             </p>
             <div className={styles.ctaRow}>
               <Button href="/contact#enquiry" variant="primary" size="md">
