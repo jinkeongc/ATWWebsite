@@ -99,11 +99,34 @@
   }
 
   .mobileMenu {
+    display: grid;
+    grid-template-rows: 0fr;
+    background: rgba(251, 249, 243, 0.97);
+    border-top: 1px solid transparent;
+    transition: grid-template-rows 0.32s cubic-bezier(0.4, 0, 0.2, 1),
+      border-color 0.32s ease;
+  }
+
+  .mobileMenuOpen {
+    grid-template-rows: 1fr;
+    border-top-color: var(--border-subtle);
+  }
+
+  .mobileMenuInner {
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    padding: 0 0 20px;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.22s ease, transform 0.28s ease;
+  }
+
+  .mobileMenuOpen .mobileMenuInner {
     padding: 8px 0 20px;
-    border-top: 1px solid var(--border-subtle);
-    background: rgba(251, 249, 243, 0.97);
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.06s;
   }
 
   .mobileLink,
