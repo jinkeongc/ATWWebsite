@@ -17,7 +17,15 @@ export function Formats() {
           const body = (
             <>
               <div className={styles.photo}>
-                <ImageSlot label={f.img} shape="rounded" radius={18} devSrc={f.src} kenBurns />
+                <ImageSlot
+                  label={f.img}
+                  alt={f.alt}
+                  shape="rounded"
+                  radius={18}
+                  devSrc={f.src}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  kenBurns
+                />
               </div>
               <div className={styles.cardText}>
                 <span className={styles.cardTitle}>{f.name}</span>

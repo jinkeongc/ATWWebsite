@@ -8,7 +8,7 @@ import { ImageSlot } from "@/components/ui/ImageSlot";
 import styles from "./products.module.css";
 
 export const metadata = createMetadata({
-  title: "Products | ATW",
+  title: "Private-Label Wellness Products & Custom Formulations | ATW",
   description:
     "Start with an existing ATW formulation like Wheatgrass Coffee or Moringa Chocolate — or develop a wellness product entirely around your own idea, ingredients and market.",
   path: "/products",
@@ -50,6 +50,7 @@ const EXAMPLES = [
       ["Samples", "Available on request"],
     ],
     img: "wheatgrass coffee concept — iced latte, green powder, unbranded sachet",
+    alt: "Wheatgrass coffee concept: iced latte, green powder and an unbranded sachet",
     src: "/placeholders/products-example-wheatgrass.jpg",
     reversed: false,
   },
@@ -65,6 +66,7 @@ const EXAMPLES = [
       ["Samples", "Available on request"],
     ],
     img: "moringa chocolate concept — dark cocoa drink, moringa leaf & powder",
+    alt: "Moringa chocolate concept: dark cocoa drink with moringa leaf and powder",
     src: "/placeholders/products-example-moringa.jpg",
     reversed: true,
   },
@@ -100,16 +102,16 @@ export default function ProductsPage() {
       {/* Staggered visual strip */}
       <div className={`container ${styles.heroStrip}`}>
         <div className={styles.stripA} data-parallax="-0.04">
-          <ImageSlot label="raw ingredient powders, scoops" radius={18} devSrc="/placeholders/products-strip-powders.jpg" kenBurns />
+          <ImageSlot label="raw ingredient powders, scoops" alt="Raw ingredient powders with scoops" radius={18} devSrc="/placeholders/products-strip-powders.jpg" sizes="(max-width: 640px) 50vw, 25vw" kenBurns />
         </div>
         <div className={styles.stripB} data-parallax="-0.07">
-          <ImageSlot label="unbranded pouches & packaging lineup" radius={18} devSrc="/placeholders/products-strip-jars.jpg" kenBurns />
+          <ImageSlot label="unbranded pouches & packaging lineup" alt="Unbranded pouches and packaging lineup" radius={18} devSrc="/placeholders/products-strip-jars.jpg" sizes="(max-width: 640px) 50vw, 25vw" kenBurns />
         </div>
         <div className={styles.stripC} data-parallax="-0.03">
-          <ImageSlot label="poured functional beverage" radius={18} devSrc="/placeholders/products-strip-beverage.jpg" kenBurns />
+          <ImageSlot label="poured functional beverage" alt="Poured functional beverage" radius={18} devSrc="/placeholders/products-strip-beverage.jpg" sizes="(max-width: 640px) 50vw, 25vw" kenBurns />
         </div>
         <div className={styles.stripD} data-parallax="-0.06">
-          <ImageSlot label="fanned unbranded sachets / stick packs" radius={18} devSrc="/placeholders/products-strip-sachets.jpg" kenBurns />
+          <ImageSlot label="fanned unbranded sachets / stick packs" alt="Fanned unbranded sachets and stick packs" radius={18} devSrc="/placeholders/products-strip-sachets.jpg" sizes="(max-width: 640px) 50vw, 25vw" kenBurns />
         </div>
       </div>
 
@@ -135,6 +137,7 @@ export default function ProductsPage() {
             <div className={styles.createPhoto}>
               <ImageSlot
                 label="development bench — weighing powders, sample cups, notebook"
+                alt="Development bench with weighed powders, sample cups and a notebook"
                 radius={24}
                 style={{ background: "rgba(247,243,230,0.08)", borderColor: "rgba(247,243,230,0.2)" }}
                 devSrc="/placeholders/products-dev-bench.jpg"
@@ -184,7 +187,7 @@ export default function ProductsPage() {
         {EXAMPLES.map((ex) => (
           <div key={ex.name} className={`${styles.example} ${ex.reversed ? styles.exampleReversed : ""}`}>
             <div className={styles.examplePhoto}>
-              <ImageSlot label={ex.img} radius={24} devSrc={ex.src} innerParallax={0.9} kenBurns />
+              <ImageSlot label={ex.img} alt={ex.alt} radius={24} devSrc={ex.src} innerParallax={0.9} kenBurns />
             </div>
             <div data-reveal={ex.reversed ? "left" : "right"}>
               <span className={styles.exampleTag}>{ex.tag}</span>

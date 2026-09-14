@@ -9,7 +9,7 @@ import { CapabilityExplorer } from "./CapabilityExplorer";
 import styles from "./capabilities.module.css";
 
 export const metadata = createMetadata({
-  title: "Capabilities | ATW",
+  title: "Wellness Product Formats & Formulation Ingredients | ATW",
   description:
     "Browse the health functions, ingredients and product formats ATW can develop — a map of what's possible for your wellness product.",
   path: "/capabilities",

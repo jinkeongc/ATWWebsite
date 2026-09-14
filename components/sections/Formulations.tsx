@@ -20,6 +20,7 @@ export function Formulations() {
           <div className={styles.photo}>
             <ImageSlot
               label="wheatgrass coffee: unbranded pouch + prepared cup, wheatgrass sprigs"
+              alt="Wheatgrass coffee sample: unbranded pouch, prepared cup and wheatgrass sprigs"
               shape="rounded"
               radius={24}
               devSrc="/placeholders/formulation-wheatgrass-coffee.jpg"
@@ -62,6 +63,7 @@ export function Formulations() {
           <div className={`${styles.photo} ${styles.photoOrder1}`}>
             <ImageSlot
               label="moringa chocolate: cocoa powder, moringa leaves, neutral sachet"
+              alt="Moringa chocolate sample: cocoa powder, moringa leaves and an unbranded sachet"
               shape="rounded"
               radius={24}
               devSrc="/placeholders/formulation-moringa-chocolate.jpg"

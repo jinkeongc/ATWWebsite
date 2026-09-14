@@ -8,9 +8,9 @@ import { ImageSlot } from "@/components/ui/ImageSlot";
 import styles from "./about.module.css";
 
 export const metadata = createMetadata({
-  title: "About Us | ATW",
+  title: "About ATW | Wellness Product Development Partner",
   description:
-    "ATW is a Malaysia-based wellness product development and OEM / private-label partner, helping brands turn wellness ideas into finished products.",
+    "ATW is a wellness product development and OEM / private-label partner based in Petaling Jaya, Malaysia, helping brands turn wellness ideas into finished products.",
   path: "/about",
 });
 
@@ -93,6 +93,7 @@ export default function AboutPage() {
         <div className={`${styles.heroPhoto} fade-up-delay`}>
           <ImageSlot
             label="ATW team at work — natural light, formulation bench"
+            alt="ATW team working at a formulation bench"
             radius={24}
             devSrc="/placeholders/about-hero-team-bench.jpg"
             innerParallax={0.9}
@@ -180,6 +181,7 @@ export default function AboutPage() {
           <div className={styles.howPhoto}>
             <ImageSlot
               label="tasting session — sample cups, notes, two people collaborating"
+              alt="Two people reviewing sample cups and notes in a tasting session"
               radius={24}
               devSrc="/placeholders/about-tasting-session.jpg"
               innerParallax={0.9}

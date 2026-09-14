@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const SITE_NAME = "Asian Top Wellness";
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.asiantopwellness.com";
 export const DEFAULT_DESCRIPTION =
-  "ATW is a Malaysia-based OEM and private-label wellness product partner, helping brands formulate, manufacture, package and deliver finished products.";
+  "Develop wellness products under your own brand with ATW. Custom formulation, OEM manufacturing and packaging for drink powders, coffee, chocolate and supplements.";
 
 const SOCIAL_IMAGE = {
   url: "/placeholders/about-team-facility.jpg",

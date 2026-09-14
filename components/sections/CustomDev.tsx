@@ -34,6 +34,7 @@ export function CustomDev() {
         <div className={styles.photo}>
           <ImageSlot
             label="formulation session: weighing powders, tasting samples"
+            alt="Formulation session: weighing powders and tasting samples"
             shape="rounded"
             radius={24}
             devSrc="/placeholders/custom-dev-session.jpg"

@@ -8,7 +8,7 @@ import { ImageSlot } from "@/components/ui/ImageSlot";
 import styles from "./services.module.css";
 
 export const metadata = createMetadata({
-  title: "Services | ATW",
+  title: "Custom Wellness Product Development Services | ATW",
   description:
     "ATW supports wellness product development from concept to commercial product — consultation, formulation, sampling, sourcing, OEM / private-label manufacturing, packaging and delivery.",
   path: "/services",
@@ -24,6 +24,7 @@ const STAGES = [
     copy: "A project can start from almost anything — an idea, an ingredient, a flavor, a health positioning, an existing formulation, or just a market you want to serve. We sit down with you to understand what you want to create, for whom, and what success looks like.",
     tags: ["An idea", "An ingredient", "A flavor", "A positioning", "An existing formulation", "A target market"],
     img: "consultation — two people over samples and notes",
+    alt: "Consultation over product samples and notes",
     src: "/placeholders/services-consultation.jpg",
     reversed: false,
   },
@@ -34,6 +35,7 @@ const STAGES = [
     copy: "ATW develops a new formulation or customizes an existing one around your direction — balancing ingredients, flavor, sweetness, functionality, texture and format against how the product will be positioned and sold.",
     tags: ["Ingredients", "Flavor", "Sweetness", "Functionality", "Texture", "Format"],
     img: "formulation bench — weighing powders, beakers",
+    alt: "Formulation bench with weighed powders and beakers",
     src: "/placeholders/services-formulation-bench.jpg",
     reversed: true,
   },
@@ -44,6 +46,7 @@ const STAGES = [
     copy: "We produce real samples for you to taste, test and share. Your feedback drives iteration — flavor tuned, texture adjusted, nutrition rebalanced — until the product is right and ready to be approved for production.",
     tags: ["Sample creation", "Evaluation", "Feedback", "Iteration", "Refinement"],
     img: "tasting flight — sample cups, spoons, score sheet",
+    alt: "Tasting flight of sample cups with spoons and a score sheet",
     src: "/placeholders/services-tasting-flight.jpg",
     reversed: false,
   },
@@ -54,6 +57,7 @@ const STAGES = [
     copy: "Where applicable, ATW helps coordinate appropriate ingredients and materials for your product — matched to its quality direction and cost targets. Sourcing specifics are project-dependent and agreed with you.",
     tags: ["Raw ingredients", "Functional inputs", "Packaging materials"],
     img: "raw ingredients — leaves, powders, cocoa, grains",
+    alt: "Raw ingredients: leaves, powders, cocoa and grains",
     src: "/placeholders/services-raw-ingredients.jpg",
     reversed: true,
   },
@@ -64,6 +68,7 @@ const STAGES = [
     copy: "Approved formulations move toward production on an OEM / private-label basis: the finished product carries your brand, and ATW stays invisible behind it. Production specifics — volumes, capabilities, timelines — are scoped per project.",
     tags: ["OEM", "Private label", "Your brand on pack"],
     img: "production — filling line, unbranded packs",
+    alt: "Unbranded pouches moving along a filling line",
     src: "/placeholders/services-production-line.jpg",
     reversed: false,
   },
@@ -74,6 +79,7 @@ const STAGES = [
     copy: "We support the finished-product packaging process across formats appropriate to your product — sachets, pouches, tablet & capsule packs and more, as confirmed per project — so what arrives is retail-ready.",
     tags: ["Sachets", "Pouches", "Tablets & capsules", "& more"],
     img: "packaging formats — neutral sachets & pouches lineup",
+    alt: "Neutral sachets and pouches in a packaging lineup",
     src: "/placeholders/services-packaging-formats.jpg",
     reversed: true,
   },
@@ -84,6 +90,7 @@ const STAGES = [
     copy: "Finally, ATW supports moving finished goods toward you and your customers, including international markets. Destinations and logistics arrangements are agreed per project — tell us where the product needs to go.",
     tags: ["Export support", "International markets", "Delivery coordination"],
     img: "export — sealed cartons, pallet, shipping labels (unbranded)",
+    alt: "Sealed export cartons on a pallet with shipping labels",
     src: "/placeholders/services-export-cartons.jpg",
     reversed: false,
   },
@@ -161,7 +168,7 @@ export default function ServicesPage() {
               </div>
             </div>
             <div className={styles.stagePhoto}>
-              <ImageSlot label={s.img} radius={18} devSrc={s.src} innerParallax={0.9} kenBurns />
+              <ImageSlot label={s.img} alt={s.alt} radius={18} devSrc={s.src} innerParallax={0.9} kenBurns />
             </div>
           </div>
         ))}

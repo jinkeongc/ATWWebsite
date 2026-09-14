@@ -14,7 +14,7 @@ const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   ...createMetadata({
-    title: "ATW | From idea to finished wellness product",
+    title: "OEM & Private-Label Wellness Product Manufacturing | ATW",
     description: DEFAULT_DESCRIPTION,
     path: "/",
   }),

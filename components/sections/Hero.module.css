@@ -137,3 +137,8 @@
     padding: 14px 16px;
   }
 }
+
+/* Italic half of the headline, matching the inner-page hero pattern. */
+.heading em {
+  font-style: italic;
+}

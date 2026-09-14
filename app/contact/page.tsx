@@ -10,7 +10,7 @@ import { EnquiryForm } from "./EnquiryForm";
 import styles from "./contact.module.css";
 
 export const metadata = createMetadata({
-  title: "Contact | ATW",
+  title: "Start Your Private-Label Wellness Product | ATW",
   description:
     "Tell ATW about the wellness product you want to create. An idea is enough to start the discussion — reach us by enquiry form, email, phone or WhatsApp.",
   path: "/contact",
@@ -93,6 +93,7 @@ export default function ContactPage() {
         <div className={styles.directPhoto} data-reveal>
           <ImageSlot
             label="ATW office / sample shelf — warm, natural light"
+            alt="Product sample shelf in the ATW office"
             radius={24}
             devSrc="/placeholders/contact-office-shelf.jpg"
             innerParallax={0.9}

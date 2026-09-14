@@ -20,6 +20,7 @@ export const FORMATS = [
     name: "Drink powders & superfood blends",
     desc: "Greens, protein and functional blends built around your hero ingredient.",
     img: "green powder scoop, sachets",
+    alt: "Green superfood drink powder with a scoop and sachets",
     src: "/placeholders/format-drink-powders.jpg",
   },
   {
@@ -27,6 +28,7 @@ export const FORMATS = [
     name: "Functional coffee & beverages",
     desc: "Coffee, lattes and instant beverages with a wellness angle.",
     img: "pour of iced functional latte",
+    alt: "Iced functional latte being poured",
     src: "/placeholders/format-functional-coffee.jpg",
   },
   {
@@ -34,6 +36,7 @@ export const FORMATS = [
     name: "Wellness chocolate & cocoa",
     desc: "Chocolate drinks and protein bars carrying functional ingredients.",
     img: "cocoa powder + chocolate pieces",
+    alt: "Cocoa powder and chocolate pieces",
     src: "/placeholders/format-wellness-chocolate.jpg",
   },
   {
@@ -41,6 +44,7 @@ export const FORMATS = [
     name: "Sachets & single-serve",
     desc: "Stick packs and sachets for daily-ritual products.",
     img: "unbranded stick packs, fanned",
+    alt: "Unbranded single-serve stick packs fanned out",
     src: "/placeholders/format-sachets.jpg",
   },
   {
@@ -48,6 +52,7 @@ export const FORMATS = [
     name: "Retail-ready packaging",
     desc: "Sachets, pouches and more — packed and finished to match your positioning.",
     img: "neutral packaging lineup",
+    alt: "Unbranded stand-up pouches, sachets and stick packs in a packaging lineup",
     src: "/placeholders/format-jars-pouches.jpg",
   },
   {
@@ -55,6 +60,7 @@ export const FORMATS = [
     name: "Your formulation",
     desc: "A category we haven't listed? That's usually where projects start.",
     img: "raw ingredients composition",
+    alt: "Assorted raw wellness ingredients",
     src: "/placeholders/format-raw-ingredients.jpg",
     href: "/capabilities",
     linkLabel: "Browse our capabilities",

@@ -8,9 +8,11 @@ export function Hero() {
       <div className="fade-up">
         <div className="eyebrow" style={{ marginBottom: 28 }}>
           <span className="eyebrow-rule" />
-          OEM &amp; Private-Label Wellness · Malaysia
+          Wellness product development partner
         </div>
-        <h1 className={styles.heading}>From idea to finished wellness product.</h1>
+        <h1 className={styles.heading}>
+          OEM &amp; private-label wellness products, <em>from idea to finished product.</em>
+        </h1>
         <p className={styles.lede}>
           ATW partners with brands, distributors and entrepreneurs to formulate, manufacture, package and deliver
           wellness products designed around their market.
@@ -29,6 +31,9 @@ export function Hero() {
         <div className={styles.collageMain} data-parallax="-0.05">
           <ImageSlot
             label="hero: powders + beverage formulation, bright natural light"
+            alt="Unbranded pouches, green drink powders and an iced green latte on a sunlit bench"
+            priority
+            sizes="(max-width: 900px) 100vw, 45vw"
             shape="rounded"
             radius={24}
             devSrc="/placeholders/hero-formulation.jpg"
@@ -39,6 +44,9 @@ export function Hero() {
           <div className="idle-float">
             <ImageSlot
               label="ingredient close-up (wheatgrass / moringa)"
+              alt="Fresh wheatgrass, moringa leaves and green powder on a plate"
+              priority
+              sizes="(max-width: 900px) 40vw, 15vw"
               shape="circle"
               devSrc="/placeholders/hero-ingredient-closeup.jpg"
               kenBurns

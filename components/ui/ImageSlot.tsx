@@ -1,9 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useState, type CSSProperties } from "react";
+import Image from "next/image";
+import { useState, type CSSProperties } from "react";
 
 interface ImageSlotProps {
   label: string;
+  /**
+   * Description for screen readers and search engines. Leave empty for
+   * purely decorative images.
+   */
+  alt?: string;
   shape?: "rounded" | "circle";
   radius?: number;
   style?: CSSProperties;
@@ -17,10 +23,18 @@ interface ImageSlotProps {
   innerParallax?: number;
   /** Settle the photo from a slight zoom to rest when it scrolls into view. */
   kenBurns?: boolean;
+  /** Load eagerly at high priority. Only for images visible before scrolling. */
+  priority?: boolean;
+  /**
+   * How wide the frame renders, so the browser downloads a matching size.
+   * Defaults to full width on phones and half width on larger screens.
+   */
+  sizes?: string;
 }
 
 /**
- * Renders production photography with a labeled fallback if the image cannot
+ * Renders production photography through next/image (responsive sizes,
+ * modern formats, lazy loading) with a labeled fallback if the image cannot
  * be loaded.
  *
  * Transform ownership is split so effects never fight: ScrollEffects drives
@@ -28,6 +42,7 @@ interface ImageSlotProps {
  */
 export function ImageSlot({
   label,
+  alt = "",
   shape = "rounded",
   radius = 24,
   style,
@@ -35,14 +50,12 @@ export function ImageSlot({
   devSrc,
   innerParallax,
   kenBurns,
+  priority,
+  sizes = "(max-width: 768px) 100vw, 50vw",
 }: ImageSlotProps) {
+  // next/image re-issues the request after hydration whenever onError is
+  // supplied, so a failure that happens before React mounts is still caught.
   const [failed, setFailed] = useState(false);
-  const imgRef = useRef<HTMLImageElement>(null);
-  // A missing devSrc can 404 before hydration, so onError alone may not catch it.
-  useEffect(() => {
-    const img = imgRef.current;
-    if (img && img.complete && img.naturalWidth === 0) setFailed(true);
-  }, [devSrc]);
   return (
     <div
       className={className}
@@ -76,18 +89,14 @@ export function ImageSlot({
             willChange: innerParallax ? "transform" : undefined,
           }}
         >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            ref={imgRef}
+          <Image
             src={devSrc}
-            alt=""
+            alt={alt}
+            fill
+            sizes={sizes}
+            priority={priority}
             onError={() => setFailed(true)}
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              display: "block",
-            }}
+            style={{ objectFit: "cover" }}
           />
         </div>
       ) : (

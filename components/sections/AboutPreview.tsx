@@ -8,6 +8,7 @@ export function AboutPreview() {
         <div className={styles.photo}>
           <ImageSlot
             label="ATW team / facility, natural light"
+            alt="ATW team at work in the development space"
             shape="rounded"
             radius={24}
             devSrc="/placeholders/about-team-facility.jpg"

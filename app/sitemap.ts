@@ -6,7 +6,6 @@ const ROUTES = ["", "/about", "/products", "/capabilities", "/services", "/conta
 export default function sitemap(): MetadataRoute.Sitemap {
   return ROUTES.map((path) => ({
     url: new URL(path || "/", SITE_URL).toString(),
-    lastModified: new Date(),
     changeFrequency: path === "" ? "monthly" : "yearly",
     priority: path === "" ? 1 : path === "/contact" ? 0.8 : 0.7,
   }));
