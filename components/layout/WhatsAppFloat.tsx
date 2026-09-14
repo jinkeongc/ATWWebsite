@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { WHATSAPP_URL } from "@/lib/content";
+import { trackEnquiry } from "@/lib/analytics";
 
 export function WhatsAppFloat() {
   const [hover, setHover] = useState(false);
@@ -12,6 +13,7 @@ export function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       title="WhatsApp Us"
+      onClick={() => trackEnquiry("whatsapp_click", { location: "float" })}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
       style={{

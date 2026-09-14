@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
+import { trackEnquiry } from "@/lib/analytics";
 import styles from "./contact.module.css";
 
 const INTERESTS = [
@@ -142,6 +143,9 @@ export function EnquiryForm() {
           }
 
           setStatus("submitted");
+          trackEnquiry("generate_lead", {
+            interest: typeof payload.interest === "string" && payload.interest ? payload.interest : "Not specified",
+          });
           form.reset();
           setInterest(null);
         } catch (submitError) {

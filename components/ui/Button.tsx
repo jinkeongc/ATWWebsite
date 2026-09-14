@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type CSSProperties, type ReactNode } from "react";
+import { trackEnquiry, type EnquiryClickEvent, type EnquiryLocation } from "@/lib/analytics";
 
 export type ButtonVariant = "primary" | "secondary" | "inverse";
 export type ButtonSize = "sm" | "md" | "lg" | "xl";
@@ -13,6 +14,9 @@ interface ButtonProps {
   onClick?: () => void;
   type?: "button" | "submit" | "reset";
   href?: string;
+  /** Record an enquiry event when this link button is clicked. Both props are required for it to fire. */
+  trackEvent?: EnquiryClickEvent;
+  trackLocation?: EnquiryLocation;
 }
 
 const PRIMARY_PAD: Record<ButtonSize, string> = {
@@ -44,6 +48,8 @@ export function Button({
   onClick,
   type = "button",
   href,
+  trackEvent,
+  trackLocation,
 }: ButtonProps) {
   const [hover, setHover] = useState(false);
 
@@ -98,6 +104,9 @@ export function Button({
         style={style}
         target={isExternal ? "_blank" : undefined}
         rel={isExternal ? "noopener noreferrer" : undefined}
+        onClick={
+          trackEvent && trackLocation ? () => trackEnquiry(trackEvent, { location: trackLocation }) : undefined
+        }
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >

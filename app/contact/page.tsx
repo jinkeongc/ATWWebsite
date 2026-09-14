@@ -4,6 +4,7 @@ import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 import { ImageSlot } from "@/components/ui/ImageSlot";
+import { TrackedLink } from "@/components/ui/TrackedLink";
 import { CONTACT_ADDRESS, CONTACT_EMAIL, CONTACT_PHONE, WHATSAPP_URL } from "@/lib/content";
 import { EnquiryForm } from "./EnquiryForm";
 import styles from "./contact.module.css";
@@ -109,13 +110,17 @@ export default function ContactPage() {
             <div className={styles.detailItem}>
               <span className={styles.detailKey}>Email</span>
               <span className={styles.detailVal}>
-                <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+                <TrackedLink href={`mailto:${CONTACT_EMAIL}`} event="email_click" location="contact-page">
+                  {CONTACT_EMAIL}
+                </TrackedLink>
               </span>
             </div>
             <div className={styles.detailItem}>
               <span className={styles.detailKey}>Phone</span>
               <span className={styles.detailVal}>
-                <a href={`tel:${CONTACT_PHONE.replace(/[^+\d]/g, "")}`}>{CONTACT_PHONE}</a>
+                <TrackedLink href={`tel:${CONTACT_PHONE.replace(/[^+\d]/g, "")}`} event="phone_click" location="contact-page">
+                  {CONTACT_PHONE}
+                </TrackedLink>
               </span>
             </div>
             <div className={styles.detailItem}>
@@ -129,9 +134,16 @@ export default function ContactPage() {
           </div>
           <div className={styles.waRow}>
             <p className={styles.waCopy}>Fastest is WhatsApp — a short message is enough.</p>
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className={styles.waButton}>
+            <TrackedLink
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.waButton}
+              event="whatsapp_click"
+              location="contact-page"
+            >
               Message us on WhatsApp
-            </a>
+            </TrackedLink>
           </div>
         </div>
       </div>

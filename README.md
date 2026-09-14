@@ -42,8 +42,16 @@ The enquiry form posts to `app/api/enquiry/route.ts`, which delivers enquiries t
 to `.env.local` for local testing and configure the same server-only variables in Vercel. Verify
 `asiantopwellness.com` as a sending domain in Resend before using the production sender address.
 
-Vercel Web Analytics is included in the root layout. Enable Web Analytics for the project in the Vercel dashboard
-before the production deployment.
+Vercel Web Analytics is included in the root layout for page views. Enable Web Analytics for the project in the
+Vercel dashboard before the production deployment.
+
+Google Analytics 4 loads only when `NEXT_PUBLIC_GA_MEASUREMENT_ID` (the `G-...` measurement ID) is set. Enquiry
+events (`generate_lead` for a delivered form, `whatsapp_click`, `email_click`, `phone_click`) are sent through
+`lib/analytics.ts`. Register `interest` and `location` as event-scoped custom dimensions in GA4 Admin so they appear
+in reports, and mark `generate_lead` and `whatsapp_click` as key events.
+
+`GOOGLE_SITE_VERIFICATION` (optional) renders the Google Search Console HTML-tag verification meta. A DNS-verified
+domain property does not need it.
 
 Canonical URLs and the generated sitemap use `NEXT_PUBLIC_SITE_URL`, defaulting to
 `https://www.asiantopwellness.com`.

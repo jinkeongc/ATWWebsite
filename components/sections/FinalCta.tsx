@@ -14,7 +14,7 @@ export function FinalCta() {
         <Button href="/contact#enquiry" variant="primary" size="xl">
           Discuss Your Product Idea
         </Button>
-        <Button href={WHATSAPP_URL} variant="secondary" size="xl">
+        <Button href={WHATSAPP_URL} variant="secondary" size="xl" trackEvent="whatsapp_click" trackLocation="home-cta">
           WhatsApp Us
         </Button>
       </div>

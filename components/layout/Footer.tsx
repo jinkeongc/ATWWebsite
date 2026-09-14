@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { TrackedLink } from "@/components/ui/TrackedLink";
 import { CONTACT_EMAIL, WHATSAPP_URL } from "@/lib/content";
 import styles from "./Footer.module.css";
 
@@ -40,9 +41,9 @@ export function Footer() {
             <Link href="/contact#enquiry" className={styles.link}>
               Request a Sample
             </Link>
-            <a href={WHATSAPP_URL} className={styles.link}>
+            <TrackedLink href={WHATSAPP_URL} className={styles.link} event="whatsapp_click" location="footer">
               WhatsApp
-            </a>
+            </TrackedLink>
           </div>
           <div className={`${styles.col} ${styles.address}`}>
             <span className={styles.colHead}>Contact</span>
@@ -52,9 +53,9 @@ export function Footer() {
               <br />
               47300 Petaling Jaya, Selangor, Malaysia
             </span>
-            <a href={`mailto:${CONTACT_EMAIL}`} className={styles.link}>
+            <TrackedLink href={`mailto:${CONTACT_EMAIL}`} className={styles.link} event="email_click" location="footer">
               {CONTACT_EMAIL}
-            </a>
+            </TrackedLink>
           </div>
         </div>
         <div className={styles.copyright}>Copyright © 2026 Asian Top Wellness Sdn Bhd</div>
