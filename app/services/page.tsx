@@ -13,7 +13,7 @@ import styles from "./services.module.css";
 export const metadata = createMetadata({
   title: "Custom Wellness Product Development Services | ATW",
   description:
-    "ATW supports wellness product development from concept to commercial product — consultation, formulation, sampling, sourcing, OEM / private-label manufacturing, packaging and delivery.",
+    "Wellness product development from idea to finished goods: consultation, formulation, sampling, sourcing, OEM and private-label manufacturing, and packaging.",
   path: "/services",
 });
 

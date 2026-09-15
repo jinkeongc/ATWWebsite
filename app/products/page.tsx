@@ -12,7 +12,7 @@ import styles from "./products.module.css";
 export const metadata = createMetadata({
   title: "Private-Label Wellness Products & Custom Formulations | ATW",
   description:
-    "Start with an existing ATW formulation like Wheatgrass Coffee or Moringa Chocolate — or develop a wellness product entirely around your own idea, ingredients and market.",
+    "Start from an existing formulation like Wheatgrass Coffee or Moringa Chocolate, or build a private-label wellness product around your own idea and market.",
   path: "/products",
 });
 
