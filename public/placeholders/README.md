@@ -4,6 +4,15 @@ These are the approved production images used throughout the site. The folder
 name is retained to avoid changing every existing asset URL. If an image is
 missing, the corresponding image slot displays its descriptive fallback label.
 
+## Site-wide
+
+| File | Slot | Orientation |
+| --- | --- | --- |
+| `social-product-bench.jpg` | Link-preview card (WhatsApp / LinkedIn), set in `lib/seo.ts` | Landscape 16:9 |
+
+The link-preview image is the one exception to the table below: it is never placed on a page, and it
+must stay 16:9 because social platforms crop to that shape.
+
 ## Homepage
 
 | File | Slot | Orientation |

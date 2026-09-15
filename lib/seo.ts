@@ -6,11 +6,16 @@ export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.asianto
 export const DEFAULT_DESCRIPTION =
   "Develop wellness products under your own brand with ATW. Custom formulation, OEM manufacturing and packaging for drink powders, coffee, chocolate and supplements.";
 
+/**
+ * The preview card shown when a link to the site is shared (WhatsApp,
+ * LinkedIn, Slack). Kept at 16:9 because that is the shape those previews
+ * crop to — the portrait hero photo would lose its top and bottom.
+ */
 const SOCIAL_IMAGE = {
-  url: "/placeholders/about-team-facility.jpg",
-  width: 1536,
-  height: 1024,
-  alt: "Asian Top Wellness product development and manufacturing",
+  url: "/placeholders/social-product-bench.jpg",
+  width: 1600,
+  height: 900,
+  alt: "Unbranded pouches, green drink powders and an iced green latte on a sunlit bench",
 };
 
 type MetadataOptions = {

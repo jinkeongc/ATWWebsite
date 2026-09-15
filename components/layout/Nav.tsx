@@ -23,8 +23,11 @@ export function Nav() {
           <Image
             src={LOGO_URL}
             alt="Asian Top Wellness"
-            width={245}
-            height={101}
+            width={810}
+            height={333}
+            // The bar renders the logo 46px tall, so ~112px wide. Without this
+            // the browser would fetch the full-resolution artwork for it.
+            sizes="112px"
             priority
             className={styles.logoImg}
           />
