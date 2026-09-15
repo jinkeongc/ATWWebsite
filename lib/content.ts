@@ -29,10 +29,11 @@ export const LOGO_URL = "/atw-logo.png";
  *    schemes tie mark usage to the certificate holder and its certified
  *    premises. SIRIM's rules do not even extend a mark to a certified
  *    company's own parent, so they plainly do not reach a customer.
- *  - Attribute in the same breath, in the same size type. A qualifier set in
- *    smaller or lighter type below a badge row reads as fine print, and
- *    s.7(2) of the Trade Descriptions Act 2011 deems a merely MISLEADING
- *    description false. The impression the layout creates is what is tested.
+ *  - Attribute in the same breath. The lead sentence must always say that the
+ *    FACILITIES are the certified party, and must sit immediately above the
+ *    names — s.7(2) of the Trade Descriptions Act 2011 deems a merely
+ *    MISLEADING description false, and the impression the layout creates is
+ *    what is tested. Plain text labels are fine; certifier artwork is not.
  *  - NO halal claim of any kind, in any wording, until ATW holds its own
  *    Sijil Pengesahan Halal Malaysia. JAKIM's MPPHM (Domestik) 2020 cl.
  *    18(8)(b) states an OEM partner's certificate does not pass to the brand
@@ -49,10 +50,16 @@ export const LOGO_URL = "/atw-logo.png";
 export const MANUFACTURING_STANDARDS = {
   eyebrow: "Manufacturing standards",
   heading: "Where your product is made",
-  /** Rendered as equal-weight paragraphs; never demote the second to fine print. */
-  body: [
-    "ATW develops and manages your product. The manufacturing itself runs at partner facilities certified to Good Manufacturing Practice and HACCP by the Malaysian Ministry of Health.",
-    "Those certifications belong to the facilities rather than to ATW, which holds none of its own. The certification requirements for your finished product are scoped at the start of the project and confirmed in writing before anything goes into production — ask us early and we will tell you plainly what your product can and cannot carry.",
+  /**
+   * Names the certified party (the facilities) before the certifications are
+   * listed. Do not shorten this into a bare "GMP and HACCP certified" claim.
+   */
+  lead:
+    "ATW develops and manages your product. The manufacturing itself runs at partner facilities certified by the Malaysian Ministry of Health:",
+  /** Plain text labels only — never the certifiers' logos or device marks. */
+  certifications: [
+    { name: "GMP", note: "Good Manufacturing Practice" },
+    { name: "HACCP", note: "Hazard analysis and critical control points" },
   ],
 };
 

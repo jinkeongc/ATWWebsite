@@ -85,15 +85,15 @@ export const CATEGORIES: ProductCategory[] = [
     navLabel: "Drink powders",
     cardLinkLabel: "Explore drink powders",
     cardDesc:
-      "Greens, fruit-powder, protein, multigrain, sport and fibre blends — the most flexible way to carry an ingredient.",
+      "Greens, fruit-powder, protein, multigrain and sport blends, and powder supplements — the most flexible way to carry an ingredient.",
     eyebrow: "Product category",
-    title: "OEM Drink Powder Manufacturing & Private-Label Blends | ATW",
+    title: "OEM Drink Powders & Private-Label Powder Supplements | ATW",
     description:
-      "Develop a drink powder under your own brand — greens, superfood, fruit-powder, protein and sport blends. Custom formulation, sampling and OEM production.",
+      "Develop drink powders and powder supplements under your own brand: greens, protein, fibre and sport blends. Custom formulation, sampling and OEM production.",
     h1Lead: "Drink powders, built around",
     h1Em: "your hero ingredient.",
     intro:
-      "A drink powder is the most forgiving place to start a wellness brand. Almost any ingredient someone believes in can be carried in one, and flavour, sweetness and serving size can all be tuned without going back to the beginning. Bring us the ingredient — or just the idea of it — and we develop the blend around it.",
+      "A drink powder is the most forgiving place to start a wellness brand. Almost any ingredient someone believes in can be carried in one, and flavour, sweetness and serving size can all be tuned without going back to the beginning. Powder supplements live here too — a scoop or a sachet is often an easier sell than a tablet, and it leaves far more room for flavour. Bring us the ingredient, or just the idea of it, and we develop the blend around it.",
     hero: {
       src: "/placeholders/format-drink-powders.jpg",
       alt: "Green superfood drink powder with a scoop and single-serve sachets",
@@ -101,7 +101,7 @@ export const CATEGORIES: ProductCategory[] = [
     },
     buildsHeading: "What a drink powder can be",
     buildsIntro:
-      "These are the directions customers most often take. They overlap happily — a greens blend with added protein is a normal request, not an awkward one.",
+      "These are the directions customers most often take, whether the finished product is sold as a daily drink or as a powder supplement. They overlap happily — a greens blend with added protein is a normal request, not an awkward one.",
     builds: [
       {
         name: "Greens & superfood blends",
@@ -192,6 +192,10 @@ export const CATEGORIES: ProductCategory[] = [
       label: "raw ingredient powders, scoops",
     },
     faqs: [
+      {
+        q: "Is a powder supplement different from a drink powder?",
+        a: "Not really, and that is rather the point. A powder food supplement is the same format, positioned around a nutritional purpose rather than a drink occasion — and powder-based food supplements are exactly what our manufacturing partners specialise in. Whichever word you use for it on the pack, the development path is the same.",
+      },
       {
         q: "Can I bring my own ingredient?",
         a: "Yes, and it is how a lot of our projects begin. Tell us what the ingredient is and what you want it to do in the product, and we will work out how to carry it in a powder that still tastes good.",
