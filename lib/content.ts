@@ -22,6 +22,8 @@ export const FORMATS = [
     img: "green powder scoop, sachets",
     alt: "Green superfood drink powder with a scoop and sachets",
     src: "/placeholders/format-drink-powders.jpg",
+    href: "/products/drink-powders",
+    linkLabel: "Explore drink powders",
   },
   {
     slot: "hp-fmt-coffee",
@@ -30,6 +32,8 @@ export const FORMATS = [
     img: "pour of iced functional latte",
     alt: "Iced functional latte being poured",
     src: "/placeholders/format-functional-coffee.jpg",
+    href: "/products/functional-coffee",
+    linkLabel: "Explore functional coffee",
   },
   {
     slot: "hp-fmt-choc",
@@ -38,6 +42,8 @@ export const FORMATS = [
     img: "cocoa powder + chocolate pieces",
     alt: "Cocoa powder and chocolate pieces",
     src: "/placeholders/format-wellness-chocolate.jpg",
+    href: "/products/wellness-chocolate",
+    linkLabel: "Explore wellness chocolate",
   },
   {
     slot: "hp-fmt-sachet",

@@ -9,8 +9,8 @@
 
 .grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.2fr);
-  gap: 56px;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.9fr) minmax(0, 1.1fr) minmax(0, 0.9fr) minmax(0, 1.2fr);
+  gap: 44px;
   padding-bottom: 56px;
   border-bottom: 1px solid rgba(201, 214, 192, 0.15);
 }

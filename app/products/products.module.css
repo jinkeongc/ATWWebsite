@@ -50,6 +50,91 @@
   height: 300px;
 }
 
+/* Browse by category */
+.catSection {
+  padding: 0 40px 110px;
+}
+
+.catHead {
+  display: grid;
+  grid-template-columns: minmax(0, 6fr) minmax(0, 5fr);
+  gap: 64px;
+  align-items: end;
+  margin-bottom: 48px;
+}
+
+.catHeading {
+  font-family: var(--font-serif);
+  font-weight: var(--weight-medium);
+  font-size: 40px;
+  line-height: 1.12;
+  color: var(--text-brand);
+  margin: 18px 0 0;
+  text-wrap: balance;
+}
+
+.catIntro {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-copy);
+  margin: 0;
+}
+
+.catGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+.catCard {
+  display: flex;
+  flex-direction: column;
+  color: inherit;
+}
+
+.catPhoto {
+  height: 220px;
+  margin-bottom: 22px;
+}
+
+.catName {
+  font-family: var(--font-serif);
+  font-weight: var(--weight-medium);
+  font-size: 24px;
+  line-height: 1.18;
+  color: var(--text-brand);
+  margin: 0 0 12px;
+}
+
+.catDesc {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--text-copy);
+  margin: 0 0 18px;
+  flex: 1;
+}
+
+.catCue {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  font-weight: var(--weight-medium);
+  color: var(--green-mid);
+}
+
+.catCard:hover .catCue {
+  color: var(--green-deep);
+}
+
+.catArrow {
+  transition: transform var(--dur-med) var(--ease-out);
+}
+
+.catCard:hover .catArrow {
+  transform: translateX(3px);
+}
+
 /* Create Your Own Product — the dominant section */
 .createBand {
   background: var(--surface-journey);
@@ -329,9 +414,13 @@
   .createHead,
   .createBody,
   .example,
-  .capInner {
+  .capInner,
+  .catHead {
     grid-template-columns: 1fr;
     gap: 48px;
+  }
+  .catGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .createPhoto {
     height: 340px;
@@ -372,6 +461,23 @@
   }
   .startList {
     columns: 1;
+  }
+  .catSection {
+    padding: 0 24px 72px;
+  }
+  .catHead {
+    gap: 24px;
+    margin-bottom: 36px;
+  }
+  .catHeading {
+    font-size: 30px;
+  }
+  .catGrid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .catPhoto {
+    height: 200px;
   }
   .examplesSection {
     padding: 80px 24px 24px;

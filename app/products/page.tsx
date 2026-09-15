@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { createMetadata } from "@/lib/seo";
+import { CATEGORIES } from "@/lib/categories";
 import { ScrollEffects } from "@/components/ScrollEffects";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
@@ -114,6 +116,47 @@ export default function ProductsPage() {
           <ImageSlot label="fanned unbranded sachets / stick packs" alt="Fanned unbranded sachets and stick packs" radius={18} devSrc="/placeholders/products-strip-sachets.jpg" sizes="(max-width: 640px) 50vw, 25vw" kenBurns />
         </div>
       </div>
+
+      {/* Browse by category */}
+      <section className={`container ${styles.catSection}`}>
+        <div className={styles.catHead} data-reveal>
+          <div>
+            <div className="eyebrow">
+              <span className="eyebrow-rule" />
+              Browse by category
+            </div>
+            <h2 className={styles.catHeading}>Three places most projects begin</h2>
+          </div>
+          <p className={styles.catIntro}>
+            If you already know roughly what shape your product takes, start here — each page walks through the
+            formats, formulation choices and packaging options we work with.
+          </p>
+        </div>
+        <div className={styles.catGrid} data-reveal-stagger>
+          {CATEGORIES.map((c) => (
+            <Link key={c.slug} href={`/products/${c.slug}`} className={styles.catCard} data-reveal>
+              <div className={styles.catPhoto}>
+                <ImageSlot
+                  label={c.hero.label}
+                  alt={c.hero.alt}
+                  radius={18}
+                  devSrc={c.hero.src}
+                  sizes="(max-width: 640px) 100vw, 33vw"
+                  kenBurns
+                />
+              </div>
+              <h3 className={styles.catName}>{c.navLabel}</h3>
+              <p className={styles.catDesc}>{c.cardDesc}</p>
+              <span className={styles.catCue}>
+                {c.cardLinkLabel}
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" className={styles.catArrow}>
+                  <path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       {/* Create Your Own Product — dominant */}
       <section className={styles.createBand}>

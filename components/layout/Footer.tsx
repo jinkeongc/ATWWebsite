@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { TrackedLink } from "@/components/ui/TrackedLink";
+import { CATEGORIES } from "@/lib/categories";
 import { CONTACT_EMAIL, WHATSAPP_URL } from "@/lib/content";
 import styles from "./Footer.module.css";
 
@@ -32,6 +33,14 @@ export function Footer() {
             <Link href="/contact" className={styles.link}>
               Contact
             </Link>
+          </div>
+          <div className={styles.col}>
+            <span className={styles.colHead}>What we make</span>
+            {CATEGORIES.map((c) => (
+              <Link key={c.slug} href={`/products/${c.slug}`} className={styles.link}>
+                {c.navLabel}
+              </Link>
+            ))}
           </div>
           <div className={styles.col}>
             <span className={styles.colHead}>Start</span>

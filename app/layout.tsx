@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
-import { createMetadata, DEFAULT_DESCRIPTION, SITE_URL } from "@/lib/seo";
+import { createMetadata, DEFAULT_DESCRIPTION, organizationJsonLd, SITE_URL } from "@/lib/seo";
 import "./globals.css";
 
 // Google Search Console "HTML tag" verification. Optional: a DNS-verified
@@ -27,6 +27,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd()) }}
+        />
         {children}
         <Analytics />
       </body>
