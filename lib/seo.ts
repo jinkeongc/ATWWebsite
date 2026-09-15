@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { CONTACT_EMAIL, CONTACT_PHONE, LOGO_URL } from "./content";
+import {
+  COMPANY_LEGAL_NAME,
+  COMPANY_REG_NO,
+  COMPANY_REG_NO_OLD,
+  CONTACT_EMAIL,
+  CONTACT_PHONE,
+  LOGO_URL,
+} from "./content";
 
 export const SITE_NAME = "Asian Top Wellness";
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.asiantopwellness.com";
@@ -61,7 +68,8 @@ export function organizationJsonLd() {
   const organization = {
     "@type": "Organization",
     "@id": `${SITE_URL}/#organization`,
-    name: "Asian Top Wellness Sdn Bhd",
+    name: COMPANY_LEGAL_NAME,
+    legalName: COMPANY_LEGAL_NAME,
     alternateName: ["Asian Top Wellness", "ATW"],
     url: SITE_URL,
     logo: {
@@ -86,6 +94,18 @@ export function organizationJsonLd() {
       email: CONTACT_EMAIL,
       telephone: CONTACT_PHONE,
     },
+    identifier: [
+      {
+        "@type": "PropertyValue",
+        name: "Malaysian company registration number (SSM)",
+        value: COMPANY_REG_NO,
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Former Malaysian company registration number",
+        value: COMPANY_REG_NO_OLD,
+      },
+    ],
   };
 
   const website = {

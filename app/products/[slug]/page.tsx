@@ -9,6 +9,7 @@ import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
 import { Button } from "@/components/ui/Button";
 import { ImageSlot } from "@/components/ui/ImageSlot";
+import { ManufacturingStandards } from "@/components/sections/ManufacturingStandards";
 import styles from "./category.module.css";
 
 /** Build all three category pages at deploy time; reject any other slug. */
@@ -243,6 +244,8 @@ export default async function CategoryPage({ params }: PageProps<"/products/[slu
           </div>
         </div>
       </section>
+
+      <ManufacturingStandards />
 
       {/* Questions we get asked */}
       <section className={styles.faqBand}>

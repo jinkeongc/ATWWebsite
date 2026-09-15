@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { TrackedLink } from "@/components/ui/TrackedLink";
 import { CATEGORIES } from "@/lib/categories";
-import { CONTACT_EMAIL, WHATSAPP_URL } from "@/lib/content";
+import {
+  COMPANY_LEGAL_NAME,
+  COMPANY_REG_NO,
+  COMPANY_REG_NO_OLD,
+  CONTACT_EMAIL,
+  WHATSAPP_URL,
+} from "@/lib/content";
 import styles from "./Footer.module.css";
 
 export function Footer() {
@@ -67,7 +73,13 @@ export function Footer() {
             </TrackedLink>
           </div>
         </div>
-        <div className={styles.copyright}>Copyright © 2026 Asian Top Wellness Sdn Bhd</div>
+        {/* The registration number is required on business communications. */}
+        <div className={styles.copyright}>
+          <span>
+            {COMPANY_LEGAL_NAME} · Company No. {COMPANY_REG_NO} ({COMPANY_REG_NO_OLD})
+          </span>
+          <span>Copyright © 2026 {COMPANY_LEGAL_NAME}</span>
+        </div>
       </div>
     </footer>
   );

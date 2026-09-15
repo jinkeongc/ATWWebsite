@@ -23,6 +23,8 @@ export interface CapabilityFormat {
   name: string;
   desc: string;
   examples: string[];
+  /** Product-category page this format belongs to, linked from /capabilities. */
+  category?: "drink-powders" | "functional-coffee" | "wellness-chocolate";
 }
 
 export const FUNCTIONS: CapabilityFunction[] = [
@@ -439,56 +441,67 @@ export const FUNCTIONS: CapabilityFunction[] = [
 export const CAPABILITY_FORMATS: CapabilityFormat[] = [
   {
     name: "Drink powders & fruit-powder blends",
+    category: "drink-powders",
     desc: "The most flexible base — almost any function above can be carried in a fruit-powder drink.",
     examples: ["Sachet drink mixes", "Fruit powder bases", "Greens & superfood blends"],
   },
   {
     name: "Functional coffee",
+    category: "functional-coffee",
     desc: "Instant coffee formats with a wellness angle layered in.",
     examples: ["Latte, mocha & cappuccino", "White coffee", "Durian coffee", "Alkaline coffee"],
   },
   {
     name: "Milk tea",
+    category: "functional-coffee",
     desc: "Instant milk tea premixes across flavour and functional directions.",
     examples: ["Matcha", "Hazelnut & peach", "Rose & sweet potato", "Spirulina"],
   },
   {
     name: "Cocoa & chocolate drinks",
+    category: "wellness-chocolate",
     desc: "Indulgent chocolate bases carrying functional ingredients.",
     examples: ["Hot chocolate", "Cocoa oat", "Chocolate meal replacement"],
   },
   {
     name: "Plant & alternative milks",
+    category: "functional-coffee",
     desc: "Dairy and dairy-alternative powdered milks with functional additions.",
     examples: ["Goat milk", "Soy milk", "Oat milk", "Colostrum milk"],
   },
   {
     name: "Multigrain & meal replacement",
+    category: "drink-powders",
     desc: "Satiety-led powders with protein, fibre and vitamin premixes.",
     examples: ["Multigrain powders", "Chocolate, strawberry & vanilla shakes"],
   },
   {
     name: "Sport & energy premixes",
+    category: "drink-powders",
     desc: "Hydration, pre-workout and recovery drink powders.",
     examples: ["Energy drink powders", "Electrolyte drinks", "Muscle recovery blends"],
   },
   {
     name: "Protein & wellness bars",
+    category: "wellness-chocolate",
     desc: "Bar formats carrying protein and functional ingredients.",
     examples: ["Protein bars", "Chocolate wellness bars"],
   },
   {
     name: "Tablets",
+    category: "wellness-chocolate",
     desc: "Compressed tablets for supplements and chewables.",
     examples: ["Vitamin C tablets", "Colostrum tablets", "Spirulina tablets"],
   },
   {
     name: "Capsules",
+    category: "wellness-chocolate",
     desc: "Capsule supplements for herbal, beauty and general wellness lines.",
     examples: ["Traditional herb capsules", "Beauty capsules", "Health supplement capsules"],
   },
   {
     name: "Liquids",
+    category: "functional-coffee",
     desc: "Liquid concentrates and ready-to-dilute formats.",
     examples: ["Liquid chlorophyll", "Mint & fruit variants"],
   },

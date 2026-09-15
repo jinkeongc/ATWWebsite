@@ -3,8 +3,11 @@ import { ScrollEffects } from "@/components/ScrollEffects";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
+import Link from "next/link";
 import { Button } from "@/components/ui/Button";
 import { ImageSlot } from "@/components/ui/ImageSlot";
+import { ManufacturingStandards } from "@/components/sections/ManufacturingStandards";
+import { CATEGORIES } from "@/lib/categories";
 import styles from "./services.module.css";
 
 export const metadata = createMetadata({
@@ -193,6 +196,20 @@ export default function ServicesPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <ManufacturingStandards />
+
+      {/* Where the process leads — the product categories themselves */}
+      <section className={`container ${styles.catRow}`} data-reveal>
+        <span className={styles.catHead}>What this process produces</span>
+        <div className={styles.catLinks}>
+          {CATEGORIES.map((c) => (
+            <Link key={c.slug} href={`/products/${c.slug}`} className={styles.catLink}>
+              {c.navLabel}
+            </Link>
+          ))}
         </div>
       </section>
 

@@ -65,6 +65,9 @@
   padding-top: 28px;
   font-size: 13px;
   color: var(--footer-muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
 }
 
 @media (max-width: 900px) {

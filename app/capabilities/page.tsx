@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { createMetadata } from "@/lib/seo";
 import { ScrollEffects } from "@/components/ScrollEffects";
 import { Nav } from "@/components/layout/Nav";
@@ -75,7 +76,17 @@ export default function CapabilitiesPage() {
           <div className={styles.formatsGrid} data-reveal-stagger>
             {CAPABILITY_FORMATS.map((f) => (
               <div key={f.name} className={styles.format} data-reveal>
-                <span className={styles.formatName}>{f.name}</span>
+                {/* Formats we have a category page for link straight to it. */}
+                {f.category ? (
+                  <Link
+                    href={`/products/${f.category}`}
+                    className={`${styles.formatName} ${styles.formatLink}`}
+                  >
+                    {f.name}
+                  </Link>
+                ) : (
+                  <span className={styles.formatName}>{f.name}</span>
+                )}
                 <span className={styles.formatDesc}>{f.desc}</span>
                 <ul className={styles.formatExamples}>
                   {f.examples.map((ex) => (

@@ -7,12 +7,46 @@ export const NAV_LINKS = [
   { label: "Contact", href: "/contact" },
 ];
 
+export const COMPANY_LEGAL_NAME = "Asian Top Wellness Sdn Bhd";
+/** Current SSM registration number, required on business communications. */
+export const COMPANY_REG_NO = "201901010002";
+/** Pre-2019 number, still quoted alongside the new one on Malaysian documents. */
+export const COMPANY_REG_NO_OLD = "1319330-M";
+
 export const CONTACT_PHONE = "+60 12-961 9900";
 export const CONTACT_ADDRESS = "30, Jalan SS 2/72, SS 2, 47300 Petaling Jaya, Selangor, Malaysia";
 
 export const WHATSAPP_URL = "https://api.whatsapp.com/send?phone=60129619900";
 export const CONTACT_EMAIL = "info@asiantopwellness.com";
 export const LOGO_URL = "/atw-logo.png";
+
+/**
+ * What the site may say about certification — the wording is load-bearing.
+ *
+ *  - These certifications belong to ATW's manufacturing partners, never to
+ *    ATW. Never reword this into a claim that ATW itself is certified.
+ *  - The partners do not hold the same set, so the copy says "between them"
+ *    and never implies every facility holds every certification.
+ *  - Malaysian Halal certification is granted per product and per premises.
+ *    A certified facility does not make a new private-label product certified,
+ *    so the copy must never promise a certification on a customer's finished
+ *    product. Product-level certification is confirmed per project.
+ *  - Partner identities stay confidential; see lib/capabilities.ts.
+ */
+export const MANUFACTURING_STANDARDS = {
+  eyebrow: "Manufacturing standards",
+  heading: "Certified manufacturing partners",
+  lead:
+    "ATW develops and manages your product. The production itself runs through our manufacturing partners, who between them hold:",
+  certifications: [
+    { name: "GMP", note: "Good Manufacturing Practice" },
+    { name: "HACCP", note: "Food safety hazard control" },
+    { name: "Halal", note: "Depending on the facility and product" },
+    { name: "MeSTI", note: "Malaysian food safety scheme" },
+  ],
+  note:
+    "These are our partners' certifications rather than ATW's own, and not every facility holds every one. Halal certification in particular is granted to specific products and premises, so it does not carry across to a new product automatically. Which certifications your finished product can hold is confirmed per project — ask when you enquire and we will tell you exactly what applies to yours.",
+};
 
 export const FORMATS = [
   {
