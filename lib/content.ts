@@ -21,31 +21,39 @@ export const CONTACT_EMAIL = "info@asiantopwellness.com";
 export const LOGO_URL = "/atw-logo.png";
 
 /**
- * What the site may say about certification — the wording is load-bearing.
+ * What the site may say about certification. This wording is load-bearing and
+ * was written against Malaysian law — do not loosen it without advice.
  *
- *  - These certifications belong to ATW's manufacturing partners, never to
- *    ATW. Never reword this into a claim that ATW itself is certified.
- *  - The partners do not hold the same set, so the copy says "between them"
- *    and never implies every facility holds every certification.
- *  - Malaysian Halal certification is granted per product and per premises.
- *    A certified facility does not make a new private-label product certified,
- *    so the copy must never promise a certification on a customer's finished
- *    product. Product-level certification is confirmed per project.
- *  - Partner identities stay confidential; see lib/capabilities.ts.
+ *  - NO certifier logos, device marks, seals or badge/card rows. ATW holds no
+ *    certification of its own, and the Malaysian Ministry of Health and SIRIM
+ *    schemes tie mark usage to the certificate holder and its certified
+ *    premises. SIRIM's rules do not even extend a mark to a certified
+ *    company's own parent, so they plainly do not reach a customer.
+ *  - Attribute in the same breath, in the same size type. A qualifier set in
+ *    smaller or lighter type below a badge row reads as fine print, and
+ *    s.7(2) of the Trade Descriptions Act 2011 deems a merely MISLEADING
+ *    description false. The impression the layout creates is what is tested.
+ *  - NO halal claim of any kind, in any wording, until ATW holds its own
+ *    Sijil Pengesahan Halal Malaysia. JAKIM's MPPHM (Domestik) 2020 cl.
+ *    18(8)(b) states an OEM partner's certificate does not pass to the brand
+ *    owner's product. The Trade Descriptions (Definition of Halal) Order 2011
+ *    catches anything "likely to mislead or confuse", carries up to RM5m for a
+ *    body corporate, and s.65 deems directors personally guilty. Companies have
+ *    been convicted in 2026 for halal wording alone, with no logo shown.
+ *    MPPHM cl. 21(19) lets ATW apply in its own name as brand owner; until that
+ *    certificate exists, halal stays off the site entirely.
+ *  - Partner identities stay confidential; see lib/capabilities.ts. Do not
+ *    publish certificate numbers either — they are publicly searchable and
+ *    would identify the factory.
  */
 export const MANUFACTURING_STANDARDS = {
   eyebrow: "Manufacturing standards",
-  heading: "Certified manufacturing partners",
-  lead:
-    "ATW develops and manages your product. The production itself runs through our manufacturing partners, who between them hold:",
-  certifications: [
-    { name: "GMP", note: "Good Manufacturing Practice" },
-    { name: "HACCP", note: "Food safety hazard control" },
-    { name: "Halal", note: "Depending on the facility and product" },
-    { name: "MeSTI", note: "Malaysian food safety scheme" },
+  heading: "Where your product is made",
+  /** Rendered as equal-weight paragraphs; never demote the second to fine print. */
+  body: [
+    "ATW develops and manages your product. The manufacturing itself runs at partner facilities certified to Good Manufacturing Practice and HACCP by the Malaysian Ministry of Health.",
+    "Those certifications belong to the facilities rather than to ATW, which holds none of its own. The certification requirements for your finished product are scoped at the start of the project and confirmed in writing before anything goes into production — ask us early and we will tell you plainly what your product can and cannot carry.",
   ],
-  note:
-    "These are our partners' certifications rather than ATW's own, and not every facility holds every one. Halal certification in particular is granted to specific products and premises, so it does not carry across to a new product automatically. Which certifications your finished product can hold is confirmed per project — ask when you enquire and we will tell you exactly what applies to yours.",
 };
 
 export const FORMATS = [

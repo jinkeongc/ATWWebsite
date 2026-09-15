@@ -4,11 +4,11 @@ import styles from "./ManufacturingStandards.module.css";
 /**
  * Certification statement, shared by the category pages and /services.
  *
- * The wording in lib/content.ts is deliberate and load-bearing: the
- * certifications belong to ATW's manufacturing partners, the partners do not
- * all hold the same ones, and Halal certification does not transfer to a new
- * product on its own. Read the note above MANUFACTURING_STANDARDS before
- * changing any of it.
+ * Deliberately plain prose: no certifier logos, no badge row, and both
+ * paragraphs at the same weight so the attribution never reads as fine print.
+ * Read the note above MANUFACTURING_STANDARDS in lib/content.ts before
+ * changing the copy or the presentation — both are constrained by Malaysian
+ * trade-descriptions law, not by taste.
  */
 export function ManufacturingStandards() {
   const s = MANUFACTURING_STANDARDS;
@@ -23,16 +23,11 @@ export function ManufacturingStandards() {
           <h2 className={styles.heading}>{s.heading}</h2>
         </div>
         <div className={styles.body} data-reveal>
-          <p className={styles.lead}>{s.lead}</p>
-          <ul className={styles.certs}>
-            {s.certifications.map((c) => (
-              <li key={c.name} className={styles.cert}>
-                <span className={styles.certName}>{c.name}</span>
-                <span className={styles.certNote}>{c.note}</span>
-              </li>
-            ))}
-          </ul>
-          <p className={styles.note}>{s.note}</p>
+          {s.body.map((para) => (
+            <p key={para.slice(0, 32)} className={styles.para}>
+              {para}
+            </p>
+          ))}
         </div>
       </div>
     </section>
