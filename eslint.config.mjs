@@ -12,6 +12,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Claude Code's scratch worktrees: full checkouts, each with its own
+    // node_modules and .next build output. Linting them doubles every real
+    // finding and buries it under thousands from generated code.
+    ".claude/**",
   ]),
 ]);
 
