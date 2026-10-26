@@ -17,7 +17,7 @@ export const CONTACT_PHONE = "+60 10-298 4925";
 export const CONTACT_ADDRESS = "30, Jalan SS 2/72, SS 2, 47300 Petaling Jaya, Selangor, Malaysia";
 
 export const WHATSAPP_URL = "https://api.whatsapp.com/send?phone=60102984925";
-export const CONTACT_EMAIL = "info@asiantopwellness.com";
+export const CONTACT_EMAIL = "hello@asiantopwellness.com";
 export const LOGO_URL = "/atw-logo.png";
 
 /**
