@@ -426,7 +426,7 @@ export const FUNCTIONS: CapabilityFunction[] = [
       "Dandelion Extract",
       "Digestive Enzyme Premix",
       "Green Tea Extract",
-      "Liquid Chlorophyll",
+      "Chlorophyll",
       "Moringa Leaf Powder",
       "Oil Palm Fibre",
       "Probiotics",
@@ -482,12 +482,6 @@ export const CAPABILITY_FORMATS: CapabilityFormat[] = [
     examples: ["Energy drink powders", "Electrolyte drinks", "Muscle recovery blends"],
   },
   {
-    name: "Protein & wellness bars",
-    category: "wellness-chocolate",
-    desc: "Bar formats carrying protein and functional ingredients.",
-    examples: ["Protein bars", "Chocolate wellness bars"],
-  },
-  {
     name: "Tablets",
     category: "wellness-chocolate",
     desc: "Compressed tablets for supplements and chewables.",
@@ -498,12 +492,6 @@ export const CAPABILITY_FORMATS: CapabilityFormat[] = [
     category: "wellness-chocolate",
     desc: "Capsule supplements for herbal, beauty and general wellness lines.",
     examples: ["Traditional herb capsules", "Beauty capsules", "Health supplement capsules"],
-  },
-  {
-    name: "Liquids",
-    category: "functional-coffee",
-    desc: "Liquid concentrates and ready-to-dilute formats.",
-    examples: ["Liquid chlorophyll", "Mint & fruit variants"],
   },
 ];
 

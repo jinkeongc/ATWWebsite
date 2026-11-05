@@ -242,7 +242,7 @@ export const CATEGORIES: ProductCategory[] = [
     builds: [
       {
         name: "Functional coffee",
-        desc: "Latte, mocha, cappuccino, white coffee, durian coffee and alkaline coffee — familiar cups with a wellness angle formulated in.",
+        desc: "Latte, mocha, cappuccino, white coffee, durian coffee and alkaline coffee — familiar cups with a wellness angle formulated in, whether that is a mushroom, wheatgrass, collagen or protein coffee.",
       },
       {
         name: "Milk tea premixes",
@@ -259,10 +259,6 @@ export const CATEGORIES: ProductCategory[] = [
       {
         name: "Energy & hydration drinks",
         desc: "Electrolyte and energy drink powders for the sport and daily-hydration shelves.",
-      },
-      {
-        name: "Liquid concentrates",
-        desc: "Ready-to-dilute liquid formats such as chlorophyll drinks, in mint and fruit directions.",
       },
     ],
     choicesHeading: "Where a coffee project gets decided",
@@ -287,7 +283,7 @@ export const CATEGORIES: ProductCategory[] = [
       {
         name: "Serving format",
         note: "How the drink reaches the cup.",
-        options: ["Single-serve sachet", "Stick pack", "Multi-serve pouch", "Liquid concentrate"],
+        options: ["Single-serve sachet", "Stick pack", "Multi-serve pouch", "Bulk powder"],
       },
     ],
     functionsHeading: "Angles that work in a cup",
@@ -352,14 +348,14 @@ export const CATEGORIES: ProductCategory[] = [
   },
   {
     slug: "wellness-chocolate",
-    navLabel: "Wellness chocolate & bars",
+    navLabel: "Wellness chocolate & cocoa",
     cardLinkLabel: "Explore wellness chocolate",
     cardDesc:
-      "Cocoa drinks, meal-replacement shakes, protein bars and supplement formats, led by taste as much as function.",
+      "Cocoa drinks, meal-replacement shakes and supplement formats, led by taste as much as function.",
     eyebrow: "Product category",
-    title: "Wellness Chocolate, Cocoa & Protein Bar Manufacturing | ATW",
+    title: "Wellness Chocolate & Cocoa Drink Manufacturing | ATW",
     description:
-      "Private-label chocolate drinks, cocoa blends and protein or wellness bars. Custom formulation, sampling and OEM production, with your brand on every pack.",
+      "Private-label chocolate drinks and cocoa blends. Custom formulation, sampling and OEM production, with your brand on every pack.",
     h1Lead: "Chocolate that carries",
     h1Em: "more than comfort.",
     intro:
@@ -371,7 +367,7 @@ export const CATEGORIES: ProductCategory[] = [
     },
     buildsHeading: "Cocoa, in more than one shape",
     buildsIntro:
-      "Drinks and bars ask for different development work, but they share ingredients and positioning — which is why brands often launch one and add the other later.",
+      "Cocoa drinks, cocoa oat blends and chocolate meal-replacement shakes share ingredients and positioning, so a brand that starts with one often adds a second — with tablets and capsules sitting alongside them where a supplement suits the range.",
     builds: [
       {
         name: "Hot chocolate & cocoa drinks",
@@ -386,16 +382,8 @@ export const CATEGORIES: ProductCategory[] = [
         desc: "Satiety-led chocolate shakes with protein, fibre and vitamin premixes dialled to your nutritional direction.",
       },
       {
-        name: "Protein bars",
-        desc: "Bar formats carrying protein and functional ingredients, for brands that want something to hand over rather than mix.",
-      },
-      {
-        name: "Chocolate wellness bars",
-        desc: "Cocoa-led bars positioned around a functional angle instead of confectionery alone.",
-      },
-      {
         name: "Tablets & capsules",
-        desc: "Where a positioning suits a supplement rather than a snack, we also develop compressed tablets and capsules.",
+        desc: "Where a positioning suits a supplement, we also develop compressed tablets and capsules.",
       },
     ],
     choicesHeading: "What you get to shape",
@@ -414,13 +402,13 @@ export const CATEGORIES: ProductCategory[] = [
       },
       {
         name: "Texture & sweetness",
-        note: "For bars especially, texture is half the product.",
-        options: ["Sweetness level", "Mouthfeel", "Bar chew & bite", "Drink smoothness"],
+        note: "How the drink feels, sip after sip.",
+        options: ["Sweetness level", "Mouthfeel", "Drink smoothness"],
       },
       {
         name: "Format",
-        note: "Whether it is drunk, eaten or taken.",
-        options: ["Drink powder", "Bar", "Tablet", "Capsule"],
+        note: "Whether it is drunk or taken.",
+        options: ["Drink powder", "Tablet", "Capsule"],
       },
     ],
     functionsHeading: "Positionings cocoa carries well",
@@ -429,7 +417,7 @@ export const CATEGORIES: ProductCategory[] = [
     functionIds: ["protein", "sport", "bone", "beauty", "weight", "sleep", "antioxidant"],
     packagingHeading: "Finished so it looks worth buying",
     packagingCopy:
-      "Packaging formats are confirmed per project and supported through to retail-ready finishing. For chocolate and bars in particular, the pack is doing as much selling as the recipe.",
+      "Packaging formats are confirmed per project and supported through to retail-ready finishing. For chocolate in particular, the pack is doing as much selling as the recipe.",
     packagingOptions: [
       {
         name: "Single-serve sachets",
@@ -438,10 +426,6 @@ export const CATEGORIES: ProductCategory[] = [
       {
         name: "Stand-up pouches",
         desc: "Multi-serve chocolate drink packs with your artwork across the front.",
-      },
-      {
-        name: "Bar wrappers",
-        desc: "Individually wrapped bars, finished to match how the product is positioned.",
       },
       {
         name: "Tablet & capsule packs",
@@ -455,7 +439,7 @@ export const CATEGORIES: ProductCategory[] = [
     },
     processHeading: "How a chocolate project comes together",
     processCopy:
-      "Concept first, then formulation, then real samples you can taste and share. Bars usually take an extra round or two, because texture has to be right as well as flavour. Once you approve it, production runs under your brand, packed and finished, with export support toward your market.",
+      "Concept first, then formulation, then real samples you can taste and share. Once you approve it, production runs under your brand, packed and finished, with export support toward your market.",
     processPhoto: {
       src: "/placeholders/formulation-moringa-chocolate.jpg",
       alt: "Moringa chocolate concept: dark cocoa drink with moringa leaf and powder",
@@ -467,8 +451,8 @@ export const CATEGORIES: ProductCategory[] = [
         a: "Often it can, which is why cocoa is such a useful base. How much it can carry depends on the ingredient and the dose your positioning needs — and we will tell you honestly during sampling if it is fighting the recipe.",
       },
       {
-        q: "Do you develop bars as well as drinks?",
-        a: "Yes. Protein bars and chocolate wellness bars are both formats we work in. Bars ask for more attention to texture, so expect development to take a little longer than a drink powder.",
+        q: "Do you make bars?",
+        a: "No. We work in powder-based formats only: drink powders and blends in sachets, stick packs, pouches or bulk, and tablets or capsules where a supplement suits the positioning.",
       },
       {
         q: "Is Moringa Chocolate available to build on?",
@@ -481,7 +465,7 @@ export const CATEGORIES: ProductCategory[] = [
     ],
     ctaHeading: "Got a chocolate product in mind?",
     ctaCopy:
-      "Whether it is a drink, a bar or something between the two, tell us what you want it to be and we will start working out how to make it.",
+      "Whether it is a cocoa drink, a chocolate shake or a tablet or capsule beside them, tell us what you want it to be and we will start working out how to make it.",
   },
 ];
 

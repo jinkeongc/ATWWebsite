@@ -41,7 +41,7 @@ export function Footer() {
             </Link>
           </div>
           <div className={styles.col}>
-            <span className={styles.colHead}>What we make</span>
+            <span className={styles.colHead}>What we can make</span>
             {CATEGORIES.map((c) => (
               <Link key={c.slug} href={`/products/${c.slug}`} className={styles.link}>
                 {c.navLabel}

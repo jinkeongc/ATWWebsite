@@ -87,7 +87,7 @@ export const FORMATS = [
   {
     slot: "hp-fmt-choc",
     name: "Wellness chocolate & cocoa",
-    desc: "Chocolate drinks and protein bars carrying functional ingredients.",
+    desc: "Cocoa drinks and chocolate blends carrying functional ingredients.",
     img: "cocoa powder + chocolate pieces",
     alt: "Cocoa powder and chocolate pieces",
     src: "/placeholders/format-wellness-chocolate.jpg",

@@ -271,7 +271,7 @@ export default async function CategoryPage({ params }: PageProps<"/products/[slu
       {/* Related categories + closing CTA */}
       <section className={`container ${styles.closeSection}`}>
         <div className={styles.relatedRow} data-reveal>
-          <span className={styles.relatedHead}>Other things we make</span>
+          <span className={styles.relatedHead}>Other things we can make</span>
           <div className={styles.relatedLinks}>
             {related.map((r) => (
               <Link key={r.slug} href={`/products/${r.slug}`} className={styles.relatedLink}>
