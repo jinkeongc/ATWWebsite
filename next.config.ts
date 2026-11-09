@@ -4,9 +4,10 @@ import type { NextConfig } from "next";
  * Content Security Policy.
  *
  * Every allowed origin below corresponds to something the site actually loads:
- * Google Fonts (imported in app/globals.css), GA4 (via @next/third-parties),
- * Vercel Analytics, and Cloudflare Turnstile on the contact form. Adding a new
- * third-party script means adding its origin here, or it will be blocked.
+ * GA4 (via @next/third-parties), Vercel Analytics, and Cloudflare Turnstile on
+ * the contact form. Fonts are self-hosted by next/font, so they need no origin
+ * of their own. Adding a new third-party script means adding its origin here,
+ * or it will be blocked.
  *
  * `'unsafe-inline'` is present in script-src because Next.js App Router injects
  * inline bootstrap/hydration scripts, and the site renders static JSON-LD
@@ -31,8 +32,9 @@ const csp = [
   "frame-ancestors 'none'",
   "form-action 'self'",
   `script-src 'self' 'unsafe-inline'${devOnlyScriptSrc} https://www.googletagmanager.com https://www.google-analytics.com https://challenges.cloudflare.com https://va.vercel-scripts.com`,
-  "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-  "font-src 'self' https://fonts.gstatic.com",
+  // Fonts are self-hosted by next/font, so no Google Fonts origins are needed.
+  "style-src 'self' 'unsafe-inline'",
+  "font-src 'self'",
   "img-src 'self' data: blob: https://www.googletagmanager.com https://*.google-analytics.com",
   "connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://challenges.cloudflare.com",
   // Turnstile renders its challenge inside an iframe on our own page.
