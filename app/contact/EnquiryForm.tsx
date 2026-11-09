@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { trackEnquiry } from "@/lib/analytics";
+import { TurnstileWidget, turnstileEnabled } from "./TurnstileWidget";
 import styles from "./contact.module.css";
 
 const INTERESTS = [
@@ -101,6 +102,8 @@ export function EnquiryForm() {
   const [interest, setInterest] = useState<string | null>(null);
   const [status, setStatus] = useState<"idle" | "submitting" | "submitted" | "error">("idle");
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
 
   if (status === "submitted") {
     return (
@@ -123,12 +126,22 @@ export function EnquiryForm() {
       aria-busy={status === "submitting"}
       onSubmit={async (e) => {
         e.preventDefault();
+
+        // Turnstile normally resolves while the form is being filled in, so this
+        // is a rare edge case rather than a routine wait.
+        if (turnstileEnabled && !turnstileToken) {
+          setStatus("error");
+          setError("Just a moment — we're still checking your browser. Please try again in a second.");
+          return;
+        }
+
         setStatus("submitting");
         setError("");
 
         const form = e.currentTarget;
         const formData = new FormData(form);
-        const payload = Object.fromEntries(formData.entries());
+        const payload: Record<string, FormDataEntryValue> = Object.fromEntries(formData.entries());
+        if (turnstileToken) payload.turnstileToken = turnstileToken;
 
         try {
           const response = await fetch("/api/enquiry", {
@@ -151,6 +164,8 @@ export function EnquiryForm() {
         } catch (submitError) {
           setError(submitError instanceof Error ? submitError.message : "We couldn't send your enquiry. Please try again.");
           setStatus("error");
+          // A Turnstile token is single-use, so a retry needs a fresh challenge.
+          setTurnstileResetKey((key) => key + 1);
         }
       }}
     >
@@ -214,6 +229,8 @@ export function EnquiryForm() {
             <input id="website" name="website" tabIndex={-1} autoComplete="off" />
           </div>
         </div>
+
+      <TurnstileWidget onToken={setTurnstileToken} resetKey={turnstileResetKey} />
 
       <div className={styles.submitRow}>
         <Button type="submit" variant="primary" size="xl" disabled={status === "submitting"}>
