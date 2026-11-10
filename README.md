@@ -93,11 +93,18 @@ Not yet configured. Until it is, the form works normally and the rate limit stil
 3. Name it `ATW website`, add the hostname `asiantopwellness.com`, and leave the widget mode as
    **Managed**. Click **Create**.
 4. You now get two values: a **Site Key** and a **Secret Key**.
-5. In Vercel, open the project → **Settings** → **Environment Variables**, and add:
-   - `NEXT_PUBLIC_TURNSTILE_SITE_KEY` = the Site Key (all three environments)
-   - `TURNSTILE_SECRET_KEY` = the Secret Key (all three environments, marked **Secret**)
+5. In Vercel, open the project → **Settings** → **Environment Variables**, and add both to the
+   **Production environment only**:
+   - `NEXT_PUBLIC_TURNSTILE_SITE_KEY` = the Site Key
+   - `TURNSTILE_SECRET_KEY` = the Secret Key, marked **Secret**
 6. Redeploy. A small "verifying" box appears on the contact form; real visitors never have to
    solve anything.
+
+Production only, because a Turnstile widget is tied to the hostnames registered against it.
+Preview deployments get random `*.vercel.app` URLs that cannot be registered in advance, so a
+widget would fail its hostname check there and block the form. Leaving the keys off Preview and
+Development means Turnstile stays dormant on those builds and the form keeps working, with the
+rate limit still applying.
 
 Add **both** keys together. A secret key without a site key cannot be verified, so Turnstile is
 skipped (and the mismatch logged) rather than blocking enquiries.
