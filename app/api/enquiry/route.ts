@@ -94,6 +94,62 @@ function isAllowedOrigin(request: NextRequest) {
   return false;
 }
 
+/**
+ * Emails the visitor a short confirmation that their enquiry arrived. Replies
+ * go to the ATW inbox. The enquiry itself has already been delivered by the
+ * time this runs, so a failure here is logged and never shown to the visitor.
+ */
+async function sendAcknowledgement({
+  apiKey,
+  from,
+  replyTo,
+  name,
+  email,
+}: {
+  apiKey: string;
+  from: string;
+  replyTo: string;
+  name: string;
+  email: string;
+}) {
+  const text = [
+    `Hi ${name},`,
+    "",
+    "Thanks for writing an enquiry. We have received your message and will get back to you shortly.",
+    "",
+    "Asian Top Wellness",
+    SITE_URL,
+  ].join("\n");
+
+  try {
+    const response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+        "Idempotency-Key": crypto.randomUUID(),
+        "User-Agent": "ATW-Website/1.0",
+      },
+      body: JSON.stringify({
+        from,
+        to: [email],
+        reply_to: replyTo,
+        subject: "Thanks for your enquiry — Asian Top Wellness",
+        text,
+      }),
+    });
+
+    if (!response.ok) {
+      console.error("Resend rejected an enquiry acknowledgement.", { status: response.status });
+    }
+  } catch (error) {
+    console.error(
+      "Enquiry acknowledgement failed.",
+      error instanceof Error ? error.message : "Unknown error",
+    );
+  }
+}
+
 export async function POST(request: NextRequest) {
   if (!isAllowedOrigin(request)) {
     return NextResponse.json({ error: "Invalid request origin." }, { status: 403 });
@@ -207,6 +263,8 @@ export async function POST(request: NextRequest) {
         { status: 502 },
       );
     }
+
+    await sendAcknowledgement({ apiKey, from, replyTo: to, name: enquiry.name, email: enquiry.email });
 
     return NextResponse.json({ ok: true });
   } catch (error) {
