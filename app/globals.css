@@ -1,11 +1,15 @@
 /* ---- Design tokens — v1 approved visual style (ATW Homepage v1.dc.html, source of truth) ---- */
 
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
+/* Fonts are loaded and self-hosted by next/font in app/layout.tsx, which sets
+   --font-lora and --font-schibsted-grotesk on <html>. A plain
+   @import url(fonts.googleapis.com) does NOT work here: Turbopack strips it
+   from the compiled stylesheet, which is why the type silently fell back to
+   Times. The literal family names stay as a fallback. */
 
 :root {
   /* fonts */
-  --font-sans: "Schibsted Grotesk", sans-serif;
-  --font-serif: "Lora", serif;
+  --font-sans: var(--font-schibsted-grotesk), "Schibsted Grotesk", sans-serif;
+  --font-serif: var(--font-lora), "Lora", serif;
 
   /* page + surfaces */
   --surface-page: #FBF9F3;

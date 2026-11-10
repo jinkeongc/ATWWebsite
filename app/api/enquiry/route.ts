@@ -1,5 +1,8 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { CONTACT_EMAIL } from "@/lib/content";
+import { checkRateLimit, clientIp } from "@/lib/rate-limit";
+import { verifyTurnstile } from "@/lib/turnstile";
+import { SITE_URL } from "@/lib/seo";
 
 export const runtime = "nodejs";
 
@@ -15,32 +18,90 @@ const MAX_LENGTHS = {
 
 type EnquiryField = keyof typeof MAX_LENGTHS;
 
+/** Fields that end up on a single line (including the subject) keep no line breaks. */
+const SINGLE_LINE_FIELDS: ReadonlySet<EnquiryField> = new Set([
+  "name",
+  "company",
+  "email",
+  "country",
+  "phone",
+  "interest",
+]);
+
+/**
+ * Largest request body accepted, in bytes. The fields above total well under
+ * 5 KB; this stops a large payload being parsed into memory at all. Vercel caps
+ * request bodies anyway, but rejecting early costs nothing.
+ */
+const MAX_BODY_BYTES = 16 * 1024;
+
+const CONTROL_CHARS = /[\u0000-\u001F\u007F-\u009F]/g;
+
+/**
+ * Strips control characters from submitted text. Line breaks in a value that is
+ * interpolated into an email subject or address are the classic header
+ * injection vector; Resend's JSON API should encode them safely, so this is
+ * defence in depth rather than the only thing standing in the way.
+ */
+function sanitize(value: string, field: EnquiryField) {
+  const stripped = value.replace(CONTROL_CHARS, field === "idea" ? "\n" : " ");
+  const normalized = SINGLE_LINE_FIELDS.has(field)
+    ? stripped.replace(/\s+/g, " ")
+    : stripped.replace(/\n{3,}/g, "\n\n");
+  return normalized.trim().slice(0, MAX_LENGTHS[field]);
+}
+
 function readField(body: Record<string, unknown>, field: EnquiryField) {
   const value = body[field];
-  return typeof value === "string" ? value.trim().slice(0, MAX_LENGTHS[field]) : "";
+  return typeof value === "string" ? sanitize(value, field) : "";
 }
 
 function isValidEmail(value: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 }
 
-function sameOrigin(request: NextRequest) {
+/**
+ * Cross-origin check (CSRF protection).
+ *
+ * The origin is compared against hosts we know are ours, rather than against
+ * the request's own `host` / `x-forwarded-host` headers — a caller can set
+ * those, so the old comparison could be satisfied by sending a matching pair.
+ *
+ * A request with no `Origin` header is still allowed. Browsers always send it,
+ * so this check does its job of stopping another website from posting the form
+ * on a visitor's behalf. Requiring it would not stop a script, which can set any
+ * origin it likes, but would break the occasional privacy proxy that strips the
+ * header. Scripted abuse is handled by the rate limit and Turnstile instead.
+ */
+function isAllowedOrigin(request: NextRequest) {
   const origin = request.headers.get("origin");
-  const forwardedHost = request.headers.get("x-forwarded-host");
-  const host = forwardedHost ?? request.headers.get("host");
+  if (!origin) return true;
 
-  if (!origin || !host) return true;
-
+  let host: string;
   try {
-    return new URL(origin).host === host;
+    host = new URL(origin).host.toLowerCase();
   } catch {
     return false;
   }
+
+  if (host === new URL(SITE_URL).host.toLowerCase()) return true;
+
+  // Vercel preview deployments and local development.
+  if (host.endsWith(".vercel.app")) return true;
+  if (host === "localhost" || host.startsWith("localhost:")) return true;
+  if (host === "127.0.0.1" || host.startsWith("127.0.0.1:")) return true;
+
+  return false;
 }
 
 export async function POST(request: NextRequest) {
-  if (!sameOrigin(request)) {
+  if (!isAllowedOrigin(request)) {
     return NextResponse.json({ error: "Invalid request origin." }, { status: 403 });
+  }
+
+  const declaredLength = Number(request.headers.get("content-length"));
+  if (Number.isFinite(declaredLength) && declaredLength > MAX_BODY_BYTES) {
+    return NextResponse.json({ error: "Enquiry is too large." }, { status: 413 });
   }
 
   let body: Record<string, unknown>;
@@ -51,9 +112,26 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Invalid request." }, { status: 400 });
   }
 
+  if (typeof body !== "object" || body === null || Array.isArray(body)) {
+    return NextResponse.json({ error: "Invalid request." }, { status: 400 });
+  }
+
   // Bots commonly fill fields that are visually hidden from real visitors.
   if (typeof body.website === "string" && body.website.trim()) {
     return NextResponse.json({ ok: true });
+  }
+
+  // Throttle before doing any outbound work, so a flood cannot burn the Resend
+  // quota or make us call Cloudflare repeatedly.
+  const ip = clientIp(request.headers);
+  if (ip) {
+    const limit = checkRateLimit(ip);
+    if (!limit.allowed) {
+      return NextResponse.json(
+        { error: "You've already sent us an enquiry. Please email or WhatsApp us if it's urgent." },
+        { status: 429, headers: { "Retry-After": String(limit.retryAfterSeconds) } },
+      );
+    }
   }
 
   const enquiry = {
@@ -68,6 +146,14 @@ export async function POST(request: NextRequest) {
 
   if (!enquiry.name || !isValidEmail(enquiry.email)) {
     return NextResponse.json({ error: "Please provide a name and valid email address." }, { status: 400 });
+  }
+
+  const turnstile = await verifyTurnstile(body.turnstileToken, ip);
+  if (!turnstile.ok) {
+    return NextResponse.json(
+      { error: "We couldn't verify that you're human. Please reload the page and try again." },
+      { status: 403 },
+    );
   }
 
   const apiKey = process.env.RESEND_API_KEY;
